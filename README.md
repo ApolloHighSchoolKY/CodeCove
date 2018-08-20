@@ -1,5 +1,5 @@
 # CodeCove
 Team 4
 <html>
-  <head><title>Team 4</title></head>
+  <head><label>This is team 4's page, get off!</label></head>
 </html>
