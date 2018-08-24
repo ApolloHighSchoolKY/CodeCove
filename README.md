@@ -1,2 +1,2 @@
 # CodeCove
-Team 4
+Team4Studios ©2018
