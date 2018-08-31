@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <!--METADATA-->
+  <div>
+    <!--Set the encoding type-->
+    <meta charset="UTF-8">
+    <!--Allows page to be standardized across devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </div>
+  <head>
+    <!--Sets the correct CSS file and icon for the page to use-->
+    <link rel='stylesheet' id='style' type='text/css' href='CSS\Github.css'>
+    <link rel='icon' href='Resources\Leohr.png'>
+    <!--Give the "title" of the tab in the browser-->
+    <Title>CodeCove</Title>
+  </head>
+  <body>
+    <!--Navigation Bar-->
+    <div>
+      <div class="navbar">
+        <a href="https://github.com/ApolloHighSchoolKY/CodeCove">Github</a>
+        <a href="https://prod.teamgantt.com/gantt/schedule/?ids=1257545&public_keys=fHDTzH5DeW7d&zoom=d100&font_size=12&estimated_hours=0&assigned_resources=0&percent_complete=0&documents=0&comments=0&col_width=355&hide_header_tabs=0&menu_view=1&resource_filter=1&name_in_bar=0&name_next_to_bar=0&resource_names=1#user=&company=&custom=&date_filter=&hide_completed=false&color_filter=">Gantt Chart</a>
+        <a href="https://teamup.com/ks2y6w6whbvjz625sh">Calendar</a>
+        <a href="javascript:alert('Contact us at these emails:\nChristopher.cox@stu.daviess.kyschools.us\nNathan.roberts@stu.daviess.kyschools.us\nJacob.jones3@stu.daviess.kyschools.us');" class="right">Contact Us</a>
+      </div>
+      <style>
+        .navbar {
+          overflow: hidden; /* Hide overflow */
+          background-color: #333; /* Dark background color */
+        }
+
+        /* Style the navigation bar links */
+        .navbar a {
+          float: left; /* Make sure that the links stay side-by-side */
+          display: block; /* Change the display to block, for responsive reasons (see below) */
+          color: white; /* White text color */
+          text-align: center; /* Center the text */
+          padding: 14px 20px; /* Add some padding */
+          text-decoration: none; /* Remove underline */
+        }
+
+        /* Right-aligned link */
+        .navbar a.right {
+          float: right; /* Float a link to the right */
+        }
+
+        /* Change color on hover/mouse-over */
+        .navbar a:hover {
+          background-color: #ddd; /* Grey background color */
+          color: black; /* Black text color */
+        }
+      </style>
+    </div>
+    <!--Video, label, button, image-->
+    <div>
+      <!--Video on the webpage-->
+      <video id='videoPlayer'controls width='200' height='200'>
+      <source src='Resources\nggyu.mp4' type='audio/mp4'>
+      </video>
+      <!--Horizontal dividing line-->
+      <hr align='left' width=20%>
+      <label>
+        <!--Links to our Github pprogress-->
+        In progress on <a href="https://github.com/ApolloHighSchoolKY/CodeCove">GitHub</a>
+      </label>
+      <!--Button to change the theme of the webpage-->
+      <input id='btnChange' type='button' value='Change Color' onclick='switchTheme();' />
+      <!--Horizontal dividing line-->
+      <hr align='left' width=20%>
+      <!--Picture of Pirate Leohr for good luck-->
+      <img src='Resources\Leohr.png' width='200' height='200'/>
+    </div>
+    <!--Javascript Files-->
+    <div>
+      <!--Change theme-->
+      <script type='text/javascript' src='JS\ThemeChange.js'></script>
+    </div>
+  </body>
+</html>
