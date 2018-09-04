@@ -10,9 +10,9 @@
   <head>
     <!--Sets the correct CSS file and icon for the page to use-->
     <link rel='stylesheet' id='style' type='text/css' href='CSS\Github.css'>
-    <link rel='icon' href='Resources\Leohr.png'>
+    <link rel='icon' href='Resources/Leohr.png'>
     <!--Give the "title" of the tab in the browser-->
-    <Title>CodeCove</Title>
+    <title>CodeCove</title>
   </head>
   <body>
     <!--Navigation Bar-->
@@ -51,15 +51,12 @@
         }
       </style>
     </div>
-    <!--Video, label, button, image-->
+    <!--Audio, label, button, image-->
     <div>
+      <!--Audio on the webpage-->
       <audio controls>
-        source="Resources/nggyu.mp3"
+        <source src="Resources/nggyu.mp3" type="audio/mpeg">
       </audio>
-      <!--Video on the webpage-->
-      <!--<video id='videoPlayer'controls width='200' height='200'>
-      <source src='Resources\nggyu.mp4' type='audio/mp4'>
-      </video>-->
       <!--Horizontal dividing line-->
       <hr align='left' width=20%>
       <label>
@@ -71,12 +68,27 @@
       <!--Horizontal dividing line-->
       <hr align='left' width=20%>
       <!--Picture of Pirate Leohr for good luck-->
-      <img src='Resources\Leohr.png' width='200' height='200'/>
+      <img id='Leohr' src='Resources\Leohr.png' width='200' height='200'/>
     </div>
     <!--Javascript Files-->
     <div>
       <!--Change theme-->
-      <script type='text/javascript' src='JS\ThemeChange.js'></script>
+      <script type='text/javascript'>
+        var theme=1;
+        function switchTheme(){
+          if(theme===1){
+            document.getElementById('style').setAttribute('href', 'CSS/Coder.css');
+            theme=2;
+          }
+          else if(theme===2){
+            document.getElementById('style').setAttribute('href', 'CSS/Github.css');
+            theme=1;
+          }
+          $('#Leohr').fadeToggle();
+        };
+      </script>
+      <!--jQuery-->
+      <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     </div>
   </body>
 </html>
