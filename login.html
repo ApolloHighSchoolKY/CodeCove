@@ -1,0 +1,46 @@
+<html>
+  <Title>Login Page</Title>
+    <head>
+      <link rel='stylesheet' href="..\CSS\Login.css">
+    </head>
+    <body>
+      <form action="action_page.php">
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input id="un" type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <p>
+    <button type="submit">Login</button>
+      </p>
+    <label>
+      <input id="pw" type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+      </form>
+    </body>
+    <script>
+    //Method to fetch login info, need to connect to database first//
+    function getLoginInfo(un,pw){
+      //*Insert method code here*
+    }
+    </script>
+    <div>
+      <p style="
+      position: fixed;
+      bottom: 0;
+      width:100%;
+      text-align: center;
+      padding-left:44.8%;">
+      Team4Studios<sup>TM</sup>©
+      </p>
+    </div>
+</html>
