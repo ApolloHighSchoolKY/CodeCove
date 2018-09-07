@@ -1,1 +1,0 @@
-START chrome.exe "html/index.html"
