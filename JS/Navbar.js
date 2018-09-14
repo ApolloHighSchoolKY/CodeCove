@@ -17,6 +17,7 @@ document.write(`<div class="navbar">
   <a id="hacker" href="javascript:switchTheme();">Hacker Green</a>
   <a href="html/questions.html">Questions</a>
   <a href="javascript:$('.navbar').hide();">Delete Navbar</a>
+  <a id=loginButton href="..\HTML\login.html">Login Page</a>
 </div>`);
 
 //Method to switch theme
