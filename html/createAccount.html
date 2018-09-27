@@ -1,0 +1,37 @@
+<html>
+  <Title>Login Page</Title>
+    <head>
+      <script src="../JS/Navbar.js"></script>
+      <link rel='stylesheet' href="..\css\Github.css">
+    </head>
+    <body>
+      <form class="login" onsubmit="create(email, password)">
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input id="un" type="text" placeholder="Enter Email" name="email" required>
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" required>
+          <p>
+          <button type="submit" onclick="create(email,password)">Create Account</button>
+          </p>
+          <label>
+            <input id="pw" type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+        <div class="container">
+          <button type="button" class="cancelbtn" onclick="window.location.href='../index.html'">Cancel</button>
+          <span class="psw"><p><a href="forgotPassword.html">Forgot password?</a></p></span>
+        </div>
+      </form>
+    </body>
+    <div>
+      <p style="
+      position: fixed;
+      bottom: 0;
+      width:100%;
+      text-align: center;
+      padding-left:44.8%;">
+      Team4Studios<sup>TM</sup>©
+      </p>
+    </div>
+</html>
