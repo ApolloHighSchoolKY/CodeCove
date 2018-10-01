@@ -13,11 +13,11 @@
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
     <i class="fa fa-remove"></i>
   </a>
-  <a href="#" class="w3-bar-item w3-button">Link 1</a>
-  <a href="#" class="w3-bar-item w3-button">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button">Link 3</a>
-  <a href="#" class="w3-bar-item w3-button">Link 4</a>
-  <a href="#" class="w3-bar-item w3-button">Link 5</a>
+  <a href="#" class="w3-bar-item w3-button">HTML</a>
+  <a href="#" class="w3-bar-item w3-button">Javascript</a>
+  <a href="#" class="w3-bar-item w3-button">CSS</a>
+  <a href="#" class="w3-bar-item w3-button">View All Lessons</a>
+  <a href="#" class="w3-bar-item w3-button">Create Lesson</a>
 </nav>
 
 <!-- Navbar -->
@@ -122,7 +122,7 @@
 <div class="w3-card w3-white">
   <img src="/w3images/snow.jpg" alt="Snow" style="width:100%">
   <div class="w3-container">
-  <h3>Customer 1</h3>
+  <h3>HTML</h3>
   <h4>Trade</h4>
   <p>Blablabla</p>
   <p>Blablabla</p>
@@ -136,7 +136,7 @@
 <div class="w3-card w3-white">
   <img src="/w3images/lights.jpg" alt="Lights" style="width:100%">
   <div class="w3-container">
-  <h3>Customer 2</h3>
+  <h3>Javascript</h3>
   <h4>Trade</h4>
   <p>Blablabla</p>
   <p>Blablabla</p>
@@ -150,7 +150,7 @@
 <div class="w3-card w3-white">
   <img src="/w3images/mountains.jpg" alt="Mountains" style="width:100%">
   <div class="w3-container">
-  <h3>Customer 3</h3>
+  <h3>CSS</h3>
   <h4>Trade</h4>
   <p>Blablabla</p>
   <p>Blablabla</p>
@@ -244,22 +244,57 @@
       <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i><a href="mailto:Jacob.jones3@stu.daviess.kyschools.us?Subject=Code%20Cove">Jacob.jones3@stu.daviess.kyschools.us</a></p>
     </div>
     <div class="w3-col m7">
-      <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
+      <form class="w3-container w3-card-4 w3-padding-16 w3-white" onsubmit="sendEmail()">
+      <!--Name of commenter-->
       <div class="w3-section">
         <label>Name</label>
-        <input class="w3-input" type="text" name="Name" required>
+        <input class="w3-input" type="text" id="name" required>
       </div>
+      <!--Email address-->
       <div class="w3-section">
         <label>Email</label>
-        <input class="w3-input" type="text" name="Email" required>
+        <input class="w3-input" type="text" id="email" required>
       </div>
+      <!--Body for email-->
       <div class="w3-section">
         <label>Message</label>
-        <input class="w3-input" type="text" name="Message" required>
+        <input class="w3-input" type="text" id="message" required>
       </div>
-      <input class="w3-check" type="checkbox" checked name="Like">
+      <!--Opinion checkbox-->
+      <input class="w3-check" type="checkbox" id="like">
       <label>I Like it!</label>
+      <!--Submit information-->
       <button type="submit" class="w3-button w3-right w3-theme">Send</button>
+      <!--Script to send email-->
+      <script>
+        //Script to open and fill out email
+        function sendEmail(){
+          if(document.getElementById("like").checked=true)
+            var like="I%20like%20it!";
+          else
+            var like="I%20Don\'t%20Like%20It!";
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+          var tempMessage = document.getElementById("message").value;
+          var message="";
+          for(var x=0;x<tempMessage.length; x++){
+            var y=tempMessage.indexOf(" ", x);
+            if(y!=-1){
+              message += tempMessage.substring(x,y)+"%20";
+              x=y;
+            }
+            if(y==-1){
+              message += tempMessage.substring(x);
+              break;
+            }
+          }
+          alert(message);
+          //mailto:christopher.cox@stu.daviess.kyschools.us?cc=nathan.roberts%40stu.daviess.kyschools.us%2C%20jacob.jones3%40stu.daviess.kyschools.us&subject=Code%20Cove&body=Test
+          var link="mailto:"+email+"?cc=nathan.roberts%40stu.daviess.kyschools.us%2C%20jacob.jones3%40stu.daviess.kyschools.us&subject=Code%20Cove%20|%20"+name+"%20|%20"+like+"&body="+message;
+          var newWin=window.open(link);
+          newWin.close();
+        };
+      </script>
       </form>
     </div>
   </div>
