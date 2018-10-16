@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<title>CodeCove</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../css/w3.css">
+<!--<link rel="stylesheet" href="../css/w3-theme-black.css">-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <head>
+    <script src="../../games/ast/jquery-1.4.1.min.js"></script>
+    <script src="../../games/ast/vector_battle_regular.typeface.js"></script>
+    <script src="../../games/ast/game.js"></script>
+    <style>
+      #canvas { border:1px solid black; top:0px; left:0px; }
+      .button { position:absolute; border:1px solid black; }
+      #left-controls { position:absolute; left:1px; bottom:0px; display:none; }
+      #right-controls { position:absolute; right:1px; bottom:0px; display:none; }
+      #up { width:200px; height:100px; bottom:100px;}
+      #left { width:100px; height:100px; bottom:0px;}
+      #right { width:100px; height:100px; bottom:0px; left:100px; }
+      #space { width:200px; height:200px; bottom:0px; right:0px; }
+    </style>
+  </head>
+  <body id="myPage">
+
+  <!-- Sidebar on click -->
+  <nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+      <i class="fa fa-remove"></i>
+    </a>
+    <a href="#" class="w3-bar-item w3-button">HTML</a>
+    <a href="#" class="w3-bar-item w3-button">Javascript</a>
+    <a href="#" class="w3-bar-item w3-button">CSS</a>
+    <a href="#" class="w3-bar-item w3-button">View All Lessons</a>
+    <a href="#" class="w3-bar-item w3-button">Add a Lesson</a>
+  </nav>
+
+  <!-- Navbar -->
+  <div id="navbar" style="color: black; background-color: transparent;" class="w3-top">
+   <div class="w3-bar w3-theme-d2 w3-left-align">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+    <a href="main.html" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+    <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-teal">Team</a>
+    <a href="#lessons" class="w3-bar-item w3-button w3-hide-small w3-hover-teal">Lessons</a>
+    <a href="#accounts" class="w3-bar-item w3-button w3-hide-small w3-hover-teal">Accounts</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-teal">Contact</a>
+    <a href="javascript:random_bg_color()" class = "w3-bar-item w3-button w3-hover-teal" >Random Theme</a>
+    <a href="javascript:defaultTheme()" class = "w3-bar-item w3-button w3-hover-teal" >Default Theme</a>
+      <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-button" title="Notifications">Resources<i class="fa fa-caret-down"></i></button>
+      <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+        <a href="https://github.com/ApolloHighSchoolKY/CodeCove" target="_blank" class="w3-bar-item w3-button">GitHub</a>
+        <a href="https://prod.teamgantt.com/gantt/schedule/?ids=1257545&public_keys=fHDTzH5DeW7d&zoom=d100&font_size=12&estimated_hours=0&assigned_resources=0&percent_complete=0&documents=0&comments=0&col_width=355&hide_header_tabs=0&menu_view=1&resource_filter=1&name_in_bar=0&name_next_to_bar=0&resource_names=1#user=&company=&custom=&date_filter=&hide_completed=false&color_filter=" target="_blank" class="w3-bar-item w3-button">TeamGantt</a>
+        <a href="https://teamup.com/ks2y6w6whbvjz625sh" target="_blank" class="w3-bar-item w3-button">Teamup Calendar</a>
+      </div>
+    </div>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
+   </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+      <a href="#team" class="w3-bar-item w3-button">Team</a>
+      <a href="#lessons" class="w3-bar-item w3-button">Lessons</a>
+      <a href="#accounts" class="w3-bar-item w3-button">Accounts</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+      <a href="#" class="w3-bar-item w3-button">Search</a>
+    </div>
+  </div>
+
+  <!-- Image Header -->
+  <div class="w3-display-container w3-animate-opacity">
+    <img src="../../resources/sailboat.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
+    <div class="w3-container w3-display-bottomleft w3-margin-bottom">
+      <button onclick="document.getElementById('id01').style.display='block'" style="color:white;" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="CodeCove">CodeCove</button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-top">
+      <header class="w3-container w3-teal w3-display-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+        <h4>Welcome to CodeCove!</h4>
+        <h5>A site designed by programming students for class <i class="fa fa-smile-o"></i></h5>
+      </header>
+      <div class="w3-container">
+        <p>Check the site out and</p>
+        <p>Leave any feedback you may have!</p>
+      </div>
+      <footer class="w3-container w3-teal">
+        <p>Happy coding!</p>
+      </footer>
+    </div>
+  </div>
+    <div id="game-container">
+      <canvas id="canvas" width="780" height="540"></canvas>
+      <div id="left-controls">
+        <div id="up" class='button'>THRUST</div>
+        <div id="left" class='button'>LEFT</div>
+        <div id="right" class='button'>RIGHT</div>
+      </div>
+      <div id="right-controls">
+        <div id="space" class='button'>FIRE</div>
+      </div>
+    </div>
+  </body>
+</html>
