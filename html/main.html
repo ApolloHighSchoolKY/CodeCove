@@ -3,9 +3,8 @@
 <title>CodeCove</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="../js/ThemeChange.js"></script>
 <link rel="stylesheet" href="../css/w3.css">
-<link rel="stylesheet" href="../css/w3-theme-black.css">
+<!--<link rel="stylesheet" href="../css/w3-theme-black.css">-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body id="myPage">
 
@@ -22,18 +21,18 @@
 </nav>
 
 <!-- Navbar -->
-<div id="navbar" class="w3-top">
+<div id="navbar" style="color: black; background-color: transparent;" class="w3-top">
  <div class="w3-bar w3-theme-d2 w3-left-align">
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
   <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
-  <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Team</a>
-  <a href="#lessons" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Lessons</a>
-  <a href="#accounts" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Accounts</a>
-  <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
-  <a href="javascript:random_bg_color()" class = "w3-bar-item w3-button" >Random Theme</a>
-  <a href="javascript:defaultTheme()" class = "w3-bar-item w3-button" >Default Theme</a>
+  <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-teal">Team</a>
+  <a href="#lessons" class="w3-bar-item w3-button w3-hide-small w3-hover-teal">Lessons</a>
+  <a href="#accounts" class="w3-bar-item w3-button w3-hide-small w3-hover-teal">Accounts</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-teal">Contact</a>
+  <a href="javascript:random_bg_color()" class = "w3-bar-item w3-button w3-hover-teal" >Random Theme</a>
+  <a href="javascript:defaultTheme()" class = "w3-bar-item w3-button w3-hover-teal" >Default Theme</a>
     <div class="w3-dropdown-hover w3-hide-small">
-    <button class="w3-button" title="Notifications">Resources <i class="fa fa-caret-down"></i></button>
+    <button class="w3-button" title="Notifications">Resources<i class="fa fa-caret-down"></i></button>
     <div class="w3-dropdown-content w3-card-4 w3-bar-block">
       <a href="https://github.com/ApolloHighSchoolKY/CodeCove" target="_blank" class="w3-bar-item w3-button">GitHub</a>
       <a href="https://prod.teamgantt.com/gantt/schedule/?ids=1257545&public_keys=fHDTzH5DeW7d&zoom=d100&font_size=12&estimated_hours=0&assigned_resources=0&percent_complete=0&documents=0&comments=0&col_width=355&hide_header_tabs=0&menu_view=1&resource_filter=1&name_in_bar=0&name_next_to_bar=0&resource_names=1#user=&company=&custom=&date_filter=&hide_completed=false&color_filter=" target="_blank" class="w3-bar-item w3-button">TeamGantt</a>
@@ -57,7 +56,7 @@
 <div class="w3-display-container w3-animate-opacity">
   <img src="../resources/sailboat.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
   <div class="w3-container w3-display-bottomleft w3-margin-bottom">
-    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="CodeCove">CodeCove</button>
+    <button onclick="document.getElementById('id01').style.display='block'" style="color:white;" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="CodeCove">CodeCove</button>
   </div>
 </div>
 
@@ -315,6 +314,7 @@ function myMap()
 }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<script src="../js/ThemeChange.js"></script>
 <!--
 To use this code on your website, get a free API key from Google.
 Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
