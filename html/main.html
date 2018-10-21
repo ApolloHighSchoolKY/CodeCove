@@ -7,8 +7,16 @@
 <link rel="stylesheet" href="../css/CodeCove.css">
 <!--<link rel="stylesheet" href="../css/CodeCove-Theme-Black.css">-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- Firebase Testing
-<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+<!-- Firebase App is always required and must be first -->
+		<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+
+		<!-- Add additional services that you want to use -->
+		<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-database.js"></script>
+		<!--<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-messaging.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-functions.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-storage.js"></script>-->
 <script>
   // Initialize Firebase
   var config = {
@@ -21,7 +29,6 @@
   };
   firebase.initializeApp(config);
 </script>
--->
 <script src="../js/ThemeChange.js"></script>
 </head>
 <body id="myPage">
@@ -41,14 +48,22 @@
 <!-- Navbar -->
 <div id="navbar" style="color: black; background-color: transparent;" class="top">
  <div class="bar theme-d2 left-align">
+   <!--General Navbar-->
   <a class="bar-item button hide-medium hide-large right hover-white theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
   <a href="main.html" class="bar-item button teal"><i class="fa fa-home margin-right"></i>Home</a>
   <a href="#team" class="bar-item button hide-small hover-teal">Team</a>
   <a href="#lessons" class="bar-item button hide-small hover-teal">Lessons</a>
   <a href="#accounts" class="bar-item button hide-small hover-teal">Accounts</a>
   <a href="#contact" class="bar-item button hide-small hover-teal">Contact</a>
-  <a href="javascript:random_bg_color()" class = "bar-item button hover-teal" >Random Theme</a>
-  <a href="javascript:defaultTheme()" class = "bar-item button hover-teal" >Default Theme</a>
+  <!--Theme Options-->
+  <div class="dropdown-hover hide-small">
+    <button class="button hover-teal">Theme<i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-content card-4 bar-block">
+      <a href="javascript:random_bg_color()" class = "bar-item button hover-teal" >Random Theme</a>
+      <a href="javascript:defaultTheme()" class = "bar-item button hover-teal" >Default Theme</a>
+    </div>
+  </div>
+  <!--Fun Section-->
   <div class="dropdown-hover hide-small">
     <button class="button hover-teal">Fun<i class="fa fa-caret-down"></i></button>
     <div class="dropdown-content card-4 bar-block">
@@ -57,6 +72,7 @@
       <a href="../resources/leohr.png" target="_blank" class="bar-item button hover-teal">Pirate</a>
     </div>
   </div>
+  <!--External Resources-->
   <div class="dropdown-hover hide-small">
     <button class="button hover-teal">Resources<i class="fa fa-caret-down"></i></button>
     <div class="dropdown-content card-4 bar-block">
@@ -65,6 +81,11 @@
       <a href="https://teamup.com/ks2y6w6whbvjz625sh" target="_blank" class="bar-item button hover-teal">Teamup Calendar</a>
     </div>
   </div>
+  <a href="login.html" class="bar-item button hide-small hover-teal">Login</a>
+  <!--<form onsubmit="javascript:login(uuid,psw)">
+  <input type="text" placeholder="Username" id="uuid">
+  <input type="text" placeholder="Password" id="psw">
+  <button type="submit">-->
   <a href="#" class="bar-item button hide-small right hover-teal" title="Search"><i class="fa fa-search"></i></a>
  </div>
 
