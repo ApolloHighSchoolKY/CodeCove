@@ -3,14 +3,62 @@
 <title>CodeCove</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
 <link rel="stylesheet" href="../css/CodeCove.css">
 <!--<link rel="stylesheet" href="../css/CodeCove-Theme-Black.css">-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Firebase App is always required and must be first -->
+		<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+
+		<!-- Add additional services that you want to use -->
+		<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-database.js"></script>
+		<!--<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-messaging.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-functions.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-storage.js"></script>-->
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDDBGLJFW4v4AtMRrDd53yFz7Wm9pX_OdQ",
+    authDomain: "code-cove.firebaseapp.com",
+    databaseURL: "https://code-cove.firebaseio.com",
+    projectId: "code-cove",
+    storageBucket: "code-cove.appspot.com",
+    messagingSenderId: "1089219979545"
+  };
+  firebase.initializeApp(config);
+</script>
+<script>
+  //Login method
+  function login(uuid, psw){
+
+  }
+  //Create an acount method
+  function create(uuid, psw){
+
+  }
+</script>
+<script src="../js/ThemeChange.js"></script>
+</head>
 <body id="myPage">
+
+<!-- Sidebar on click -->
+<nav class="sidebar bar-block white card animate-left xxlarge" style="display:none;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="bar-item button display-topright text-teal">Close
+    <i class="fa fa-remove"></i>
+  </a>
+  <a href="#" class="bar-item button">HTML</a>
+  <a href="#" class="bar-item button">Javascript</a>
+  <a href="#" class="bar-item button">CSS</a>
+  <a href="lessons.html" class="bar-item button">View All Lessons</a>
+  <a href="#" class="bar-item button">Add a Lesson</a>
+</nav>
 
 <!-- Navbar -->
 <div id="navbar" style="color: black; background-color: transparent;" class="top">
  <div class="bar theme-d2 left-align">
+   <!--General Navbar-->
   <a class="bar-item button hide-medium hide-large right hover-white theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
   <a href="main.html" class="bar-item button teal"><i class="fa fa-home margin-right"></i>Home</a>
   <a href="#team" class="bar-item button hide-small hover-teal">Team</a>
@@ -25,6 +73,7 @@
       <a href="javascript:defaultTheme()" class = "bar-item button hover-teal" >Default Theme</a>
     </div>
   </div>
+  <!--Fun Section-->
   <div class="dropdown-hover hide-small">
     <button class="button hover-teal">Fun<i class="fa fa-caret-down"></i></button>
     <div class="dropdown-content card-4 bar-block">
@@ -33,7 +82,8 @@
       <a href="../resources/leohr.png" target="_blank" class="bar-item button hover-teal">Pirate</a>
     </div>
   </div>
-    <div class="dropdown-hover hide-small">
+  <!--External Resources-->
+  <div class="dropdown-hover hide-small">
     <button class="button hover-teal">Resources<i class="fa fa-caret-down"></i></button>
     <div class="dropdown-content card-4 bar-block">
       <a href="https://github.com/ApolloHighSchoolKY/CodeCove" target="_blank" class="bar-item button hover-teal">GitHub</a>
@@ -41,7 +91,11 @@
       <a href="https://teamup.com/ks2y6w6whbvjz625sh" target="_blank" class="bar-item button hover-teal">Teamup Calendar</a>
     </div>
   </div>
-  <a href="lessons.html" class="bar-item button hide-small hover-teal">Login</a>
+  <a href="login.html" class="bar-item button hide-small hover-teal">Login</a>
+  <!--<form onsubmit="javascript:login(uuid,psw)">
+  <input type="text" placeholder="Username" id="uuid">
+  <input type="text" placeholder="Password" id="psw">
+  <button type="submit">-->
   <a href="#" class="bar-item button hide-small right hover-teal" title="Search"><i class="fa fa-search"></i></a>
  </div>
 
@@ -59,7 +113,7 @@
 <div class="display-container animate-opacity">
   <img src="../resources/sailboat.jpg" alt="boat" style="width:100%;min-height:50px;max-height:300px;">
   <div class="container display-bottomleft margin-bottom">
-    <button onclick="document.getElementById('id01').style.display='block'" style="color:white;" class="button xlarge theme hover-teal" title="Lessons">Lessons</button>
+    <button onclick="document.getElementById('id01').style.display='block'" style="color:white;" class="button xlarge theme hover-teal" title="Lessons">Login Page</button>
   </div>
 </div>
 
@@ -68,12 +122,11 @@
   <div class="modal-content card-4 animate-top">
     <header class="container teal display-container">
       <span onclick="document.getElementById('id01').style.display='none'" class="button teal display-topright"><i class="fa fa-remove"></i></span>
-      <h4>Welcome to the lessons page!</h4>
-      <h5>This is the general location for links to all lessons</h5>
+      <h4>Welcome to the login page!</h4>
+      <h5>Here you can sign in or sign up</i></h5>
     </header>
     <div class="container">
-      <p>Check the lessons out and</p>
-      <p>Leave any feedback you may have!</p>
+      <p>Fill out the login section to sign in or fill out the sign up section to create an account</p>
     </div>
     <footer class="container teal">
       <p>Happy coding!</p>
@@ -81,7 +134,19 @@
   </div>
 </div>
 
-<script src="../js/ThemeChange.js"></script>
+<!--Sign in-->
+<form onsubmit="javascript:login()">
+
+</form>
+
+<!--Sign up-->
+<form onsubmit="javascript:signup(document.getElementById('email').value, document.getElementById('username').value, document.getElementById('password').value)">
+  <input type="text" placeholder="Email Address" id="email">
+  <input type="text" placeholder="Username" id="username">
+  <input type="text" placeholder="Password" id="password">
+  <button type="submit">Sign Up</button>
+</form>
+
 <!-- Footer -->
 <footer class="container padding-32 theme-d1 center">
   <h4>Follow Us</h4>
@@ -98,6 +163,41 @@
     <i class="fa fa-chevron-circle-up"></i></span></a>
   </div>
 </footer>
+<!-- Firebase App is always required and must be first -->
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
 
+<!-- Add additional services that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-database.js"></script>
+<!--<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-functions.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-storage.js"></script>-->
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDDBGLJFW4v4AtMRrDd53yFz7Wm9pX_OdQ",
+    authDomain: "code-cove.firebaseapp.com",
+    databaseURL: "https://code-cove.firebaseio.com",
+    projectId: "code-cove",
+    storageBucket: "code-cove.appspot.com",
+    messagingSenderId: "1089219979545"
+  };
+  firebase.initializeApp(config);
+</script>
+<!--Login and Signup methods-->
+<script>
+  //Login method
+  function login(uuid, psw){
+
+  }
+  //Create an acount method
+  function signup(email, uuid, psw){
+    firebase.database().ref('users/' + email).set({
+      username: uuid,
+			password: psw
+  	});
+  }
+</script>
 </body>
 </html>

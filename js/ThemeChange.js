@@ -11,7 +11,7 @@ var navBarColor = "rgb(" + xx + "," + yy + "," + zz + ")";
   document.getElementById("navbar").style.backgroundColor = navBarColor;
 };
 function defaultTheme() {
-  document.getElementById("navbar").style.backgroundColor = "black";
-  document.getElementById("navbar").style.color = "white";
+  document.getElementById("navbar").style.backgroundColor = "transparent";
+  document.getElementById("navbar").style.color = "black";
   document.body.style.backgroundColor = "white";
 };
