@@ -1,0 +1,98 @@
+<html>
+<title>CodeCove</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/CodeCove.css">
+<!--<link rel="stylesheet" href="../css/CodeCove-Theme-Black.css">-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body id="myPage">
+
+<!-- Navbar -->
+<div id="navbar" style="color: black; background-color: transparent;" class="top">
+ <div class="bar theme-d2 left-align">
+  <a class="bar-item button hide-medium hide-large right hover-white theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="main.html" class="bar-item button teal"><i class="fa fa-home margin-right"></i>Home</a>
+  <a href="lessons.html" class = "bar-item button hover-teal" >Lessons Home</a>
+  <a href="javascript:random_bg_color()" class = "bar-item button hover-teal" >Random Theme</a>
+  <a href="javascript:defaultTheme()" class = "bar-item button hover-teal" >Default Theme</a>
+  <div class="dropdown-hover hide-small">
+    <button class="button hover-teal">Fun<i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-content card-4 bar-block">
+      <a href="../resources/nggyu.mp4" target="_blank" class="bar-item button hover-teal">Special MP4</a>
+      <a href="games/ast.html" class="bar-item button hover-teal">Asteroids</a>
+      <a href="../resources/leohr.png" target="_blank" class="bar-item button hover-teal">Pirate</a>
+    </div>
+  </div>
+    <div class="dropdown-hover hide-small">
+    <button class="button hover-teal">Resources<i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-content card-4 bar-block">
+      <a href="https://github.com/ApolloHighSchoolKY/CodeCove" target="_blank" class="bar-item button hover-teal">GitHub</a>
+      <a href="https://prod.teamgantt.com/gantt/schedule/?ids=1257545&public_keys=fHDTzH5DeW7d&zoom=d100&font_size=12&estimated_hours=0&assigned_resources=0&percent_complete=0&documents=0&comments=0&col_width=355&hide_header_tabs=0&menu_view=1&resource_filter=1&name_in_bar=0&name_next_to_bar=0&resource_names=1#user=&company=&custom=&date_filter=&hide_completed=false&color_filter=" target="_blank" class="bar-item button hover-teal">TeamGantt</a>
+      <a href="https://teamup.com/ks2y6w6whbvjz625sh" target="_blank" class="bar-item button hover-teal">Teamup Calendar</a>
+    </div>
+  </div>
+  <a href="#" class="bar-item button hide-small right hover-teal" title="Search"><i class="fa fa-search"></i></a>
+ </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="bar-block theme-d2 hide hide-large hide-medium">
+    <a href="#team" class="bar-item button">Team</a>
+    <a href="#" class="bar-item button">Search</a>
+  </div>
+</div>
+
+<!-- Image Header -->
+<div class="display-container animate-opacity">
+  <p class = "container padding-64 center"><b> Welcome to the JavaScript Lessons Page</b> </p>
+  <p> <b> <u> *Prior HTML Lessons Recommended* General Rules for Javascript:</u> </b></p>
+   <ul style="padding-left:32px;">
+     <li> All Javascript Files are saved with a ".js" extension. </li>
+     <li> When used in .html files, javascript syntax must be preceded by "javascript:" or enclosed by a "script" tag.  </li>
+     <li> Javascript is very similar to Java, and is an official programming languge which allows data manipulation. </li>
+     <li> Functions in javascript must have "{}" following the "function" + name of the function. </li>
+     <li style="color:rgb(20,200,255)"> Javascript functions (including default ones) will highlight this color. </li>
+     <li style="color:rgb(140,0,140)"> Default types of objects (such as function and var) will highlight this color. </li>
+   </ul>
+  </table>
+  <div class="container display-bottomleft margin-bottom">
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="id01" class="modal">
+  <div class="modal-content card-4 animate-top">
+    <header class="container teal display-container">
+      <span onclick="document.getElementById('id01').style.display='none'" class="button teal display-topright"><i class="fa fa-remove"></i></span>
+      <h4>Welcome to the lessons page!</h4>
+      <h5>This is the general location for links to all lessons</h5>
+    </header>
+    <div class="container">
+      <p>Check the lessons out and</p>
+      <p>Leave any feedback you may have!</p>
+    </div>
+    <footer class="container teal">
+      <p>Happy coding!</p>
+    </footer>
+  </div>
+</div>
+
+<script src="../js/ThemeChange.js"></script>
+<!-- Footer -->
+<footer class=" middle bottom container padding-16 theme-d1 center">
+  <h4 >Follow Us</h4>
+  <a class="button large teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+  <a class="button large teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+  <a class="button large teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
+  <a class="button large teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+  <a class="button large teal hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">CodeCove.css</a></p>
+
+  <div style="position:relative;bottom:100px;z-index:1;" class="tooltip right">
+    <span class="text padding teal hide-small">Go To Top</span>
+    <a class="button theme" href="#myPage"><span class="xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <title>CodeCove</title>
@@ -397,3 +398,381 @@ function openNav() {
 
 </body>
 </html>
+=======
+<html>
+<title>CodeCove</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/CodeCove.css">
+<!--<link rel="stylesheet" href="../css/CodeCove-Theme-Black.css">-->
+<script src="../js/ThemeChange.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body id="myPage">
+
+<!-- Sidebar on click -->
+<nav class="sidebar bar-block white card animate-left xxlarge" style="display:none;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="bar-item button display-topright text-teal">Close
+    <i class="fa fa-remove"></i>
+  </a>
+  <a href="#" class="bar-item button">HTML</a>
+  <a href="#" class="bar-item button">Javascript</a>
+  <a href="#" class="bar-item button">CSS</a>
+  <a href="lessons.html" class="bar-item button">View All Lessons</a>
+  <a href="#" class="bar-item button">Add a Lesson</a>
+</nav>
+
+<!-- Navbar -->
+<div id="navbar" style="color: black; background-color: transparent;" class="top">
+ <div class="bar theme-d2 left-align">
+  <a class="bar-item button hide-medium hide-large right hover-white theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="main.html" class="bar-item button teal"><i class="fa fa-home margin-right"></i>Home</a>
+  <a href="#team" class="bar-item button hide-small hover-teal">Team</a>
+  <a href="#lessons" class="bar-item button hide-small hover-teal">Lessons</a>
+  <a href="#accounts" class="bar-item button hide-small hover-teal">Accounts</a>
+  <a href="#contact" class="bar-item button hide-small hover-teal">Contact</a>
+  <a href="javascript:random_bg_color()" class = "bar-item button hover-teal" >Random Theme</a>
+  <a href="javascript:defaultTheme()" class = "bar-item button hover-teal" >Default Theme</a>
+  <div class="dropdown-hover hide-small">
+    <button class="button hover-teal">Fun<i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-content card-4 bar-block">
+      <a href="../resources/nggyu.mp4" target="_blank" class="bar-item button hover-teal">Special MP4</a>
+      <a href="games/ast.html" class="bar-item button hover-teal">Asteroids</a>
+      <a href="../resources/leohr.png" target="_blank" class="bar-item button hover-teal">Pirate</a>
+    </div>
+  </div>
+  <div class="dropdown-hover hide-small">
+    <button class="button hover-teal">Resources<i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-content card-4 bar-block">
+      <a href="https://github.com/ApolloHighSchoolKY/CodeCove" target="_blank" class="bar-item button hover-teal">GitHub</a>
+      <a href="https://prod.teamgantt.com/gantt/schedule/?ids=1257545&public_keys=fHDTzH5DeW7d&zoom=d100&font_size=12&estimated_hours=0&assigned_resources=0&percent_complete=0&documents=0&comments=0&col_width=355&hide_header_tabs=0&menu_view=1&resource_filter=1&name_in_bar=0&name_next_to_bar=0&resource_names=1#user=&company=&custom=&date_filter=&hide_completed=false&color_filter=" target="_blank" class="bar-item button hover-teal">TeamGantt</a>
+      <a href="https://teamup.com/ks2y6w6whbvjz625sh" target="_blank" class="bar-item button hover-teal">Teamup Calendar</a>
+    </div>
+  </div>
+  <a href="#" class="bar-item button hide-small right hover-teal" title="Search"><i class="fa fa-search"></i></a>
+ </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="bar-block theme-d2 hide hide-large hide-medium">
+    <a href="#team" class="bar-item button">Team</a>
+    <a href="#lessons" class="bar-item button">Lessons</a>
+    <a href="#accounts" class="bar-item button">Accounts</a>
+    <a href="#contact" class="bar-item button">Contact</a>
+    <a href="#" class="bar-item button">Search</a>
+  </div>
+</div>
+
+<!-- Image Header -->
+<div class="display-container animate-opacity">
+  <img src="../resources/sailboat.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
+  <div class="container display-bottomleft margin-bottom">
+    <button onclick="document.getElementById('id01').style.display='block'" style="color:white;" class="button xlarge theme hover-teal" title="CodeCove">CodeCove</button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="id01" class="modal">
+  <div class="modal-content card-4 animate-top">
+    <header class="container teal display-container">
+      <span onclick="document.getElementById('id01').style.display='none'" class="button teal display-topright"><i class="fa fa-remove"></i></span>
+      <h4>Welcome to CodeCove!</h4>
+      <h5>A site designed by programming students for class <i class="fa fa-smile-o"></i></h5>
+    </header>
+    <div class="container">
+      <p>Check the site out and</p>
+      <p>Leave any feedback you may have!</p>
+    </div>
+    <footer class="container teal">
+      <p>Happy coding!</p>
+    </footer>
+  </div>
+</div>
+
+<!-- Team Container -->
+<div class="container padding-64 center" id="team">
+<h2>OUR TEAM</h2>
+<p>Meet the team:</p>
+
+<div class="row"><br>
+
+<div class="third">
+  <a href="https://github.com/legit228" target="_blank">
+    <img href="https://github.com/legit228" src="../resources/chris.png" alt="" style="width:45%" class="circle hover-opacity">
+  </a>
+  <h3>Christopher Cox</h3>
+  <p>HTML Guy</p>
+</div>
+
+<div class="third">
+  <a href="https://github.com/NateDaddy" target="_blank">
+    <img src="../resources/nathan.png" alt="" style="width:45%" class="circle hover-opacity">
+  </a>
+  <h3>Nathan Roberts</h3>
+  <p>Javascript Guy</p>
+</div>
+
+<div class="third">
+  <a href="https://github.com/jajones3" target="_blank">
+    <img src="../resources/jacob.png" alt="" style="width:45%" class="circle hover-opacity">
+  </a>
+  <h3>Jacob Jones</h3>
+  <p>PHP Guy</p>
+</div>
+
+</div>
+</div>
+
+<!-- Work Row -->
+<div class="row-padding padding-64 theme-l1" id="lessons">
+
+<div class="quarter">
+<h2><a href="lessons.html">Lessons</a></h2>
+<p>New lessons will be added over time.</p>
+</div>
+
+<div class="quarter">
+<div class="card white">
+  <!--<img src="/w3images/snow.jpg" alt="Snow" style="width:100%">-->
+  <div class="container">
+  <h3><a href="hyperTextMarkupLessons.html">HTML</a></h3>
+  <h4>Contains</h4>
+  <p>general</p>
+  <p>lessons for</p>
+  <p>now but will</p>
+  <p>be added to</p>
+  </div>
+  </div>
+</div>
+
+<div class="quarter">
+<div class="card white">
+  <!--<img src="/w3images/lights.jpg" alt="Lights" style="width:100%">-->
+  <div class="container">
+    <h3><a href="javaScriptLessons.html">JavaScript</a></h3>
+    <h4>Contains</h4>
+    <p>general</p>
+    <p>lessons for</p>
+    <p>now but will</p>
+    <p>be added to</p>
+  </div>
+  </div>
+</div>
+
+<div class="quarter">
+<div class="card white">
+  <!--<img src="/w3images/mountains.jpg" alt="Mountains" style="width:100%">-->
+  <div class="container">
+    <h3><a href="cssLessons.html">CSS</a></h3>
+    <h4>Contains</h4>
+    <p>general</p>
+    <p>lessons for</p>
+    <p>now but will</p>
+    <p>be added to</p>
+  </div>
+  </div>
+</div>
+
+</div>
+
+<!-- Container -->
+<div class="container" style="position:relative">
+  <a onclick="w3_open()" class="button xlarge circle teal"
+  style="position:absolute;top:-28px;right:24px">+</a>
+</div>
+
+<!-- Create an account -->
+<div class="row-padding center padding-64" id="accounts">
+    <h2>ACCOUNTS</h2>
+    <p>Choose a type of account that fits your needs.</p><br>
+    <div class="third margin-bottom">
+      <ul class="ul border hover-shadow">
+        <li class="theme">
+          <p class="xlarge">Student</p>
+        </li>
+        <li class="padding-16"><b>Feedback</b> From Teachers(TBA)</li>
+        <li class="padding-16"><b>Code</b> Playground(TBA)</li>
+        <li class="padding-16"><b>All</b> Lessons</li>
+        <li class="padding-16"><b>Endless</b> Support</li>
+        <li class="padding-16">
+          <h2 class="wide"><i class="fa fa-usd"></i> 0</h2>
+          <span class="opacity">per month</span>
+        </li>
+        <li class="theme-l5 padding-24">
+          <button class="button teal padding-large"><i class="fa fa-check"></i> Sign Up</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="third margin-bottom">
+      <ul class="ul border hover-shadow">
+        <li class="theme-l2">
+          <p class="xlarge">Teacher</p>
+        </li>
+        <li class="padding-16"><b>Manage</b> Classrooms</li>
+        <li class="padding-16"><b>Overview</b> of Students(TBA)</li>
+        <li class="padding-16"><b>All</b> Lessons</li>
+        <li class="padding-16"><b>Endless</b> Support</li>
+        <li class="padding-16">
+          <h2 class="wide"><i class="fa fa-usd"></i> 0</h2>
+          <span class="opacity">per month</span>
+        </li>
+        <li class="theme-l5 padding-24">
+          <button class="button teal padding-large"><i class="fa fa-check"></i> Sign Up</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="third margin-bottom">
+      <ul class="ul border hover-shadow">
+        <li class="theme">
+          <p class="xlarge">Admin</p>
+        </li>
+        <li class="padding-16"><b>Manage</b> Teachers</li>
+        <li class="padding-16"><b>Overview</b> of Teachers(TBA)</li>
+        <li class="padding-16"><b>All</b> Lessons</li>
+        <li class="padding-16"><b>Endless</b> Support</li>
+        <li class="padding-16">
+          <h2 class="wide"><i class="fa fa-usd"></i> 0</h2>
+          <span class="opacity">per month</span>
+        </li>
+        <li class="theme-l5 padding-24">
+          <button class="button teal padding-large"><i class="fa fa-check"></i> Sign Up</button>
+        </li>
+      </ul>
+    </div>
+</div>
+
+<!-- Contact Container -->
+<div class="container padding-64 theme-l5" id="contact">
+  <div class="row">
+    <div class="col m5">
+    <div class="padding-16"><span class="xlarge border-teal bottombar">Contact Us</span></div>
+      <h3>How to get ahold of us:</h3>
+      <p>Feel free to contact us for any reason.</p>
+      <p><i class="fa fa-map-marker text-teal xlarge"></i>  Owensboro, US</p>
+      <p><i class="fa fa-phone text-teal xlarge"></i>  +1(234)5678910</p>
+      <p><i class="fa fa-envelope-o text-teal xlarge"></i><a href="mailto:Christopher.cox@stu.daviess.kyschools.us?Subject=Code%20Cove">Christopher.cox@stu.daviess.kyschools.us</a></p>
+      <p><i class="fa fa-envelope-o text-teal xlarge"></i><a href="mailto:Nathan.roberts@stu.daviess.kyschools.us?Subject=Code%20Cove">Nathan.roberts@stu.daviess.kyschools.us</a></p>
+      <p><i class="fa fa-envelope-o text-teal xlarge"></i><a href="mailto:Jacob.jones3@stu.daviess.kyschools.us?Subject=Code%20Cove">Jacob.jones3@stu.daviess.kyschools.us</a></p>
+    </div>
+    <div class="col m7">
+      <form class="container card-4 padding-16 white" onsubmit="sendEmail()">
+      <!--Name of commenter-->
+      <div class="section">
+        <label>Name</label>
+        <input class="input" type="text" id="name" required>
+      </div>
+      <!--Email address-->
+      <div class="section">
+        <label>Email</label>
+        <input class="input" type="text" id="email" required>
+      </div>
+      <!--Body for email-->
+      <div class="section">
+        <label>Message</label>
+        <input class="input" type="text" id="message" required>
+      </div>
+      <!--Opinion checkbox-->
+      <input class="check" type="checkbox" id="like">
+      <label>I Like it!</label>
+      <!--Submit information-->
+      <button type="submit" class="button right theme">Send</button>
+      <!--Script to send email-->
+      <script>
+        //Script to open and fill out email
+        function sendEmail(){
+          if(document.getElementById("like").checked=true)
+            var like="I%20like%20it!";
+          else
+            var like="I%20Don\'t%20Like%20It!";
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+          var tempMessage = document.getElementById("message").value;
+          var message="";
+          for(var x=0;x<tempMessage.length; x++){
+            var y=tempMessage.indexOf(" ", x);
+            if(y!=-1){
+              message += tempMessage.substring(x,y)+"%20";
+              x=y;
+            }
+            if(y==-1){
+              message += tempMessage.substring(x);
+              break;
+            }
+          }
+          var link="mailto:"+email+"?cc=nathan.roberts%40stu.daviess.kyschools.us%2C%20jacob.jones3%40stu.daviess.kyschools.us&subject=Code%20Cove%20|%20"+name+"%20|%20"+like+"&body="+message;
+          var newWin=window.open(link);
+          newWin.close();
+        };
+      </script>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Google Maps -->
+<div id="googleMap" style="width:100%;height:420px;"></div>
+<script>
+function myMap()
+{
+  myCenter=new google.maps.LatLng(41.878114, -87.629798);
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+<!-- Footer -->
+<footer class="container padding-32 theme-d1 center">
+  <h4>Follow Us</h4>
+  <a class="button large teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+  <a class="button large teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+  <a class="button large teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
+  <a class="button large teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+  <a class="button large teal hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">CodeCove.css</a></p>
+
+  <div style="position:relative;bottom:100px;z-index:1;" class="tooltip right">
+    <span class="text padding teal hide-small">Go To Top</span>
+    <a class="button theme" href="#myPage"><span class="xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+</footer>
+
+<script>
+// Script for side navigation
+function w3_open() {
+    var x = document.getElementById("mySidebar");
+    x.style.width = "300px";
+    x.style.paddingTop = "10%";
+    x.style.display = "block";
+}
+// Close side navigation
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("show") == -1) {
+        x.className += " show";
+    } else {
+        x.className = x.className.replace(" show", "");
+    }
+}
+</script>
+
+</body>
+</html>
+>>>>>>> 0f8f6545ffdde5ebc8079b819bb49fbce45bab14
