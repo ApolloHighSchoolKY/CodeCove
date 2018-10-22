@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html>
-<title>CodeCove</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../../css/CodeCove.css">
-<!--<link rel="stylesheet" href="../css/CodeCove-Theme-Black.css">-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>CodeCove</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <head>
-    <script src="../../games/ast/jquery-1.4.1.min.js"></script>
-    <script src="../../games/ast/vector_battle_regular.typeface.js"></script>
-    <script src="../../games/ast/game.js"></script>
+    <link rel="stylesheet" href="../../css/CodeCove.css">
+    <!--<link rel="stylesheet" href="../css/CodeCove-Theme-Black.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       #canvas { border:1px solid black; top:0px; left:0px; }
-      .button { position:absolute; border:1px solid black; }
+      .astButton { position:absolute; border:1px solid black; }
       #left-controls { position:absolute; left:1px; bottom:0px; display:none; }
       #right-controls { position:absolute; right:1px; bottom:0px; display:none; }
       #up { width:200px; height:100px; bottom:100px;}
@@ -20,20 +17,11 @@
       #right { width:100px; height:100px; bottom:0px; left:100px; }
       #space { width:200px; height:200px; bottom:0px; right:0px; }
     </style>
+    <script src="../../games/ast/jquery-1.4.1.min.js"></script>
+    <script src="../../games/ast/vector_battle_regular.typeface.js"></script>
+    <script src="../../games/ast/game.js"></script>
   </head>
   <body id="myPage">
-
-  <!-- Sidebar on click -->
-  <nav class="sidebar bar-block white card animate-left xxlarge" style="display:none;z-index:2" id="mySidebar">
-    <a href="javascript:void(0)" onclick="w3_close()" class="bar-item button display-topright text-teal">Close
-      <i class="fa fa-remove"></i>
-    </a>
-    <a href="#" class="bar-item button">HTML</a>
-    <a href="#" class="bar-item button">Javascript</a>
-    <a href="#" class="bar-item button">CSS</a>
-    <a href="../lessons.html" class="bar-item button">View All Lessons</a>
-    <a href="#" class="bar-item button">Add a Lesson</a>
-  </nav>
 
   <!-- Navbar -->
   <div id="navbar" style="color: black; background-color: transparent;" class="top">
@@ -112,12 +100,12 @@
     <div id="game-container">
       <canvas id="canvas" width="780" height="540"></canvas>
       <div id="left-controls">
-        <div id="up" class='button'>THRUST</div>
-        <div id="left" class='button'>LEFT</div>
-        <div id="right" class='button'>RIGHT</div>
+        <div id="up" class='astButton'>THRUST</div>
+        <div id="left" class='astButton'>LEFT</div>
+        <div id="right" class='astButton'>RIGHT</div>
       </div>
       <div id="right-controls">
-        <div id="space" class='button'>FIRE</div>
+        <div id="space" class='astButton'>FIRE</div>
       </div>
     </div>
   </body>

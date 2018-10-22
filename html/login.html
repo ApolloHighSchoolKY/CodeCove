@@ -161,9 +161,9 @@
   //Create an acount method
   function signup(email, uuid, psw){
     firebase.database().ref('users/' + uuid).set({
-    	email: email,
-	password: psw
-    });
+      email: email,
+			password: psw
+  	});
   }
 </script>
 <script src="../js/ThemeChange.js"></script>
