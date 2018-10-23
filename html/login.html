@@ -151,10 +151,13 @@
     messagingSenderId: "1089219979545"
   };
   firebase.initializeApp(config);
+
+	// Get a reference to the database service
+  var database = firebase.database();
   
   //Login method
   function login(uuid, psw){
-	return false;
+		return false;
   }
   //Create an acount method
   function signup(email, uuid, psw){
