@@ -102,15 +102,17 @@
 </div>
 
 <!--Sign in-->
-<form onsubmit="javascript:login()">
-
+<form onsubmit="javascript:login(document.getElementById('usernameIn').value, document.getElementById('passwordIn').value)">
+  <input type="text" placeholder="Username" id="usernameIn">
+  <input type="text" placeholder="Password" id="passwordIn">
+  <button type="submit">Sign In</button>
 </form>
 
 <!--Sign up-->
-<form onsubmit="javascript:signup(document.getElementById('email').value, document.getElementById('username').value, document.getElementById('password').value)">
-  <input type="text" placeholder="Email Address" id="email">
-  <input type="text" placeholder="Username" id="username">
-  <input type="text" placeholder="Password" id="password">
+<form onsubmit="javascript:signup(document.getElementById('emailUp').value, document.getElementById('usernameUp').value, document.getElementById('passwordUp').value)">
+  <input type="text" placeholder="Email Address" id="emailUp">
+  <input type="text" placeholder="Username" id="usernameUp">
+  <input type="text" placeholder="Password" id="passwordUp">
   <button type="submit">Sign Up</button>
 </form>
 
@@ -152,12 +154,22 @@
   };
   firebase.initializeApp(config);
 
-	// Get a reference to the database service
+  // Get a reference to the database service
   var database = firebase.database();
-  
+
+  //Login and Signup methods
+  var users = config.child("users");
+
   //Login method
   function login(uuid, psw){
-		return false;
+    users.once('value', function(snapshot) {
+        if (!snapshot.hasChild(uuid)) {
+            alert("That username does not exist");
+        }
+        else {
+            alert("That username exists");
+        }
+    });
   }
   //Create an acount method
   function signup(email, uuid, psw){
