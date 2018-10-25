@@ -163,19 +163,24 @@
   var database = firebase.database();
 
   //Login and Signup methods
-  var users = config.child("users");
-
+  /*var ref = firebase.database().ref();
   //Login method
-  function login(uuid, psw){
-    users.once('value', function(snapshot) {
-        if (!snapshot.hasChild(uuid)) {
-            alert("That username does not exist");
-        }
-        else {
-            alert("That username exists");
-        }
+  function userExists(uuid){
+    var users = firebase.database().ref("users/");
+    return firebase.database().ref('/users/' + uuid).once('value').then(function(snapshot) {
+      var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+      // ...
     });
-  }
+  }*/
+  //Reads all data from test user
+  /*var usersRef = firebase.database().ref("users/Coxchr30");
+
+  usersRef.once("value", function(data) {
+
+     data.forEach(function(data) {
+        console.log("The " + data.key + " is " + data.val());
+     });*/
+
   //Create an acount method
   function signup(email, uuid, psw){
     firebase.database().ref('users/' + uuid).set({
