@@ -1,9 +1,9 @@
-function isChecked(){
-  if(document.getElementByClassName('answer').checked==true)
-    document.getElementByClassName('answer').checked=false;
-    if(document.getElementByClassName('answer').checked==true)
-    document.getElementByClassName('answer').checked=false;
-}
+function checkAnswers(){
+var correctAnswers=0;
+  if(document.getElementById(a1b).checked==true)
+    correctAnswers+=1;
+    return correctAnswers;
+\}
 function addContent(){
   document.write("<meta name='viewport' content='width=device-width, initial-scale=1'>\
   <script src='../js/quizMaker.js'></script>\
@@ -40,13 +40,15 @@ function addContent(){
   <p>\
   <div class='container teal'>Q1: Where does < !DOCTYPE html > go on the form? </div>\
   A1 &#150; Just a sample question to test your understanding<br>\
-  	<input class='answer' onclick='javascript:isChecked();' type='radio' value='A1'> A &#150; Before the Emboldened Text <br>\
-  	<input class='answer' type='radio' value='B1'><a style='color:blue'> B &#150; At the Beginning of the Form </a><br>\
-  	<input class='answer' type='radio' value='C1'> C &#150; Around the Hyperlink<br>\
-  	<input class='answer' type='radio' value='D1'> D &#150; In the < script > Function<br>\
-    <!-- E &#150; &#9855 < br ><br>\
+  <fieldset style='border:none;'id=answerOne>\
+    <input id=a1A name='answerOne' type='radio' value=''> A &#150; Before the Emboldened Text <br>\
+  	<input id=a1b name='answerOne' type='radio' value=''><a style='color:blue'> B &#150; At the Beginning of the Form </a><br>\
+  	<input id=a1c name='answerOne' type='radio' value=''> C &#150; Around the Hyperlink<br>\
+  	<input id=a1d name='answerOne' type='radio' value=''> D &#150; In the < script > Function<br>\
+    </fieldset>\
+  <!-- E &#150; &#9855 < br ><br>\
     F &#150; &#9728<br>-->\
-<div class='container teal'> Q2 &#150; A tag with a backslash (/) in front does what to a function?</div>\
+<div class='container teal'> Q2 &#150; A tag with a backslash (/) in front does what to a tag?</div>\
 	A &#150; Excludes the Function from the Stylesheet<br>\
 	B &#150; Comments out the Function<br>\
 	C &#150; Quits the Program after the Function is completed<br>\
@@ -58,10 +60,10 @@ function addContent(){
 	D &#150; Hyperlink<br>\
 <div class='container teal'> Q4 &#150; What does the following code output?<br>\
 < p >Hello < b >World< /b >!< /p > </div>\
-A &#150; Hello World!<br>\
-B &#150; Hello World!<br>\
-C &#150; Hello World!<br>\
-D &#150; Hello World!<br>\
+A &#150; <b> Hello World</b>!<br>\
+B &#150; <u> Hello World</u>!<br>\
+C &#150; <b> Hello World!</b><br>\
+D &#150; <i> Hello World </i>!<br>\
 <div class='container teal'> Q5 &#150; What tag defines a comment?</div>\
 	A &#150; < ol > <br>\
 	B &#150; < &#146;...&#146; > <br>\
@@ -107,6 +109,7 @@ D &#150; Hello World!<br>\
 	B - < bd ><br>\
 	C - < b ><br>\
 	D - < bo ><br>\
+  <b> Correct Answers: + parseInt(javascript:checkAnswers()) </b>\
   <button type='submit' class='red' style='border:none;cursor:pointer;'>Check my answers </button>\
 </p>\
 </form>")
