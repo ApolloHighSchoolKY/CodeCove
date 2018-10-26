@@ -1,38 +1,12 @@
-<!DOCTYPE html>
 <html>
 <title>CodeCove</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<head>
-  <link rel="stylesheet" href="../css/CodeCove.css">
-  <link rel="icon" href="../resources/favicon.ico">
-  <!--<link rel="stylesheet" href="../css/CodeCove-Theme-Black.css">-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- Firebase App is always required and must be first -->
-  <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
-
-  <!-- Add additional services that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-database.js"></script>
-  <!--<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-messaging.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-functions.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-storage.js"></script>-->
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDDBGLJFW4v4AtMRrDd53yFz7Wm9pX_OdQ",
-      authDomain: "code-cove.firebaseapp.com",
-      databaseURL: "https://code-cove.firebaseio.com",
-      projectId: "code-cove",
-      storageBucket: "code-cove.appspot.com",
-      messagingSenderId: "1089219979545"
-    };
-    firebase.initializeApp(config);
-  </script>
-  <script src="../js/ThemeChange.js"></script>
-</head>
-<body id="myPage">
+<link rel="stylesheet" href="../css/CodeCove.css">
+<!--<link rel="stylesheet" href="../css/CodeCove-Theme-Black.css">-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="../Resources/Logos/OfficialLogo.jpg">
+ <body id="myPage">
 
 <!-- Sidebar on click -->
 <nav class="sidebar bar-block white card animate-left xxlarge" style="display:none;z-index:2" id="mySidebar">
@@ -49,31 +23,22 @@
 <!-- Navbar -->
 <div id="navbar" style="color: black; background-color: transparent;" class="top">
  <div class="bar theme-d2 left-align">
-   <!--General Navbar-->
   <a class="bar-item button hide-medium hide-large right hover-white theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
   <a href="main.html" class="bar-item button teal"><i class="fa fa-home margin-right"></i>Home</a>
   <a href="#team" class="bar-item button hide-small hover-teal">Team</a>
   <a href="#lessons" class="bar-item button hide-small hover-teal">Lessons</a>
   <a href="#accounts" class="bar-item button hide-small hover-teal">Accounts</a>
   <a href="#contact" class="bar-item button hide-small hover-teal">Contact</a>
-  <!--Theme Options-->
-  <div class="dropdown-hover hide-small">
-    <button class="button hover-teal">Theme<i class="fa fa-caret-down"></i></button>
-    <div class="dropdown-content card-4 bar-block">
-      <a href="javascript:random_bg_color()" class = "bar-item button hover-teal" >Random Theme</a>
-      <a href="javascript:defaultTheme()" class = "bar-item button hover-teal" >Default Theme</a>
-    </div>
-  </div>
-  <!--Fun Section-->
+  <a href="javascript:random_bg_color()" class = "bar-item button hover-teal" >Random Theme</a>
+  <a href="javascript:defaultTheme()" class = "bar-item button hover-teal" >Default Theme</a>
   <div class="dropdown-hover hide-small">
     <button class="button hover-teal">Fun<i class="fa fa-caret-down"></i></button>
     <div class="dropdown-content card-4 bar-block">
       <a href="../resources/nggyu.mp4" target="_blank" class="bar-item button hover-teal">Special MP4</a>
       <a href="games/ast.html" class="bar-item button hover-teal">Asteroids</a>
-      <a href="../resources/leohr.png" target="_blank" class="bar-item button hover-teal">Pirate</a>
+      <a href="../resources/Random/leohr.png" target="_blank" class="bar-item button hover-teal">Pirate</a>
     </div>
   </div>
-  <!--External Resources-->
   <div class="dropdown-hover hide-small">
     <button class="button hover-teal">Resources<i class="fa fa-caret-down"></i></button>
     <div class="dropdown-content card-4 bar-block">
@@ -82,33 +47,25 @@
       <a href="https://teamup.com/ks2y6w6whbvjz625sh" target="_blank" class="bar-item button hover-teal">Teamup Calendar</a>
     </div>
   </div>
-  <a href="login.html" class="bar-item button hide-small hover-teal">Login</a>
   <a href="#" class="bar-item button hide-small right hover-teal" title="Search"><i class="fa fa-search"></i></a>
  </div>
 
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="bar-block theme-d2 hide hide-large hide-medium" style="color: black; background-color: transparent;">
+  <div id="navDemo" class="bar-block theme-d2 hide hide-large hide-medium">
     <a href="#team" class="bar-item button">Team</a>
     <a href="#lessons" class="bar-item button">Lessons</a>
     <a href="#accounts" class="bar-item button">Accounts</a>
     <a href="#contact" class="bar-item button">Contact</a>
-    <a href="javascript:random_bg_color()" class = "bar-item button hover-teal" >Random Theme</a>
-    <a href="javascript:defaultTheme()" class = "bar-item button hover-teal" >Default Theme</a>
-    <a href="../resources/nggyu.mp4" target="_blank" class="bar-item button hover-teal">Special MP4</a>
-    <a href="games/ast.html" class="bar-item button hover-teal">Asteroids (WIP)</a>
-    <a href="../resources/leohr.png" target="_blank" class="bar-item button hover-teal">Pirate</a>
-    <a href="https://github.com/ApolloHighSchoolKY/CodeCove" target="_blank" class="bar-item button hover-teal">GitHub</a>
-    <a href="https://prod.teamgantt.com/gantt/schedule/?ids=1257545&public_keys=fHDTzH5DeW7d&zoom=d100&font_size=12&estimated_hours=0&assigned_resources=0&percent_complete=0&documents=0&comments=0&col_width=355&hide_header_tabs=0&menu_view=1&resource_filter=1&name_in_bar=0&name_next_to_bar=0&resource_names=1#user=&company=&custom=&date_filter=&hide_completed=false&color_filter=" target="_blank" class="bar-item button hover-teal">TeamGantt</a>
-    <a href="https://teamup.com/ks2y6w6whbvjz625sh" target="_blank" class="bar-item button hover-teal">Teamup Calendar</a>
     <a href="#" class="bar-item button">Search</a>
   </div>
 </div>
 
 <!-- Image Header -->
 <div class="display-container animate-opacity">
-  <img src="../resources/sailboat.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
+  <p class="container display-bottommiddle margin-bottom hover-white" href=$(id01).show() target=_blacnk style="font-family:'Helvetica';font-weight:100;font-size:48px;color:rgb(0,109,130);white-space:nowrap;cursor:pointer;"> CodeCove: The Programming Education Hub</p>
+  <img src="../Resources/Logos/OfficialLogo.jpg" alt="boat" style="width:100%;min-height:350px;max-height:750px;z-index:2;">
   <div class="container display-bottomleft margin-bottom">
-    <button onclick="document.getElementById('id01').style.display='block'" style="color:white;" class="button xlarge theme hover-teal" title="CodeCove">CodeCove</button>
+    <!-- <button onclick="document.getElementById('id01').style.display='block'" style="color:white;" class="button xlarge theme hover-teal" title="CodeCove">CodeCove</button> -->
   </div>
 </div>
 
@@ -139,7 +96,7 @@
 
 <div class="third">
   <a href="https://github.com/legit228" target="_blank">
-    <img href="https://github.com/legit228" src="../resources/chris.png" alt="" style="width:45%" class="circle hover-opacity">
+    <img href="https://github.com/legit228" src="../resources/Random/chris.png" alt="" style="width:45%" class="circle hover-opacity">
   </a>
   <h3>Christopher Cox</h3>
   <p>HTML Guy</p>
@@ -147,7 +104,7 @@
 
 <div class="third">
   <a href="https://github.com/NateDaddy" target="_blank">
-    <img src="../resources/nathan.png" alt="" style="width:45%" class="circle hover-opacity">
+    <img src="../resources/Random/nathan.png" alt="" style="width:45%" class="circle hover-opacity">
   </a>
   <h3>Nathan Roberts</h3>
   <p>Javascript Guy</p>
@@ -155,7 +112,7 @@
 
 <div class="third">
   <a href="https://github.com/jajones3" target="_blank">
-    <img src="../resources/jacob.png" alt="" style="width:45%" class="circle hover-opacity">
+    <img src="../resources/Random/jacob.png" alt="" style="width:45%" class="circle hover-opacity">
   </a>
   <h3>Jacob Jones</h3>
   <p>PHP Guy</p>
@@ -176,12 +133,12 @@
 <div class="card white">
   <!--<img src="/w3images/snow.jpg" alt="Snow" style="width:100%">-->
   <div class="container">
-  <h3><a href="#lessons">HTML</a></h3>
-  <h4>In Progress</h4>
-  <p>Will be</p>
-  <p>added onto</p>
-  <p>over</p>
-  <p>time.</p>
+  <h3><a href="hyperTextMarkupLessons.html">HTML</a></h3>
+  <h4>Contains</h4>
+  <p>general</p>
+  <p>lessons for</p>
+  <p>now but will</p>
+  <p>be added to</p>
   </div>
   </div>
 </div>
@@ -190,12 +147,12 @@
 <div class="card white">
   <!--<img src="/w3images/lights.jpg" alt="Lights" style="width:100%">-->
   <div class="container">
-  <h3><a href="#lessons">Javascript</a></h3>
-  <h4>In Progress</h4>
-  <p>Will be</p>
-  <p>added onto</p>
-  <p>over</p>
-  <p>time.</p>
+    <h3><a href="javaScriptLessons.html">JavaScript</a></h3>
+    <h4>Contains</h4>
+    <p>general</p>
+    <p>lessons for</p>
+    <p>now but will</p>
+    <p>be added to</p>
   </div>
   </div>
 </div>
@@ -204,12 +161,12 @@
 <div class="card white">
   <!--<img src="/w3images/mountains.jpg" alt="Mountains" style="width:100%">-->
   <div class="container">
-  <h3><a href="#lessons">CSS</a></h3>
-  <h4>In Progress</h4>
-  <p>Will be</p>
-  <p>added onto</p>
-  <p>over</p>
-  <p>time.</p>
+    <h3><a href="cssLessons.html">CSS</a></h3>
+    <h4>Contains</h4>
+    <p>general</p>
+    <p>lessons for</p>
+    <p>now but will</p>
+    <p>be added to</p>
   </div>
   </div>
 </div>
@@ -298,7 +255,7 @@
       <p><i class="fa fa-envelope-o text-teal xlarge"></i><a href="mailto:Jacob.jones3@stu.daviess.kyschools.us?Subject=Code%20Cove">Jacob.jones3@stu.daviess.kyschools.us</a></p>
     </div>
     <div class="col m7">
-      <form class="container card-4 padding-16 white" onsubmit="contact()">
+      <form class="container card-4 padding-16 white" onsubmit="sendEmail()">
       <!--Name of commenter-->
       <div class="section">
         <label>Name</label>
@@ -320,7 +277,7 @@
       <!--Submit information-->
       <button type="submit" class="button right theme">Send</button>
       <!--Script to send email-->
-      <!--<script>
+      <script>
         //Script to open and fill out email
         function sendEmail(){
           if(document.getElementById("like").checked=true)
@@ -346,24 +303,6 @@
           var newWin=window.open(link);
           newWin.close();
         };
-      </script>-->
-      <script>
-        // Get a reference to the database service
-        var database = firebase.database();
-        function contact(){
-          var name = document.getElementById("name").value;
-          var email = document.getElementById("email").value;
-          var message = document.getElementById("message").value;
-          if(document.getElementById("like").checked=true)
-            var like="I like it!";
-          else
-            var like="I Don\'t Like It!";
-          firebase.database().ref('contact/' + name).set({
-            email: email,
-      			message: message,
-            opinion: like
-        	});
-        }
       </script>
       </form>
     </div>
@@ -371,7 +310,6 @@
 </div>
 
 <!-- Google Maps -->
-<!--
 <div id="googleMap" style="width:100%;height:420px;"></div>
 <script>
 function myMap()
@@ -383,7 +321,6 @@ function myMap()
     mapTypeId:google.maps.MapTypeId.ROADMAP
   };
   var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-
   var marker = new google.maps.Marker({
     position: myCenter,
   });
@@ -391,7 +328,7 @@ function myMap()
 }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
--->
+<script src="../js/ThemeChange.js"></script>
 <!--
 To use this code on your website, get a free API key from Google.
 Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
@@ -403,8 +340,7 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
   <a class="button large teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
   <a class="button large teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
   <a class="button large teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
-  <a class="button large teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
-  <a class="button large teal hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+  <a class="button large teal" href=http:/www.instagram.com/nathan_roberts_81 target=_blank title="Instagram"><i class="fa fa-instagram"></i></a>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">CodeCove.css</a></p>
 
   <div style="position:relative;bottom:100px;z-index:1;" class="tooltip right">
@@ -422,12 +358,10 @@ function w3_open() {
     x.style.paddingTop = "10%";
     x.style.display = "block";
 }
-
 // Close side navigation
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
 }
-
 // Used to toggle the menu on smaller screens when clicking on the menu button
 function openNav() {
     var x = document.getElementById("navDemo");
