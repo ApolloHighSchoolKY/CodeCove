@@ -3,7 +3,7 @@ var correctAnswers=0;
   if(document.getElementById(a1b).checked==true)
     correctAnswers+=1;
     return correctAnswers;
-\}
+}
 function addContent(){
   document.write("<meta name='viewport' content='width=device-width, initial-scale=1'>\
   <script src='../js/quizMaker.js'></script>\
