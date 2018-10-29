@@ -36,6 +36,7 @@ function login(){
 function logout(){
   firebase.auth().signOut().then(function() {
     // Sign-out successful.
+    document.getElementById("passwordIn").value = "";
   }).catch(function(error) {
     // An error happened.
     window.alert("Error : " + error.message);
