@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 <link rel="stylesheet" href="../css/CodeCove.css">
-<link rel="icon" href="../resources/favicon.ico">
+<link rel="icon" href="../resources/favicon1.ico">
 <!--<link rel="stylesheet" href="../css/CodeCove-Theme-Black.css">-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -106,20 +106,30 @@
   </div>
 </div>
 
-<!--Sign in-->
-<form onsubmit="javascript:login(document.getElementById('usernameIn').value, document.getElementById('passwordIn').value)">
-  <input type="text" placeholder="Username" id="usernameIn">
-  <input type="text" placeholder="Password" id="passwordIn">
-  <button type="submit">Sign In</button>
-</form>
+<div id="login_div" class="main-div">
+  <!--Sign in-->
+  <div id="login">
+    <h1>Log In</h1>
+    <input type="email" placeholder="Email Address" id="emailIn">
+    <input type="password" placeholder="Password" id="passwordIn">
+    <button onclick="login()">Sign In</button>
+  </div>
+  <!--Divider-->
+  <br><br>
+  <!--Sign up-->
+  <div id="signup">
+    <h1>Create an Account</h1>
+    <input type="email" placeholder="Email Address" id="emailUp">
+    <input type="password" placeholder="Password" id="passwordUp">
+    <button onclick="signup()">Sign Up</button>
+  </div>
+</div>
 
-<!--Sign up-->
-<form onsubmit="javascript:signup(document.getElementById('emailUp').value, document.getElementById('usernameUp').value, document.getElementById('passwordUp').value)">
-  <input type="text" placeholder="Email Address" id="emailUp">
-  <input type="text" placeholder="Username" id="usernameUp">
-  <input type="text" placeholder="Password" id="passwordUp">
-  <button type="submit">Sign Up</button>
-</form>
+<div id="user_div" style="display: none;">
+  <h1 id="user_greetings">Welcome back!</h1>
+  <p>Enjoy your time here at CodeCove!</p>
+  <button onclick="logout()">Log Out</button>
+</div>
 
 <!-- Footer -->
 <footer class="container padding-32 theme-d1 center">
@@ -137,18 +147,51 @@
     <i class="fa fa-chevron-circle-up"></i></span></a>
   </div>
 </footer>
-<!-- Firebase App is always required and must be first -->
+<style>
+  .main-div{
+    width: 20%;
+    margin: 0px auto;
+    margin-top: 25px;
+    padding: 20px;
+    overflow: hidden;
+  }
+  .main-div input{
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    padding: 15px;
+    outline: none;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+  }
+  .main-div input:focus{
+    border: 1px solid #999;
+  }
+  .main-div button{
+    background: #5d8ffc;
+    color: #fff;
+    border: 1px solid #5d8ffc;
+    border-radius: 5px;
+    padding: 15px;
+    display: block;
+    width: 100%;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+  }
+  .main-div button:hover{
+    background: #fff;
+    color: #5d8ffc;
+    border:1px solid #5d8ffc;
+  }
+</style>
 <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
-
-<!-- Add additional services that you want to use -->
 <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-database.js"></script>
-<!--<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-messaging.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-functions.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-storage.js"></script>-->
 <script>
-  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDDBGLJFW4v4AtMRrDd53yFz7Wm9pX_OdQ",
     authDomain: "code-cove.firebaseapp.com",
@@ -158,37 +201,8 @@
     messagingSenderId: "1089219979545"
   };
   firebase.initializeApp(config);
-
-  // Get a reference to the database service
-  var database = firebase.database();
-
-  //Login and Signup methods
-  /*var ref = firebase.database().ref();
-  //Login method
-  function userExists(uuid){
-    var users = firebase.database().ref("users/");
-    return firebase.database().ref('/users/' + uuid).once('value').then(function(snapshot) {
-      var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-      // ...
-    });
-  }*/
-  //Reads all data from test user
-  /*var usersRef = firebase.database().ref("users/Coxchr30");
-
-  usersRef.once("value", function(data) {
-
-     data.forEach(function(data) {
-        console.log("The " + data.key + " is " + data.val());
-     });*/
-
-  //Create an acount method
-  function signup(email, uuid, psw){
-    firebase.database().ref('users/' + uuid).set({
-      email: email,
-			password: psw
-  	});
-  }
 </script>
+<script src="../js/Firebase.js"></script>
 <script src="../js/ThemeChange.js"></script>
 </body>
 </html>
