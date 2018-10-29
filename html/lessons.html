@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <title>CodeCove</title>
 <meta charset="UTF-8">
@@ -14,18 +13,8 @@
  <div class="bar theme-d2 left-align">
   <a class="bar-item button hide-medium hide-large right hover-white theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
   <a href="main.html" class="bar-item button teal"><i class="fa fa-home margin-right"></i>Home</a>
-  <a href="#team" class="bar-item button hide-small hover-teal">Team</a>
-  <a href="#lessons" class="bar-item button hide-small hover-teal">Lessons</a>
-  <a href="#accounts" class="bar-item button hide-small hover-teal">Accounts</a>
-  <a href="#contact" class="bar-item button hide-small hover-teal">Contact</a>
-  <!--Theme Options-->
-  <div class="dropdown-hover hide-small">
-    <button class="button hover-teal">Theme<i class="fa fa-caret-down"></i></button>
-    <div class="dropdown-content card-4 bar-block">
-      <a href="javascript:random_bg_color()" class = "bar-item button hover-teal" >Random Theme</a>
-      <a href="javascript:defaultTheme()" class = "bar-item button hover-teal" >Default Theme</a>
-    </div>
-  </div>
+  <a href="javascript:random_bg_color()" class = "bar-item button hover-teal" >Random Theme</a>
+  <a href="javascript:defaultTheme()" class = "bar-item button hover-teal" >Default Theme</a>
   <div class="dropdown-hover hide-small">
     <button class="button hover-teal">Fun<i class="fa fa-caret-down"></i></button>
     <div class="dropdown-content card-4 bar-block">
@@ -64,9 +53,19 @@
 
 <!-- Image Header -->
 <div class="display-container animate-opacity">
-  <img src="../resources/sailboat.jpg" alt="boat" style="width:100%;min-height:50px;max-height:300px;">
+  <p class = "container padding-64 center"><b> Welcome to the CodeCove Lessons Page</b> </p>
+  <table style="padding-left:525px;">
+    <tr>
+      <td><br><button style="background-color:inherit; cursor:hand; border:2" onclick="window.location='javaScriptLessons.html'" target="_blank">JavaScript Lessons</button></td>
+    </tr>
+    <tr>
+      <td><br><button style="background-color:inherit; cursor:hand; border:2" onclick="window.location='hyperTextMarkupLessons.html'" target="_blank">HTML Lessons</button></td>
+    </tr>
+    <tr>
+      <td><br><button style="background-color:inherit; cursor:hand; border:2;" onclick="window.location='cssLessons.html'" target="_blank">CSS Lessons</button></td>
+  </tr>
+  </table>
   <div class="container display-bottomleft margin-bottom">
-    <button onclick="document.getElementById('id01').style.display='block'" style="color:white;" class="button xlarge theme hover-teal" title="Lessons">Lessons</button>
   </div>
 </div>
 
@@ -90,8 +89,8 @@
 
 <script src="../js/ThemeChange.js"></script>
 <!-- Footer -->
-<footer class="container padding-32 theme-d1 center">
-  <h4>Follow Us</h4>
+<footer class=" middle bottom container padding-16 theme-d1 center">
+  <h4 >Follow Us</h4>
   <a class="button large teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
   <a class="button large teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
   <a class="button large teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
