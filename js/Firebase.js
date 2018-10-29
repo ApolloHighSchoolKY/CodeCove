@@ -57,3 +57,21 @@ function signup(){
     // ...
   });
 }
+
+//Contact
+function contact(){
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var message = document.getElementById("message").value;
+  if(document.getElementById("like").checked=true){
+    var like = "I like it!"
+  }else {
+    var like = "I don\'t like it!"
+  }
+
+  firebase.database().ref('contact/' + name).set({
+    email: email,
+    message: message,
+    opinion: like
+  });
+}

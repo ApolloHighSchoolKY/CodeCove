@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <title>CodeCove</title>
 <meta charset="UTF-8">
@@ -29,6 +30,7 @@
     };
     firebase.initializeApp(config);
   </script>
+  <script src="../Firebase.js"></script>
   <script src="../js/ThemeChange.js"></script>
 </head>
 <body id="myPage">
@@ -38,11 +40,11 @@
   <a href="javascript:void(0)" onclick="w3_close()" class="bar-item button display-topright text-teal">Close
     <i class="fa fa-remove"></i>
   </a>
-  <a href="#" class="bar-item button">HTML</a>
-  <a href="#" class="bar-item button">Javascript</a>
-  <a href="#" class="bar-item button">CSS</a>
+  <a href="hyperTextMarkupLessons.html" class="bar-item button">HTML</a>
+  <a href="javaScriptLessons.html" class="bar-item button">Javascript</a>
+  <a href="cssLessons.html" class="bar-item button">CSS</a>
   <a href="lessons.html" class="bar-item button">View All Lessons</a>
-  <a href="#" class="bar-item button">Add a Lesson</a>
+  <a href="javascript:window.alert('In progress!');" class="bar-item button">Add a Lesson</a>
 </nav>
 
 <!-- Navbar -->
@@ -75,7 +77,7 @@
       <a href="https://teamup.com/ks2y6w6whbvjz625sh" target="_blank" class="bar-item button hover-teal">Teamup Calendar</a>
     </div>
   </div>
-  <a href="login.html" class="bar-item button hide-small hover-teal">Login</a>
+  <a href="login.html" class="bar-item button hide-small hover-teal right">Login</a>
 </div>
   <!-- Navbar on small screens -->
   <div id="navDemo" class="bar-block theme-d2 hide hide-large hide-medium">
@@ -95,7 +97,7 @@
 
 <!-- Image Header -->
 <div class="display-container animate-opacity">
-  <p class="container display-bottommiddle margin-bottom hover-grey" href=$(id01).show() target=_blacnk style="font-family:'Helvetica';font-weight:100;font-size:48px;color:rgb(0,109,130);white-space:nowrap;cursor:pointer;"> CodeCove: The Programming Education Hub</p>
+  <button class="container button display-bottommiddle margin-bottom hover-opacity" onclick="document.getElementById('id01').style.display='block'" style="font-family:'Helvetica';font-weight:100;font-size:48px;color:rgb(0,109,130);white-space:nowrap;cursor:pointer;"> CodeCove: The Programming Education Resource</button>
   <img src="../resources/sailboat.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;z-index:2;">
   <div class="container display-bottomleft margin-bottom">
     <!-- <button onclick="document.getElementById('id01').style.display='block'" style="color:white;" class="button xlarge theme hover-teal" title="CodeCove">CodeCove</button> -->
@@ -112,7 +114,7 @@
     </header>
     <div class="container">
       <p>Check the site out and</p>
-      <p>Leave any feedback you may have!</p>
+      <p>Leave any feedback you may have in the contact section below!</p>
     </div>
     <footer class="container teal">
       <p>Happy coding!</p>
@@ -230,7 +232,7 @@
           <span class="opacity">per month</span>
         </li>
         <li class="theme-l5 padding-24">
-          <button class="button teal padding-large"><i class="fa fa-check"></i> Sign Up</button>
+          <a class="button teal padding-large" href="login.html"><i class="fa fa-check"></i> Sign Up</a>
         </li>
       </ul>
     </div>
@@ -249,7 +251,7 @@
           <span class="opacity">per month</span>
         </li>
         <li class="theme-l5 padding-24">
-          <button class="button teal padding-large"><i class="fa fa-check"></i> Sign Up</button>
+          <a class="button teal padding-large" href="login.html"><i class="fa fa-check"></i> Sign Up</a>
         </li>
       </ul>
     </div>
@@ -268,7 +270,7 @@
           <span class="opacity">per month</span>
         </li>
         <li class="theme-l5 padding-24">
-          <button class="button teal padding-large"><i class="fa fa-check"></i> Sign Up</button>
+          <a class="button teal padding-large" href="login.html"><i class="fa fa-check"></i> Sign Up</a>
         </li>
       </ul>
     </div>
@@ -287,7 +289,6 @@
       <p><i class="fa fa-envelope-o text-teal xlarge"></i><a href="mailto:Jacob.jones3@stu.daviess.kyschools.us?Subject=Code%20Cove">Jacob.jones3@stu.daviess.kyschools.us</a></p>
     </div>
     <div class="col m7">
-      <form class="container card-4 padding-16 white" onsubmit="sendEmail()">
       <!--Name of commenter-->
       <div class="section">
         <label>Name</label>
@@ -296,7 +297,7 @@
       <!--Email address-->
       <div class="section">
         <label>Email</label>
-        <input class="input" type="text" id="email" required>
+        <input class="input" type="email" id="email" required>
       </div>
       <!--Body for email-->
       <div class="section">
@@ -307,36 +308,8 @@
       <input class="check" type="checkbox" id="like">
       <label>I Like it!</label>
       <!--Submit information-->
-      <button type="submit" class="button right theme">Send</button>
-      <!--Script to send email-->
-      <script>
-        //Script to open and fill out email
-        function sendEmail(){
-          if(document.getElementById("like").checked=true)
-            var like="I%20like%20it!";
-          else
-            var like="I%20Don\'t%20Like%20It!";
-          var name = document.getElementById("name").value;
-          var email = document.getElementById("email").value;
-          var tempMessage = document.getElementById("message").value;
-          var message="";
-          for(var x=0;x<tempMessage.length; x++){
-            var y=tempMessage.indexOf(" ", x);
-            if(y!=-1){
-              message += tempMessage.substring(x,y)+"%20";
-              x=y;
-            }
-            if(y==-1){
-              message += tempMessage.substring(x);
-              break;
-            }
-          }
-          var link="mailto:"+email+"?cc=nathan.roberts%40stu.daviess.kyschools.us%2C%20jacob.jones3%40stu.daviess.kyschools.us&subject=Code%20Cove%20|%20"+name+"%20|%20"+like+"&body="+message;
-          var newWin=window.open(link);
-          newWin.close();
-        };
-      </script>
-      </form>
+      <button onclick="contact()" class="button right theme">Send</button>
+
     </div>
   </div>
 </div>

@@ -11,27 +11,36 @@
 <!-- Navbar -->
 <div id="navbar" style="color: black; background-color: transparent;" class="top">
  <div class="bar theme-d2 left-align">
+   <!--General Navbar-->
   <a class="bar-item button hide-medium hide-large right hover-white theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
   <a href="main.html" class="bar-item button teal"><i class="fa fa-home margin-right"></i>Home</a>
-  <a href="lessons.html" class = "bar-item button hover-teal" >Lessons Home</a>
-  <a href="javascript:random_bg_color()" class = "bar-item button hover-teal" >Random Theme</a>
-  <a href="javascript:defaultTheme()" class = "bar-item button hover-teal" >Default Theme</a>
+  <a href="lessons.html" class="bar-item button hide-small hover-teal">Lessons Home</a>
+  <!--Theme Options-->
+  <div class="dropdown-hover hide-small">
+    <button class="button hover-teal">Theme<i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-content card-4 bar-block">
+      <a href="javascript:random_bg_color()" class = "bar-item button hover-teal" >Random Theme</a>
+      <a href="javascript:defaultTheme()" class = "bar-item button hover-teal" >Default Theme</a>
+    </div>
+  </div>
+  <!--Fun Section-->
   <div class="dropdown-hover hide-small">
     <button class="button hover-teal">Fun<i class="fa fa-caret-down"></i></button>
     <div class="dropdown-content card-4 bar-block">
       <a href="games/ast.html" class="bar-item button hover-teal">Asteroids</a>
     </div>
   </div>
-    <div class="dropdown-hover hide-small">
+  <!--External Resources-->
+  <div class="dropdown-hover hide-small">
     <button class="button hover-teal">Resources<i class="fa fa-caret-down"></i></button>
     <div class="dropdown-content card-4 bar-block">
       <a href="https://github.com/ApolloHighSchoolKY/CodeCove" target="_blank" class="bar-item button hover-teal">GitHub</a>
       <a href="https://prod.teamgantt.com/gantt/schedule/?ids=1257545&public_keys=fHDTzH5DeW7d&zoom=d100&font_size=12&estimated_hours=0&assigned_resources=0&percent_complete=0&documents=0&comments=0&col_width=355&hide_header_tabs=0&menu_view=1&resource_filter=1&name_in_bar=0&name_next_to_bar=0&resource_names=1#user=&company=&custom=&date_filter=&hide_completed=false&color_filter=" target="_blank" class="bar-item button hover-teal">TeamGantt</a>
       <a href="https://teamup.com/ks2y6w6whbvjz625sh" target="_blank" class="bar-item button hover-teal">Teamup Calendar</a>
     </div>
-    <a href="login.html" class="bar-item button hide-small hover-teal">Login</a>
-    <a href="#" class="bar-item button hide-small right hover-teal" title="Search"><i class="fa fa-search"></i></a>
-   </div>
+  </div>
+  <a href="login.html" class="bar-item button hide-small hover-teal right">Login</a>
+ </div>
 
  <!-- Navbar on small screens -->
  <div id="navDemo" class="bar-block theme-d2 hide hide-large hide-medium" style="color: black; background-color: transparent;">
@@ -65,7 +74,7 @@
      <li> Some examples of elements include: "html", "body", "ul", "li", "form", "title", "header", "footer" </li>
      <li> *Almost* every element must also be closed with "<" + "/" + ">" tags </li>
      <li> These are known as 'Singleton' tags and include the "link", "br", "col", "command", and "embed" tags</li>
-     <li style="color:blue"> HTMl is compatible with many different languages, one including CSS, which makes this text blue.</li>
+     <li style="color:blue"> HTML is compatible with many different languages, one including CSS, which makes this text blue.</li>
      <li> Another one is javascript, which lets me place these characters:<script>document.write('&#134,' + "&#167," + "&#17," + "&#149," + "&#187,"); </script> </li>
    </ul>
   <div class="container display-bottomleft margin-bottom">

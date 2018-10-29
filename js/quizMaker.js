@@ -19,9 +19,7 @@ function addContent(){
     <div class='dropdown-hover hide-small'>\
       <button class='button hover-teal'>Fun<i class='fa fa-caret-down'></i></button>\
       <div class='dropdown-content card-4 bar-block'>\
-        <a href='../resources/nggyu.mp4' target='_blank' class='bar-item button hover-teal'>Special MP4</a>\
         <a href='games/ast.html' class='bar-item button hover-teal'>Asteroids</a>\
-        <a href='../resources/leohr.png' target='_blank' class='bar-item button hover-teal'>Pirate</a>\
       </div>\
     </div>\
       <div class='dropdown-hover hide-small'>\
