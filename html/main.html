@@ -30,8 +30,11 @@
     };
     firebase.initializeApp(config);
   </script>
-  <script src="../Firebase.js"></script>
+  <script src="../js/Firebase.js"></script>
   <script src="../js/ThemeChange.js"></script>
+  <noscript>
+    <h1>Please enable javascript to use many features of the site</h1>
+  </noscript>
 </head>
 <body id="myPage">
 
@@ -59,14 +62,16 @@
   <div class="dropdown-hover hide-small">
     <button class="button hover-teal">Theme<i class="fa fa-caret-down"></i></button>
     <div class="dropdown-content card-4 bar-block">
-      <a href="javascript:random_bg_color()" class = "bar-item button hover-teal" >Random Theme</a>
-      <a href="javascript:defaultTheme()" class = "bar-item button hover-teal" >Default Theme</a>
+      <a href="javascript:random_bg_color()" class = "bar-item button hover-teal" >Random</a>
+      <a href="javascript:defaultTheme()" class = "bar-item button hover-teal" >Default</a>
+      <a href="javascript:setRemoteTheme()" class="bar-item button hover-teal" >Save</a>
     </div>
   </div>
   <div class="dropdown-hover hide-small">
     <button class="button hover-teal">Fun<i class="fa fa-caret-down"></i></button>
     <div class="dropdown-content card-4 bar-block">
       <a href="games/ast.html" class="bar-item button hover-teal">Asteroids</a>
+        <a href="games/snake.html" class="bar-item button hover-teal" target="_blank">Snake</a>
     </div>
   </div>
   <div class="dropdown-hover hide-small">
@@ -308,7 +313,7 @@
       <input class="check" type="checkbox" id="like">
       <label>I Like it!</label>
       <!--Submit information-->
-      <button onclick="contact()" class="button right theme">Send</button>
+      <button onclick="writeUserData()" class="button right theme">Send</button>
 
     </div>
   </div>
@@ -349,7 +354,7 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
 
   <div style="position:relative;bottom:100px;z-index:1;" class="tooltip right">
     <span class="text padding teal hide-small">Go To Top</span>
-    <a class="button theme" href="#myPage"><span class="xlarge">
+    <a class="button theme" href="main.html"><span class="xlarge">
     <i class="fa fa-chevron-circle-up"></i></span></a>
   </div>
 </footer>
@@ -376,6 +381,5 @@ function openNav() {
     }
 }
 </script>
-
 </body>
 </html>

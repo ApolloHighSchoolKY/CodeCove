@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--<html manifest="snake.appcache">-->
+<head>
+<!--
+
+JavaScript Snake
+By Patrick Gillespie
+http://patorjk.com/games/snake
+
+Source code is available here: https://github.com/patorjk/JavaScript-Snake
+
+-->
+    <title>CodeCove Snake</title>
+    <link rel=stylesheet id=style type=text/css href=../../games/snake/css/main-snake.css>
+    <link rel="stylesheet" type="text/css" href="../../css/CodeCove.css">
+    <!-- Navbar -->
+    <div id="navbar" style="color: black; background-color: transparent;" class="top">
+     <div class="bar theme-d2 left-align">
+      <a class="bar-item button hide-medium hide-large right hover-white theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+      <a href="../main.html" class="bar-item button teal"><i class="fa fa-home margin-right"></i>Home</a>
+      <!--Theme Options-->
+      <div class="dropdown-hover hide-small">
+        <button class="button hover-teal">Theme<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content card-4 bar-block">
+          <a href="javascript:random_bg_color()" class = "bar-item button hover-teal" >Random Theme</a>
+          <a href="javascript:defaultTheme()" class = "bar-item button hover-teal" >Default Theme</a>
+        </div>
+      </div>
+      <!--Fun Section-->
+      <div class="dropdown-hover hide-small">
+        <button class="button hover-teal">Fun<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content card-4 bar-block">
+          <a href="games/ast.html" class="bar-item button hover-teal">Asteroids</a>
+        </div>
+      </div>
+      <!--External Resources-->
+        <div class="dropdown-hover hide-small">
+        <button class="button hover-teal">Resources<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content card-4 bar-block">
+          <a href="https://github.com/ApolloHighSchoolKY/CodeCove" target="_blank" class="bar-item button hover-teal">GitHub</a>
+          <a href="https://prod.teamgantt.com/gantt/schedule/?ids=1257545&public_keys=fHDTzH5DeW7d&zoom=d100&font_size=12&estimated_hours=0&assigned_resources=0&percent_complete=0&documents=0&comments=0&col_width=355&hide_header_tabs=0&menu_view=1&resource_filter=1&name_in_bar=0&name_next_to_bar=0&resource_names=1#user=&company=&custom=&date_filter=&hide_completed=false&color_filter=" target="_blank" class="bar-item button hover-teal">TeamGantt</a>
+          <a href="https://teamup.com/ks2y6w6whbvjz625sh" target="_blank" class="bar-item button hover-teal">Teamup Calendar</a>
+        </div>
+      </div>
+      <a href="../login.html" class="bar-item button hide-small hover-teal right">Login</a>
+     </div>
+
+    <!--<button onclick=getTheme()>Click to use this theme.</button>
+    <select id="select">
+        <option>Dark Theme</option>
+        <option>Revert To Original</option>
+    </select>-->
+    <div id="mode-wrapper">Select which mode you would like to play in.<br /><button id="Easy">Easy</button><br /><button id="Medium">Medium</button><br /><button id="Difficult">Difficult</button></div>
+<button id="high-score">Get your current high score for this game.</button>
+<script>
+function getTheme () {
+    function changeTheme (Theme) {
+        document.getElementById('style').setAttribute('href', Theme);
+    }
+    var index = document.getElementById("select").selectedIndex;
+    switch (index) {
+        case 0:
+          changeTheme('../../games/snake/css/dark-snake.css');
+          break;
+          case 1: changeTheme('../../games/snake/css/main-snake.css');
+    }
+}
+if (navigator.onLine && window.location.hostname === 'patorjk.com') {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3312460-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+}
+</script>
+</head>
+<body>
+    <div id="game-area" tabindex="0">
+    </div>
+    <script type="text/javascript" src="../../games/snake/js/snake.js"></script>
+    <script type="text/javascript">
+    var mySnakeBoard = new SNAKE.Board(  {
+                                            boardContainer: "game-area",
+                                            fullScreen: true
+                                        });
+    </script>
+</body>
+</html>

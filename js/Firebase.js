@@ -1,3 +1,4 @@
+var loggedIn = false;
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
@@ -8,12 +9,18 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     if(user != null){
       var email_id = user.email;
-      document.getElementById("user_greetings").innerHTML = "Welcome back, " + email_id + "!";
+      useRemoteTheme();
+      document.getElementById("user_greetings").innerHTML = "Welcome, " + email_id + "!";
+      console.log("Successfully logged in");
+      loggedIn = true;
     }
   } else {
     // No user is signed in.
     document.getElementById("user_div").style.display = "none";
     document.getElementById("login_div").style.display = "block";
+    defaultTheme();
+    console.log("Successfully logged out");
+    loggedIn= false;
   }
 });
 
@@ -28,7 +35,6 @@ function login(){
     var errorMessage = error.message;
 
     window.alert("Error : " + errorMessage);
-    // ...
   });
 }
 
@@ -54,7 +60,6 @@ function signup(){
     var errorMessage = error.message;
 
     window.alert("Error : " + errorMessage);
-    // ...
   });
 }
 
@@ -65,7 +70,7 @@ function contact(){
   var message = document.getElementById("message").value;
   if(document.getElementById("like").checked=true){
     var like = "I like it!"
-  }else {
+  } else {
     var like = "I don\'t like it!"
   }
 
@@ -73,5 +78,38 @@ function contact(){
     email: email,
     message: message,
     opinion: like
+  });
+}
+
+//Sets the Theme in the Database
+function setRemoteTheme() {
+  var userId = firebase.auth().currentUser.uid;
+  var theme = getLocalTheme();
+  firebase.database().ref('users/' + userId).set({
+    theme: theme
+  });
+  console.log("Theme saved");
+}
+
+//Sets the Local theme
+function setLocalTheme(theme){
+  var bgColor = theme.substring(0,theme.indexOf(")")+1);
+  var navBarColor = theme.substring(theme.indexOf(")")+2);
+  document.body.style.backgroundColor = bgColor;
+  document.getElementById("navbar").style.backgroundColor = navBarColor;
+  console.log("Theme changed");
+}
+
+//Gets the Local Theme
+function getLocalTheme(){
+  return document.body.style.backgroundColor + " " + document.getElementById("navbar").style.backgroundColor;
+}
+
+//Retrives Remote Theme and Sets Local Theme
+function useRemoteTheme(){
+  var userId = firebase.auth().currentUser.uid;
+  return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+    var theme = snapshot.child("theme").val();
+    setLocalTheme(theme);
   });
 }
