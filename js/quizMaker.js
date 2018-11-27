@@ -1,45 +1,204 @@
+var numberCAs = 0;
+var totalAnswers=0;
+var correctAnswer = Math.floor(Math.random() * 24);
+var numQs=2;
 function checkAnswers(){
-var correctAnswers=0;
-  if(document.getElementById(a1b).checked==true)
-    correctAnswers+=1;
-    return correctAnswers;
+  totalAnswers+=1;
+  if(correctAnswer <=6 && document.getElementById('aa').checked){
+    alert("Correct");
+    numberCAs+=1;
+     cAString ="Correct Answers: " + numberCAs;
+    document.getElementById('numberCorrect').innerHTML = cAString;
+  } else if(correctAnswer >=7 && correctAnswer <=12 && document.getElementById('ab').checked){
+      alert("Correct");
+      numberCAs+=1;
+       cAString ="Correct Answers: " + numberCAs;
+  } else if(correctAnswer >=13 && correctAnswer <=18 && document.getElementById('ac').checked){
+      alert("Correct");
+      numberCAs+=1;
+       cAString ="Correct Answers: " + numberCAs;
+
+  }else if(correctAnswer >=19 && correctAnswer <=24 && document.getElementById('ad').checked){
+      alert("Correct");
+      numberCAs+=1;
+       cAString ="Correct Answers: " + numberCAs;
+  } else{
+     cAString="Correct Answers: " + numberCAs;
+    alert("Incorrect");
+  }
+  document.getElementById('numberCorrect').innerHTML = cAString;
+  tAString="Total Percentage: " + Math.round(numberCAs/totalAnswers*100) + "%";
+    document.getElementById('totalQuestions').innerHTML = tAString;
+document.getElementById('newQ').style.display='block';
+document.getElementById('newQ').style.cursor='pointer';
+document.getElementById('newQ').style.border='none';
+};
+
+function addContent(question,correct,inc1,inc2,inc3){
+if(numQs<=0){
+  alert("Your quiz is done! Your score was: " + Math.round(numberCAs/totalAnswers*100) + "%\n" + "How many questions were attempted: " + totalAnswers + "\n" + "How many you got correct: " + numberCAs + "\n");
+  window.location='../html/lessons.html'
 }
-function addContent(){
-  document.write("<meta name='viewport' content='width=device-width, initial-scale=1'>\
-  <script src='../js/quizMaker.js'></script>\
-  <script> src='../js/ThemeChange.js' </script>\
-  <link rel='stylesheet' href='https:/cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>\
-  <link rel='stylesheet' href='../css/CodeCove.css'>\
-  <div id='navbar' style='height:38px;color: black; background-color: transparent;' class='top'>\
-   <div class='bar theme-d2 left-align'>\
-    <a class='bar-item button hide-medium hide-large right hover-white theme-d2' href='javascript:void(0);' onclick='openNav()'><i class='fa fa-bars'></i></a>\
-    <a href='main.html' class='bar-item button teal'><i class='fa fa-home margin-right'></i>Home</a>\
-    <a href='javascript:random_bg_color()' class = 'bar-item button hover-teal' >Random Theme</a>\
-    <a href='javascript:defaultTheme()' class = 'bar-item button hover-teal' >Default Theme</a>\
-    <div class='dropdown-hover hide-small'>\
-      <button class='button hover-teal'>Fun<i class='fa fa-caret-down'></i></button>\
-      <div class='dropdown-content card-4 bar-block'>\
-        <a href='games/ast.html' class='bar-item button hover-teal'>Asteroids</a>\
-      </div>\
-    </div>\
-      <div class='dropdown-hover hide-small'>\
-      <button class='button hover-teal'>Resources<i class='fa fa-caret-down'></i></button>\
-      <div class='dropdown-content card-4 bar-block'>\
-        <a href='https://github.com/ApolloHighSchoolKY/CodeCove' target='_blank' class='bar-item button hover-teal'>GitHub</a><br>\
-        <a href='https://prod.teamgantt.com/gantt/schedule/?ids=1257545&public_keys=fHDTzH5DeW7d&zoom=d100&font_size=12&estimated_hours=0&assigned_resources=0&percent_complete=0&documents=0&comments=0&col_width=355&hide_header_tabs=0&menu_view=1&resource_filter=1&name_in_bar=0&name_next_to_bar=0&resource_names=1#user=&company=&custom=&date_filter=&hide_completed=false&color_filter=' target='_blank' class='bar-item button hover-teal'>TeamGantt</a><br>\
-        <a href='https://teamup.com/ks2y6w6whbvjz625sh' target='_blank' class='bar-item button hover-teal'>Teamup Calendar</a><br>\
-      </div>\
-    </div>\
-    <a href='#' class='bar-item button hide-small right hover-teal' title='Search'><i class='fa fa-search'></i></a><br>\
-  </div>\
-  </div>\
-  <form>\
+else{
+  alert("" + numQs);
+  document.getElementById('question').innerHTML = question;
+  if(correctAnswer == 1){
+    document.getElementById('a1a').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = correct;
+    document.getElementById('a1b').innerHTML = inc1;
+    document.getElementById('a1c').innerHTML = inc2;
+    document.getElementById('a1d').innerHTML = inc3;
+  }else if(correctAnswer == 2){
+    document.getElementById('a1a').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = correct;
+    document.getElementById('a1b').innerHTML = inc1;
+    document.getElementById('a1c').innerHTML = inc3;
+    document.getElementById('a1d').innerHTML = inc2;
+  }else if(correctAnswer == 3){
+    document.getElementById('a1a').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = correct;
+    document.getElementById('a1b').innerHTML = inc2;
+    document.getElementById('a1c').innerHTML = inc1;
+    document.getElementById('a1d').innerHTML = inc3;
+  }else if(correctAnswer == 4){
+    document.getElementById('a1a').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = correct;
+    document.getElementById('a1b').innerHTML = inc2;
+    document.getElementById('a1c').innerHTML = inc3;
+    document.getElementById('a1d').innerHTML = inc1;
+  }else if(correctAnswer == 5){
+    document.getElementById('a1a').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = correct;
+    document.getElementById('a1b').innerHTML = inc3;
+    document.getElementById('a1c').innerHTML = inc1;
+    document.getElementById('a1d').innerHTML = inc2;
+  }else if(correctAnswer ==6){
+    document.getElementById('a1a').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = correct;
+    document.getElementById('a1b').innerHTML = inc3;
+    document.getElementById('a1c').innerHTML = inc2;
+    document.getElementById('a1d').innerHTML = inc1;
+  }else if(correctAnswer ==7){
+    document.getElementById('a1b').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = inc1;
+    document.getElementById('a1b').innerHTML = correct;
+    document.getElementById('a1c').innerHTML = inc2;
+    document.getElementById('a1d').innerHTML = inc3;
+  }else if(correctAnswer ==8){
+    document.getElementById('a1b').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = inc1;
+    document.getElementById('a1b').innerHTML = correct;
+    document.getElementById('a1c').innerHTML = inc3;
+    document.getElementById('a1d').innerHTML = inc2;
+  }else if(correctAnswer ==9){
+    document.getElementById('a1b').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = inc2;
+    document.getElementById('a1b').innerHTML = correct;
+    document.getElementById('a1c').innerHTML = inc3;
+    document.getElementById('a1d').innerHTML = inc1;
+  }else if(correctAnswer ==10){
+    document.getElementById('a1b').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = inc2;
+    document.getElementById('a1b').innerHTML = correct;
+    document.getElementById('a1c').innerHTML = inc1;
+    document.getElementById('a1d').innerHTML = inc3;
+  }else if(correctAnswer ==11){
+    document.getElementById('a1b').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = inc3;
+    document.getElementById('a1b').innerHTML = correct;
+    document.getElementById('a1c').innerHTML = inc1;
+    document.getElementById('a1d').innerHTML = inc2;
+  }else if(correctAnswer ==12){
+    document.getElementById('a1b').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = inc3;
+    document.getElementById('a1b').innerHTML = correct;
+    document.getElementById('a1c').innerHTML = inc2;
+    document.getElementById('a1d').innerHTML = inc1;
+  }else if(correctAnswer ==13){
+    document.getElementById('a1c').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = inc1;
+    document.getElementById('a1b').innerHTML = inc2;
+    document.getElementById('a1c').innerHTML = correct;
+    document.getElementById('a1d').innerHTML = inc3;
+  }else if(correctAnswer ==14){
+    document.getElementById('a1c').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = inc1;
+    document.getElementById('a1b').innerHTML = inc3;
+    document.getElementById('a1c').innerHTML = correct;
+    document.getElementById('a1d').innerHTML = inc2;
+  }else if(correctAnswer ==15){
+    document.getElementById('a1c').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = inc2;
+    document.getElementById('a1b').innerHTML = inc1;
+    document.getElementById('a1c').innerHTML = correct;
+    document.getElementById('a1d').innerHTML = inc3;
+  }else if(correctAnswer ==16){
+    document.getElementById('a1c').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = inc2;
+    document.getElementById('a1b').innerHTML = inc3;
+    document.getElementById('a1c').innerHTML = correct;
+    document.getElementById('a1d').innerHTML = inc1;
+  }else if(correctAnswer ==17){
+    document.getElementById('a1c').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = inc3;
+    document.getElementById('a1b').innerHTML = inc1;
+    document.getElementById('a1c').innerHTML = correct;
+    document.getElementById('a1d').innerHTML = inc2;
+  }else if(correctAnswer ==18){
+    document.getElementById('a1c').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = inc3;
+    document.getElementById('a1b').innerHTML = inc2;
+    document.getElementById('a1c').innerHTML = correct;
+    document.getElementById('a1d').innerHTML = inc1;
+  }else if(correctAnswer ==19){
+    document.getElementById('a1d').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = inc1;
+    document.getElementById('a1b').innerHTML = inc2;
+    document.getElementById('a1c').innerHTML = inc3;
+    document.getElementById('a1d').innerHTML = correct;
+  }else if(correctAnswer ==20){
+    document.getElementById('a1d').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = inc1;
+    document.getElementById('a1b').innerHTML = inc3;
+    document.getElementById('a1c').innerHTML = inc2;
+    document.getElementById('a1d').innerHTML = correct;
+  }else if(correctAnswer ==21){
+    document.getElementById('a1d').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = inc2;
+    document.getElementById('a1b').innerHTML = inc1;
+    document.getElementById('a1c').innerHTML = inc3;
+    document.getElementById('a1d').innerHTML = correct;
+  }else if(correctAnswer ==22){
+    document.getElementById('a1d').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = inc2;
+    document.getElementById('a1b').innerHTML = inc3;
+    document.getElementById('a1c').innerHTML = inc1;
+    document.getElementById('a1d').innerHTML = correct;
+  }else if(correctAnswer ==23){
+    document.getElementById('a1d').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = inc3;
+    document.getElementById('a1b').innerHTML = inc1;
+    document.getElementById('a1c').innerHTML = inc2;
+    document.getElementById('a1d').innerHTML = correct;
+  }else if(correctAnswer == 24){
+    document.getElementById('a1d').style.color = 'blue';
+    document.getElementById('a1a').innerHTML = inc3;
+    document.getElementById('a1b').innerHTML = inc2;
+    document.getElementById('a1c').innerHTML = inc1;
+    document.getElementById('a1d').innerHTML = correct;
+  }
+}
+numQs=numQs-1;
+};
+
+
+/* document.write("
   <h1 class='teal' style='margin-top:35px;'> Welcome to the CodeCove HTML Quiz </h1>\
   <p>\
   <div class='container teal'>Q1: Where does < !DOCTYPE html > go on the form? </div>\
   A1 &#150; Just a sample question to test your understanding<br>\
   <fieldset style='border:none;'id=answerOne>\
-    <input id=a1A name='answerOne' type='radio' value=''> A &#150; Before the Emboldened Text <br>\
+    <input id=a1a name='answerOne' type='radio' value=''> A &#150; Before the Emboldened Text <br>\
   	<input id=a1b name='answerOne' type='radio' value=''><a style='color:blue'> B &#150; At the Beginning of the Form </a><br>\
   	<input id=a1c name='answerOne' type='radio' value=''> C &#150; Around the Hyperlink<br>\
   	<input id=a1d name='answerOne' type='radio' value=''> D &#150; In the < script > Function<br>\
@@ -107,8 +266,6 @@ D &#150; <i> Hello World </i>!<br>\
 	B - < bd ><br>\
 	C - < b ><br>\
 	D - < bo ><br>\
-  <b> Correct Answers: + parseInt(javascript:checkAnswers()) </b>\
-  <button type='submit' class='red' style='border:none;cursor:pointer;'>Check my answers </button>\
-</p>\
-</form>")
-};
+  <div id='numberCorrect'></div>\
+  <button onclick = 'checkAnswers()' class='red' style='border:none;cursor:pointer;'>Check my answers </button>\
+</p>")*/

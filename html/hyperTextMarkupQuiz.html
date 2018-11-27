@@ -1,10 +1,54 @@
-
-<html>
+<html onload=javscript:questionNumbers(2)>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../js/quizMaker.js"></script>
-<script src="../js/themeChange.js"></script>
+<script src="../js/themeChange.js"> </script>
 <link rel="stylesheet" href="../css/CodeCove.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<body  id="myPage" onload=javascript:addContent()>
-</body>
+<body  id="myPage" onload ='addContent("Q1: Where does < !DOCTYPE html > go on the form?","Welcome to the CodeCove HTML Quiz","At the Beginning of the Form","Before the Emboldened Text","Around the Hyperlink","In the < script > Function")'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script src='../js/quizMaker.js'></script>
+  <script> src='../js/ThemeChange.js' </script>
+  <link rel='stylesheet' href='https:/cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link rel='stylesheet' href='../css/CodeCove.css'>
+  <div id='navbar' style='height:38px;color: black; background-color: transparent;' class='top'>
+   <div class='bar theme-d2 left-align'>
+    <a class='bar-item button hide-medium hide-large right hover-white theme-d2' href='javascript:void(0);' onclick='openNav()'><i class='fa fa-bars'></i></a>
+    <a href='main.html' class='bar-item button teal'><i class='fa fa-home margin-right'></i>Home</a>
+    <a href='javascript:random_bg_color()' class = 'bar-item button hover-teal' >Random Theme</a>
+    <a href='javascript:defaultTheme()' class = 'bar-item button hover-teal' >Default Theme</a>
+    <div class='dropdown-hover hide-small'>
+      <button class='button hover-teal'>Fun<i class='fa fa-caret-down'></i></button>
+      <div class='dropdown-content card-4 bar-block'>
+        <a href='../resources/nggyu.mp4' target='_blank' class='bar-item button hover-teal'>Special MP4</a>
+        <a href='games/ast.html' class='bar-item button hover-teal'>Asteroids</a>
+        <a href='../resources/leohr.png' target='_blank' class='bar-item button hover-teal'>Pirate</a>
+      </div>
+    </div>
+      <div class='dropdown-hover hide-small'>
+      <button class='button hover-teal'>Resources<i class='fa fa-caret-down'></i></button>
+      <div class='dropdown-content card-4 bar-block'>
+        <a href='https://github.com/ApolloHighSchoolKY/CodeCove' target='_blank' class='bar-item button hover-teal'>GitHub</a><br>
+        <a href='https://prod.teamgantt.com/gantt/schedule/?ids=1257545&public_keys=fHDTzH5DeW7d&zoom=d100&font_size=12&estimated_hours=0&assigned_resources=0&percent_complete=0&documents=0&comments=0&col_width=355&hide_header_tabs=0&menu_view=1&resource_filter=1&name_in_bar=0&name_next_to_bar=0&resource_names=1#user=&company=&custom=&date_filter=&hide_completed=false&color_filter=' target='_blank' class='bar-item button hover-teal'>TeamGantt</a><br>
+        <a href='https://teamup.com/ks2y6w6whbvjz625sh' target='_blank' class='bar-item button hover-teal'>Teamup Calendar</a><br>
+      </div>
+    </div>
+    <a href='#' class='bar-item button hide-small right hover-teal' title='Search'><i class='fa fa-search'></i></a><br>
+  </div>
+  </div>
+  <form>
+  <h1 class='teal' style='margin-top:38px;'> Welcome to the CodeCove HTML Quiz</h1>
+  <div id=question class='container teal'></div>
+<!-- A1 &#150; Just a sample question to test your understanding<br>-->
+  <fieldset style='border:none;'id=answerOne>
+    <input id='aa' name='answerOne' type='radio' value='answerA'> A &#150; <a id='a1a'></a><br>
+  	<input id='ab' name='answerOne' type='radio' value='answerB'> B &#150; <a id='a1b'></a> <br>
+  	<input id='ac' name='answerOne' type='radio' value='answerC'> C &#150; <a id='a1c'></a><br>
+  	<input id='ad' name='answerOne' type='radio' value='answerD'> D &#150; <a id='a1d'></a><br>
+    </fieldset>
+    <div><a id='numberCorrect'>Correct Answers: 0 </a></div>
+      <div><a id='totalQuestions'>Total Percentage: 0% </a></div>
+    <button type='button' onclick ='checkAnswers()' class='red' style='border:none;cursor:pointer;'>Check my answers </button> <br>
+    <br> <button id=newQ style='display:none' type='button' onclick='addContent("Q2: It works","Welcome to the CodeCove HTML Quiz","At the Beginning of the Form","Before the Emboldened Text","Around the Hyperlink","In the < script > Function")' class='red' style='border:none;cursor:pointer;'> New Question </button>
+  </form>
+  <body>
 </html>
