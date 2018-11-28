@@ -1,7 +1,28 @@
 var numberCAs = 0;
 var totalAnswers=0;
 var correctAnswer = Math.floor(Math.random() * 24);
-var numQs=2;
+var numQs=getQuestions();
+function setQuestions(){
+  window.sessionStorage.clear();
+window.sessionStorage.setItem('qForm', document.getElementById('qNums').value);
+};
+function getQuestions(){
+  if(typeof(Storage) == "undefined") {
+alert("Your browser does not support Session Storage");
+window.location='quizSetup.html';
+} else {
+        return ("" + window.sessionStorage.getItem('qForm'));
+      }
+      };
+    //};
+/*
+function setType(type){
+tempType=type;
+};
+function setSubType(subType){
+tempSubType=subType;
+};
+*/
 function checkAnswers(){
   totalAnswers+=1;
   if(correctAnswer <=6 && document.getElementById('aa').checked){
