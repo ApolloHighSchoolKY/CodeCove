@@ -1,29 +1,3 @@
-var loggedIn = false;
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    // User is signed in.
-    document.getElementById("user_div").style.display = "block";
-    document.getElementById("login_div").style.display = "none";
-
-    var user = firebase.auth().currentUser;
-
-    if(user != null){
-      var email_id = user.email;
-      useRemoteTheme();
-      document.getElementById("user_greetings").innerHTML = "Welcome, " + email_id + "!";
-      console.log("Successfully logged in");
-      loggedIn = true;
-    }
-  } else {
-    // No user is signed in.
-    document.getElementById("user_div").style.display = "none";
-    document.getElementById("login_div").style.display = "block";
-    defaultTheme();
-    console.log("Successfully logged out");
-    loggedIn= false;
-  }
-});
-
 //Login method
 function login(){
   var userEmail = document.getElementById("emailIn").value;
@@ -53,6 +27,7 @@ function logout(){
 function signup(){
   var userEmail = document.getElementById("emailUp").value;
   var userPassword = document.getElementById("passwordUp").value;
+  var userName = document.getElementById("nameUp").value;
 
   firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword).catch(function(error) {
     // Handle Errors here.
@@ -60,6 +35,10 @@ function signup(){
     var errorMessage = error.message;
 
     window.alert("Error : " + errorMessage);
+  });
+  var userId = firebase.auth().currentUser.uid;
+  firebase.database().ref('users/' + userId).set({
+    name: userName
   });
 }
 
