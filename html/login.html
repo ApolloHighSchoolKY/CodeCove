@@ -103,8 +103,8 @@
       <!--Sign in-->
       <div id="login">
         <h1>Log In</h1>
-        <input type="email" placeholder="Email Address" id="emailIn">
-        <input type="password" placeholder="Password" id="passwordIn">
+        <input type="email" placeholder="Email Address" id="emailIn" required>
+        <input type="password" placeholder="Password" id="passwordIn" required>
         <button onclick="login()">Sign In</button>
       </div>
       <!--Divider-->
@@ -112,10 +112,10 @@
       <!--Sign up-->
       <div id="signup">
         <h1>Create an Account</h1>
-        <input type="email" placeholder="Email Address" id="emailUp">
-        <input type="password" placeholder="Password" id="passwordUp">
+        <input type="email" placeholder="Email Address" id="emailUp" required>
+        <input type="password" placeholder="Password" id="passwordUp" required>
+        <input type="text" placeholder="First Name" id="nameUp" required>
         <button onclick="signup()">Sign Up</button>
-        <button onclick="" class="button right theme">Send</button>
       </div>
     </div>
     <!--Log Out-->
@@ -136,7 +136,6 @@
       <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">CodeCove.css</a></p>
 
       <div style="position:relative;bottom:100px;z-index:1;" class="tooltip right">
-        <span class="text padding teal hide-small">Go To Top</span>
         <a class="button theme" href="#myPage"><span class="xlarge">
         <i class="fa fa-chevron-circle-up"></i></span></a>
       </div>
@@ -198,6 +197,31 @@
       firebase.initializeApp(config);
     </script>
     <script src="../js/Firebase.js"></script>
+    <!-- When login changes -->
+    <script>
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          document.getElementById("user_div").style.display = "block";
+          document.getElementById("login_div").style.display = "none";
+
+          var user = firebase.auth().currentUser;
+
+          if(user != null){
+            var email_id = user.email;
+            useRemoteTheme();
+            document.getElementById("user_greetings").innerHTML = "Welcome, " + email_id + "!";
+            console.log("Successfully logged in");
+          }
+          } else {
+            // No user is signed in.
+            document.getElementById("user_div").style.display = "none";
+            document.getElementById("login_div").style.display = "block";
+            defaultTheme();
+            console.log("Successfully logged out");
+          }
+        });
+    </script>
     <script src="../js/ThemeChange.js"></script>
   </body>
 </html>
