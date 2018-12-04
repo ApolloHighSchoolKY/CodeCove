@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <title>CodeCove</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/CodeCove.css">
+  <link rel="icon" href="../resources/favicon1.ico">
+  <!--<link rel="stylesheet" href="../css/CodeCove-Theme-Black.css">-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <body id="myPage">
+
+    <!-- Navbar -->
+    <div id="navbar" style="color: black; background-color: transparent;" class="top">
+     <div class="bar theme-d2 left-align">
+       <!--General Navbar-->
+      <a class="bar-item button hide-medium hide-large right hover-white theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+      <a href="main.html" class="bar-item button teal"><i class="fa fa-home margin-right"></i>Home</a>
+      <a href="lessons.html" class="bar-item button hide-small hover-teal">Lessons Home</a>
+      <!--Theme Options-->
+      <div class="dropdown-hover hide-small">
+        <button class="button hover-teal">Theme<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content card-4 bar-block">
+          <a href="javascript:random_bg_color()" class = "bar-item button hover-teal" >Random</a>
+          <a href="javascript:defaultTheme()" class = "bar-item button hover-teal" >Default</a>
+          <a href="javascript:setRemoteTheme()" class="bar-item button hover-teal" >Save</a>
+        </div>
+      </div>
+      <!--Fun Section-->
+      <div class="dropdown-hover hide-small">
+        <button class="button hover-teal">Fun<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content card-4 bar-block">
+          <a href="games/ast.html" class="bar-item button hover-teal">Asteroids</a>
+        </div>
+      </div>
+      <!--External Resources-->
+      <div class="dropdown-hover hide-small">
+        <button class="button hover-teal">Resources<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content card-4 bar-block">
+          <a href="https://github.com/ApolloHighSchoolKY/CodeCove" target="_blank" class="bar-item button hover-teal">GitHub</a>
+          <a href="https://prod.teamgantt.com/gantt/schedule/?ids=1257545&public_keys=fHDTzH5DeW7d&zoom=d100&font_size=12&estimated_hours=0&assigned_resources=0&percent_complete=0&documents=0&comments=0&col_width=355&hide_header_tabs=0&menu_view=1&resource_filter=1&name_in_bar=0&name_next_to_bar=0&resource_names=1#user=&company=&custom=&date_filter=&hide_completed=false&color_filter=" target="_blank" class="bar-item button hover-teal">TeamGantt</a>
+          <a href="https://teamup.com/ks2y6w6whbvjz625sh" target="_blank" class="bar-item button hover-teal">Teamup Calendar</a>
+        </div>
+      </div>
+      <a href="login.html" class="bar-item button hide-small hover-teal right">Login</a>
+     </div>
+
+   <!-- Navbar on small screens -->
+   <div id="navDemo" class="bar-block theme-d2 hide hide-large hide-medium" style="color: black; background-color: transparent;">
+     <a href="main.html#team" class="bar-item button">Team</a>
+     <a href="main.html#lessons" class="bar-item button">Lessons</a>
+     <a href="main.html#accounts" class="bar-item button">Accounts</a>
+     <a href="main.html#contact" class="bar-item button">Contact</a>
+     <a href="javascript:random_bg_color()" class = "bar-item button hover-teal" >Random Theme</a>
+     <a href="javascript:defaultTheme()" class = "bar-item button hover-teal" >Default Theme</a>
+     <a href="javascript:setRemoteTheme()" class = "bar-item button hover-teal" >Save Theme</a>
+     <a href="games/ast.html" class="bar-item button hover-teal">Asteroids (WIP)</a>
+     <a href="https://github.com/ApolloHighSchoolKY/CodeCove" target="_blank" class="bar-item button hover-teal">GitHub</a>
+     <a href="https://prod.teamgantt.com/gantt/schedule/?ids=1257545&public_keys=fHDTzH5DeW7d&zoom=d100&font_size=12&estimated_hours=0&assigned_resources=0&percent_complete=0&documents=0&comments=0&col_width=355&hide_header_tabs=0&menu_view=1&resource_filter=1&name_in_bar=0&name_next_to_bar=0&resource_names=1#user=&company=&custom=&date_filter=&hide_completed=false&color_filter=" target="_blank" class="bar-item button hover-teal">TeamGantt</a>
+     <a href="https://teamup.com/ks2y6w6whbvjz625sh" target="_blank" class="bar-item button hover-teal">Teamup Calendar</a>
+     <a href="login.html" class="bar-item button">Login</a>
+   </div>
+  </div>
+
+  <!-- Image Header -->
+  <div class="display-container animate-opacity">
+    <img src="../resources/sailboat.jpg" alt="boat" style="width:100%;min-height:50px;max-height:300px;">
+    <div class="container display-bottomleft margin-bottom">
+      <button onclick="document.getElementById('id01').style.display='block'" style="color:white;" class="button xlarge theme hover-teal" title="Lessons">Profile</button>
+    </div>
+  </div>
+
+    <!-- Modal -->
+    <div id="id01" class="modal">
+      <div class="modal-content card-4 animate-top">
+        <header class="container teal display-container">
+          <span onclick="document.getElementById('id01').style.display='none'" class="button teal display-topright"><i class="fa fa-remove"></i></span>
+          <h4>Welcome to your profile page!</h4>
+          <h5>Here you can update your profile</h5>
+        </header>
+        <div class="container">
+          <p>Please leave any feedback you may have!</p>
+        </div>
+        <footer class="container teal">
+          <p>Happy coding!</p>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Main body -->
+    <div id="profile" class="container">
+      <label>Name</label><input type="text" id="name" placeholder="Name"></input><br>
+      <label>Theme</label><input type="text" id="theme" placeholder="Theme"></input><br>
+      <!--<label>Theme</label><input type="text" id="theme" placeholder="Theme"></input><br>-->
+      <button id="save" onclick="save()">Save Changes</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class=" middle bottom container padding-16 theme-d1 center">
+      <h4 >Follow Us</h4>
+      <a class="button large teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+      <a class="button large teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+      <a class="button large teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
+      <a class="button large teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+      <a class="button large teal hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">CodeCove.css</a></p>
+
+      <div style="position:relative;bottom:100px;z-index:1;" class="tooltip right">
+        <a class="button theme" href="#myPage"><span class="xlarge">
+        <i class="fa fa-chevron-circle-up"></i></span></a>
+      </div>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-database.js"></script>
+    <script>
+      var config = {
+        apiKey: "AIzaSyDDBGLJFW4v4AtMRrDd53yFz7Wm9pX_OdQ",
+        authDomain: "code-cove.firebaseapp.com",
+        databaseURL: "https://code-cove.firebaseio.com",
+        projectId: "code-cove",
+        storageBucket: "code-cove.appspot.com",
+        messagingSenderId: "1089219979545"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="../js/Firebase.js"></script>
+    <!-- When login changes -->
+    <!--<script>
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          document.getElementById("user_div").style.display = "block";
+          document.getElementById("login_div").style.display = "none";
+
+          var user = firebase.auth().currentUser;
+
+          if(user != null){
+            var email_id = user.email;
+            useRemoteTheme();
+            document.getElementById("user_greetings").innerHTML = "Welcome, " + email_id + "!";
+            console.log("Successfully logged in");
+          }
+        } else {
+          // No user is signed in.
+          document.getElementById("user_div").style.display = "none";
+          document.getElementById("login_div").style.display = "block";
+          defaultTheme();
+          console.log("Successfully logged out");
+        }
+      });
+    </script>-->
+    <script src="../js/ThemeChange.js"></script>
+  </body>
+</html>
