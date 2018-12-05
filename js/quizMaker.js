@@ -1,7 +1,7 @@
 var numberCAs = 0;
 var totalAnswers=0;
 var correctAnswer = Math.floor(Math.random() * 24);
-var numQs=getQuestions();
+var numQs=2;//getQuestions();
 function setQuestions(){
   window.sessionStorage.clear();
 window.sessionStorage.setItem('qForm', document.getElementById('qNums').value);
@@ -25,7 +25,9 @@ tempSubType=subType;
 */
 function checkAnswers(){
   totalAnswers+=1;
-  if(correctAnswer <=6 && document.getElementById('aa').checked){
+  if(!document.getElementById('aa').checked && !document.getElementById('ab').checked && !document.getElementById('ac').checked && !document.getElementById('ad').checked){
+    alert("You need to select an answer");
+} else if(correctAnswer <=6 && document.getElementById('aa').checked){
     alert("Correct");
     numberCAs+=1;
      cAString ="Correct Answers: " + numberCAs;
@@ -57,11 +59,15 @@ document.getElementById('newQ').style.border='none';
 
 function addContent(question,correct,inc1,inc2,inc3){
 if(numQs<=0){
-  alert("Your quiz is done! Your score was: " + Math.round(numberCAs/totalAnswers*100) + "%\n" + "How many questions were attempted: " + totalAnswers + "\n" + "How many you got correct: " + numberCAs + "\n");
-  window.location='../html/lessons.html'
+  var str = "Your quiz is done! Your score was: "+ Math.round(numberCAs/totalAnswers*100) + "%" + "<br>" + "How many questions were attempted: " + totalAnswers + "<br>" + "How many you got correct: " + numberCAs + "<br>";
+  document.getElementById('modal').style.display='block';
+  document.getElementById('score').innerHTML = "" + str;
+
 }
 else{
+/*For testing purposes only {
   alert("" + numQs);
+}*/
   document.getElementById('question').innerHTML = question;
   if(correctAnswer == 1){
     document.getElementById('a1a').style.color = 'blue';
