@@ -4,7 +4,7 @@
 <script src="../js/themeChange.js"> </script>
 <link rel="stylesheet" href="../css/CodeCove.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<body  id="myPage" onload ='getQuestions();addContent("Q1: Where does < !DOCTYPE html > go on the form?","Welcome to the CodeCove HTML Quiz","At the Beginning of the Form","Before the Emboldened Text","Around the Hyperlink","In the < script > Function")'>
+<body  id="myPage" onload ='getQuestions();addContent("Q1: Where does < !DOCTYPE html > go on the form?","At the Beginning of the Form","Before the Emboldened Text","Around the Hyperlink","In the < script > tag")'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <script src='../js/quizMaker.js'></script>
   <script> src='../js/ThemeChange.js' </script>
@@ -47,8 +47,24 @@
     </fieldset>
     <div><a id='numberCorrect'>Correct Answers: 0 </a></div>
       <div><a id='totalQuestions'>Total Percentage: 0% </a></div>
-    <button type='button' onclick ='checkAnswers()' class='red' style='border:none;cursor:pointer;'>Check my answers </button> <br>
+    <button type='button' onclick ='checkAnswers();' class='red' style='border:none;cursor:pointer;'>Check my answers </button> <br>
     <br> <button id=newQ style='display:none' type='button' onclick='addContent("Q2: It works","Welcome to the CodeCove HTML Quiz","At the Beginning of the Form","Before the Emboldened Text","Around the Hyperlink","In the < script > Function")' class='red' style='border:none;cursor:pointer;'> New Question </button>
   </form>
+  <div id="modal" class="modal">
+    <div class="modal-content card-4 animate-top">
+      <header class="container teal display-container">
+        <span onclick="window.location='../html/lessons.html';document.getElementById('modal').style.display='none'" class="button teal display-topright"><i class="fa fa-remove"></i></span>
+        <h4>Your test is completed</h4>
+        <h5 id='score'>A site designed by programming students for class <i class="fa fa-smile-o"></i></h5>
+      </header>
+      <div class="container">
+        <p>Check the site out and</p>
+        <p>Leave any feedback you may have!</p>
+      </div>
+      <footer class="container teal">
+        <p>Happy coding!</p>
+      </footer>
+    </div>
+  </div>
   <body>
 </html>
