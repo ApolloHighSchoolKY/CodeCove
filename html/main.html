@@ -31,6 +31,34 @@
       firebase.initializeApp(config);
     </script>
     <script src="../js/Firebase.js"></script>
+    <!-- When login changes -->
+    <script>
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          document.getElementById("user_div").style.display = "block";
+          document.getElementById("login_div").style.display = "none";
+
+
+          var user = firebase.auth().currentUser;
+
+          if(user != null){
+            var email_id = user.email;
+            useRemoteTheme();
+            document.getElementById("user_greetings").innerHTML = "Welcome, " + email_id + "!";
+            $("navLogin").html("Log Out");
+            console.log("Successfully logged in");
+          }
+          } else {
+            // No user is signed in.
+            document.getElementById("user_div").style.display = "none";
+            document.getElementById("login_div").style.display = "block";
+            $("navLogin").html("Log In");
+            defaultTheme();
+            console.log("Successfully logged out");
+          }
+        });
+    </script>
     <script src="../js/ThemeChange.js"></script>
     <noscript>
       <h1>Please enable javascript to use many features of the site</h1>
@@ -82,7 +110,7 @@
           <a href="https://teamup.com/ks2y6w6whbvjz625sh" target="_blank" class="bar-item button hover-cyan">Teamup Calendar</a>
         </div>
       </div>
-      <a href="javascript:$('#modLogin').fadeIn()" class="bar-item button hide-small hover-cyan right">Login</a>
+      <a href="javascript:$('#modLogin').fadeIn()" class="bar-item button hide-small hover-cyan right" id="navLogin">Log In</a>
     </div>
       <!-- Navbar on small screens -->
       <div id="navDemo" class="bar-block theme-d2 hide hide-large hide-medium">
@@ -97,7 +125,7 @@
         <a href="https://github.com/ApolloHighSchoolKY/CodeCove" target="_blank" class="bar-item button hover-cyan">GitHub</a>
         <a href="https://prod.teamgantt.com/gantt/schedule/?ids=1257545&public_keys=fHDTzH5DeW7d&zoom=d100&font_size=12&estimated_hours=0&assigned_resources=0&percent_complete=0&documents=0&comments=0&col_width=355&hide_header_tabs=0&menu_view=1&resource_filter=1&name_in_bar=0&name_next_to_bar=0&resource_names=1#user=&company=&custom=&date_filter=&hide_completed=false&color_filter=" target="_blank" class="bar-item button hover-cyan">TeamGantt</a>
         <a href="https://teamup.com/ks2y6w6whbvjz625sh" target="_blank" class="bar-item button hover-cyan">Teamup Calendar</a>
-        <a href="login.html" class="bar-item button">Login</a>
+        <a href="login.html" class="bar-item button">Log In</a>
       </div>
     </div>
 
@@ -260,6 +288,7 @@
       <a onclick="w3_open()" class="button xlarge circle cyan"
       style="position:absolute;top:-28px;right:24px">+</a>
     </div>
+    <br><br>
 
     <!-- Create an account -->
     <div class="row-padding center padding-64" id="accounts">
@@ -306,7 +335,7 @@
         <div class="third margin-bottom">
           <ul class="ul border hover-shadow">
             <li class="theme">
-              <p class="xlarge">Admin</p>
+              <p class="xlarge">Administrator</p>
             </li>
             <li class="padding-16"><b>Manage</b> Teachers</li>
             <li class="padding-16"><b>Overview</b> of Teachers(TBA)</li>
