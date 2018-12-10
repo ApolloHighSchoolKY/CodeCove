@@ -86,10 +86,11 @@
     </div>
       <!-- Navbar on small screens -->
       <div id="navDemo" class="bar-block theme-d2 hide hide-large hide-medium">
-        <a href="#team" class="bar-item button">Team</a>
-        <a href="#lessons" class="bar-item button">Lessons</a>
-        <a href="#accounts" class="bar-item button">Accounts</a>
-        <a href="#contact" class="bar-item button">Contact</a>
+        <a href="javascript:$('html, body').animate({scrollTop: '0px'}, 750);" class="bar-item button">Home<i class="fa fa-home margin-right"></i></a>
+        <a href="javascript:$('html, body').animate({scrollTop: ($('#team').offset().top)},500);" class="bar-item button">Team</a>
+        <a href="javascript:$('html, body').animate({scrollTop: ($('#lessons').offset().top)},500);" class="bar-item button">Lessons</a>
+        <a href="javascript:$('html, body').animate({scrollTop: ($('#accounts').offset().top)},500);" class="bar-item button">Accounts</a>
+        <a href="javascript:$('html, body').animate({scrollTop: ($('#contacts').offset().top)},500);" class="bar-item button">Contact</a>
         <a href="javascript:random_bg_color()" class = "bar-item button hover-cyan" >Random Theme</a>
         <a href="javascript:defaultTheme()" class = "bar-item button hover-cyan" >Default Theme</a>
         <a href="javascript:setRemoteTheme()" class = "bar-item button hover-cyan" >Save Theme</a>
