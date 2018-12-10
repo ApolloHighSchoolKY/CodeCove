@@ -13,6 +13,7 @@ Source code is available here: https://github.com/patorjk/JavaScript-Snake
     <title>CodeCove Snake</title>
     <link rel=stylesheet id=style type=text/css href=../../games/snake/css/main-snake.css>
     <link rel="stylesheet" type="text/css" href="../../css/CodeCove.css">
+    <link rel="icon" href="../resources/favicon1.ico">
     <!-- Navbar -->
     <div id="navbar" style="color: black; background-color: transparent;" class="top">
      <div class="bar theme-d2 left-align">
@@ -44,6 +45,7 @@ Source code is available here: https://github.com/patorjk/JavaScript-Snake
       </div>
       <a href="../login.html" class="bar-item button hide-small hover-cyan right">Login</a>
      </div>
+   </div>
 
     <!--<button onclick=getTheme()>Click to use this theme.</button>
     <select id="select">
@@ -77,6 +79,33 @@ if (navigator.onLine && window.location.hostname === 'patorjk.com') {
     })();
 }
 </script>
+<script src="../../js/ThemeChange.js"></script>
+<!-- Methods to get height and width -->
+<script>
+  function getWidth(){
+      var myWidth = 0;
+      if( typeof window.innerWidth === "number" ) {
+          myWidth = window.innerWidth;//Non-IE
+      } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+          myWidth = document.documentElement.clientWidth;//IE 6+ in 'standards compliant mode'
+      } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+          myWidth = document.body.clientWidth;//IE 4 compatible
+      }
+      return myWidth;
+  }
+
+  function getHeight(){
+      var myHeight = 0;
+      if( typeof window.innerHeight === "number" ) {
+          myHeight = window.innerHeight;//Non-IE
+      } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+          myHeight = document.documentElement.clientHeight;//IE 6+ in 'standards compliant mode'
+      } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+          myHeight = document.body.clientHeight;//IE 4 compatible
+      }
+      return myHeight;
+  }
+</script>
 </head>
 <body>
     <div id="game-area" tabindex="0">
@@ -85,7 +114,9 @@ if (navigator.onLine && window.location.hostname === 'patorjk.com') {
     <script type="text/javascript">
     var mySnakeBoard = new SNAKE.Board(  {
                                             boardContainer: "game-area",
-                                            fullScreen: true
+                                            fullScreen: false,
+                                            width: getWidth(),
+                                            height: getHeight()*(3/4)
                                         });
     </script>
 </body>

@@ -73,10 +73,10 @@
 </div>
 
 <!-- Modal -->
-<div id="id01" class="modal">
+<div id="modMain" class="modal">
   <div class="modal-content card-4 animate-top">
     <header class="container cyan display-container">
-      <span onclick="document.getElementById('id01').style.display='none'" class="button cyan display-topright"><i class="fa fa-remove"></i></span>
+      <span onclick="document.getElementById('modMain').style.display='none'" class="button cyan display-topright"><i class="fa fa-remove"></i></span>
       <h4>Welcome to the lessons page!</h4>
       <h5>This is the general location for links to all lessons</h5>
     </header>
@@ -102,7 +102,7 @@
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">CodeCove.css</a></p>
 
   <div style="position:relative;bottom:100px;z-index:1;" class="tooltip right">
-    <a class="button theme" href="#myPage"><span class="xlarge">
+    <a class="button theme" href="javascript:$('html, body').animate({scrollTop: '0px'}, 750);"><span class="xlarge">
     <i class="fa fa-chevron-circle-up"></i></span></a>
   </div>
 </footer>
