@@ -47,7 +47,7 @@ function contact(){
   var name = $("#name").val();
   var email = $("#email").val();
   var message = $("#message").val();
-  if($("#like").is(":checked")){
+  if($("#like").prop("checked")){
     var like = "I like it!"
   } else {
     var like = "I don\'t like it!"
@@ -59,6 +59,10 @@ function contact(){
     opinion: like
   });
   console.log("Contact form sent");
+  $("#name").val("");
+  $("#email").val("");
+  $("#message").val("");
+  $("#like").prop('checked', true);
 }
 
 //Sets the Theme in the Database

@@ -53,6 +53,12 @@
     <script src="../../games/ast/vector_battle_regular.typeface.js"></script>
     <script src="../../games/ast/game.js"></script>
     <script src="../../js/ThemeChange.js"></script>
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous">
+    </script>
   </head>
   <body id="myPage">
 
@@ -86,7 +92,13 @@
         <a href="https://teamup.com/ks2y6w6whbvjz625sh" target="_blank" class="bar-item button hover-cyan">Teamup Calendar</a>
       </div>
     </div>
-    <a href="javascript:$('#modLogin').fadeIn()" class="bar-item button hide-small hover-cyan right" id="navLogin">Log In</a>
+    <a href="javascript:void(0);" onclick="javascript:
+  if($('#navLogin').text()=='Log In'){
+    $('#modLogin').fadeIn();
+  } else {
+    logout();
+  }" class="bar-item button hide-small hover-cyan right" id="navLogin">Log In
+</a>
    </div>
 
    <!-- Navbar on small screens -->
@@ -110,27 +122,68 @@
   <div class="display-container animate-opacity">
     <img src="../../resources/sailboat.jpg" alt="boat" style="width:100%;min-height:50px;max-height:300px;">
     <div class="container display-bottomleft margin-bottom">
-      <button onclick="document.getElementById('id01').style.display='block'" style="color:white;" class="button xlarge theme hover-cyan" title="Asteroids">Asteroids</button>
+      <button onclick="$('#modMain').fadeIn()" style="color:white;" class="button xlarge theme hover-cyan" title="Asteroids">Asteroids</button>
     </div>
   </div>
 
-  <!-- Modal -->
-  <div id="id01" class="modal">
+  <!-- Modals -->
+  <div id="modMain" class="modal">
     <div class="modal-content card-4 animate-top">
       <header class="container cyan display-container">
-        <span onclick="document.getElementById('id01').style.display='none'" class="button cyan display-topright"><i class="fa fa-remove"></i></span>
+        <span onclick="$('#modMain').fadeOut()" class="button cyan display-topright"><i class="fa fa-remove"></i></span>
         <h4>Welcome to CodeCove!</h4>
-        <h5>Asteroids Game</h5>
+        <h5>A site designed by programming students for class <i class="fa fa-smile-o"></i></h5>
       </header>
       <div class="container">
-        <p>A Javascript version of the classic game</p>
-        <p>Customized from a version made by <a href="https://github.com/dmcinnes/HTML5-Asteroids" target="_blank">Doug McInnes</a></p>
+        <p>Check the site out and</p>
+        <p>Leave any feedback you may have in the contact section below!</p>
       </div>
       <footer class="container cyan">
         <p>Happy coding!</p>
       </footer>
     </div>
   </div>
+  <div id="modLogin" class="modal">
+    <div class="modal-content card-4 animate-top">
+      <header class="container cyan display-container">
+        <span onclick="$('#modLogin').fadeOut()" class="button cyan display-topright"><i class="fa fa-remove"></i></span>
+        <h4>Welcome to CodeCove!</h4>
+        <h5>Here you can sign in or create a new account.</h5>
+      </header>
+      <div class="container">
+        <p>
+          <div id="login_div" class="main-div">
+            <!--Sign in-->
+            <div id="login">
+              <h1>Log In</h1>
+              <input type="email" placeholder="Email Address" id="emailIn" required>
+              <input type="password" placeholder="Password" id="passwordIn" required>
+              <button onclick="login()">Sign In</button>
+            </div>
+            <!--Divider-->
+            <br>
+            <!--Sign up-->
+            <div id="signup">
+              <h1>Create an Account</h1>
+              <input type="email" placeholder="Email Address" id="emailUp" required>
+              <input type="password" placeholder="Password" id="passwordUp" required>
+              <input type="text" placeholder="First Name" id="nameUp" required>
+              <button onclick="signup()">Sign Up</button>
+            </div>
+          </div>
+          <!--Log Out-->
+          <div id="user_div" style="display: none;">
+            <h1 id="user_greetings">Welcome!</h1>
+            <p>Enjoy your time here at CodeCove!</p>
+          </div>
+        </p>
+      </div>
+      <footer class="container cyan">
+        <p>Happy coding!</p>
+      </footer>
+    </div>
+  </div>
+
     <div id="game-container">
       <canvas id="canvas" width="780" height="540"></canvas>
       <div id="left-controls">
