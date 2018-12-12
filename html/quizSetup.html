@@ -43,13 +43,20 @@
   </div>
 </div>
 <form id='quizSetupForm' onsubmit='setQuestions();' action='Quiz.html'>
-  <div style='margin-top:50px' class='display-topleft third'>Select the number of questions you would like:</div>
-  <select id='qNums' style='margin-top:50px' class='display-topmiddle third'>
+<h1 class='cyan display-topleft third' style='margin-top:38px'> Quiz Setup </h1>
+  <div style='margin-top:150px' class='display-topleft third'>Select the number of questions you would like:</div>
+    <div style='margin-top:100px' class='display-topleft third'>Choose your programming language to test over:</div>
+  <select id='qLang' style='margin-top:100px' class='display-topmiddle third'>
+    <option value='h'>HTML</option>
+  </select>
+  <select id='qNums' style='margin-top:150px;' class='display-topmiddle third'>
+    <option value='2'>2 Questions</option>
     <option value='5'>5 Questions </option>
     <option value='10'>10 Questions </option>
     <option value='15'>15 Questions </option>
   </select>
-  <button onclick='setQuestions();' class='hover-blue;' style='margin-top:75px;pointer:hand;'>Proceed to the Quiz</button>
+
+  <button onclick='setQuestions();' class='display-topleft hover-blue' style='margin-top:175px;cursor:pointer;'>Proceed to the Quiz</button>
 </form>
   </body>
 </html>
