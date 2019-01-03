@@ -67,12 +67,19 @@ function contact(){
 
 //Sets the Theme in the Database
 function setRemoteTheme() {
-  var userId = firebase.auth().currentUser.uid;
-  var theme = getLocalTheme();
-  firebase.database().ref('users/' + userId).set({
-    theme: theme
-  });
-  console.log("Theme saved");
+  var user = firebase.auth().currentUser;
+  if (user == null)
+  {
+    alert("Please sign in to save your theme.");
+  } else {
+    var userId = firebase.auth().currentUser.uid;
+
+    var theme = getLocalTheme();
+    firebase.database().ref('users/' + userId).set({
+      theme: theme
+    });
+    console.log("Theme saved");
+  }
 }
 
 //Sets the Local theme
