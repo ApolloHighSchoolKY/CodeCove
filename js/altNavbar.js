@@ -18,6 +18,7 @@ document.write(`
       <button class="button hover-cyan">Fun<i class="fa fa-caret-down"></i></button>
       <div class="dropdown-content card-4 bar-block">
         <a href="/CodeCove/html/games/ast.html" class="bar-item button hover-cyan">Asteroids</a>
+        <a href="/CodeCove/html/games/snake.html" class="bar-item button hover-cyan">Snake</a>
       </div>
     </div>
     <!--External Resources-->
