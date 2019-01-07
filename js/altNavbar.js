@@ -2,7 +2,7 @@ document.write(`
   <div id="navbar" style="color: black; background-image: linear-gradient(to right, rgba(255,255,255,1), rgba(0,188,212,.7));" class="top">
    <div class="bar theme-d2 left-align">
     <a class="bar-item button hide-medium hide-large right hover-white theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-    <a href="/CodeCove/html/main.html" class="bar-item button cyan"><i class="fa fa-home margin-right"></i>Home</a>
+    <a href="/CodeCove/index.html" class="bar-item button cyan"><i class="fa fa-home margin-right"></i>Home</a>
     <a href="/CodeCove/html/lessons.html" class="bar-item button hide-small hover-cyan">Lessons Home</a>
     <!--Theme Options-->
     <div class="dropdown-hover hide-small">
@@ -41,10 +41,10 @@ document.write(`
 
    <!-- Navbar on small screens -->
    <div id="navDemo" class="bar-block theme-d2 hide hide-large hide-medium" style="color: black; background-color: transparent;">
-     <a href="/CodeCove/html/main.html#team" class="bar-item button">Team</a>
-     <a href="/CodeCove/html/main.html#lessons" class="bar-item button">Lessons</a>
-     <a href="/CodeCove/html/main.html#accounts" class="bar-item button">Accounts</a>
-     <a href="/CodeCove/html/main.html#contact" class="bar-item button">Contact</a>
+     <a href="/CodeCove/index.html#team" class="bar-item button">Team</a>
+     <a href="/CodeCove/index.html#lessons" class="bar-item button">Lessons</a>
+     <a href="/CodeCove/index.html#accounts" class="bar-item button">Accounts</a>
+     <a href="/CodeCove/index.html#contact" class="bar-item button">Contact</a>
      <a href="javascript:random_bg_color()" class = "bar-item button hover-cyan" >Random Theme</a>
      <a href="javascript:defaultTheme()" class = "bar-item button hover-cyan" >Default Theme</a>
      <a href="javascript:setRemoteTheme()" class = "bar-item button hover-cyan" >Save Theme</a>
