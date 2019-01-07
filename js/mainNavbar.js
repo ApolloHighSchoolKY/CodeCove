@@ -18,8 +18,8 @@ document.write(`
     <div class="dropdown-hover hide-small">
       <button class="button hover-cyan">Fun<i class="fa fa-caret-down"></i></button>
       <div class="dropdown-content card-4 bar-block">
-        <a href="games/ast.html" class="bar-item button hover-cyan">Asteroids</a>
-          <a href="games/snake.html" class="bar-item button hover-cyan" target="_blank">Snake</a>
+        <a href="/CodeCove/html/games/ast.html" class="bar-item button hover-cyan">Asteroids</a>
+          <a href="/CodeCove/html/games/snake.html" class="bar-item button hover-cyan" target="_blank">Snake</a>
       </div>
     </div>
     <div class="dropdown-hover hide-small">
