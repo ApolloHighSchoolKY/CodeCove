@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <head>
-    <link rel="stylesheet" href="../../css/CodeCove.css">
-    <link rel="icon" href="../../resources/favicon1.ico">
-    <!--<link rel="stylesheet" href="../css/CodeCove-Theme-Black.css">-->
+    <link rel="stylesheet" href="/CodeCove/css/CodeCove.css">
+    <link rel="icon" href="/CodeCove/resources/favicon1.ico">
+    <!--<link rel="stylesheet" href="/CodeCove/css/CodeCove-Theme-Black.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       #canvas { border:1px solid black; top:0px; left:0px; }
@@ -32,7 +32,7 @@
       };
       firebase.initializeApp(config);
     </script>
-    <script src="../../js/Firebase.js"></script>
+    <script src="/CodeCove/js/Firebase.js"></script>
     <!-- When login changes -->
     <script>
       firebase.auth().onAuthStateChanged(function(user) {
@@ -49,10 +49,10 @@
           }
         });
     </script>
-    <script src="../../games/ast/jquery-1.4.1.min.js"></script>
-    <script src="../../games/ast/vector_battle_regular.typeface.js"></script>
-    <script src="../../games/ast/game.js"></script>
-    <script src="../../js/ThemeChange.js"></script>
+    <script src="/CodeCove/games/ast/jquery-1.4.1.min.js"></script>
+    <script src="/CodeCove/games/ast/vector_battle_regular.typeface.js"></script>
+    <script src="/CodeCove/games/ast/game.js"></script>
+    <script src="/CodeCove/js/ThemeChange.js"></script>
     <!-- JQuery -->
     <!--<script
       src="https://code.jquery.com/jquery-3.3.1.js"
@@ -63,11 +63,11 @@
   <body id="myPage">
 
   <!-- Navbar -->
-  <script src="../js/gameNavbar.js"></script>
+  <script src="/CodeCove/js/gameNavbar.js"></script>
 
   <!-- Image Header -->
   <div class="display-container animate-opacity">
-    <img src="../../resources/sailboat.jpg" alt="boat" style="width:100%;min-height:50px;max-height:300px;">
+    <img src="/CodeCove/resources/sailboat.jpg" alt="boat" style="width:100%;min-height:50px;max-height:300px;">
     <div class="container display-bottomleft margin-bottom">
       <button onclick="$('#modMain').fadeIn()" style="color:white;" class="button xlarge theme hover-cyan" title="Asteroids">Asteroids</button>
     </div>

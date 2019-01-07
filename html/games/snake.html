@@ -11,11 +11,11 @@ Source code is available here: https://github.com/patorjk/JavaScript-Snake
 
 -->
     <title>CodeCove Snake</title>
-    <link rel=stylesheet id=style type=text/css href=../../games/snake/css/main-snake.css>
-    <link rel="stylesheet" type="text/css" href="../../css/CodeCove.css">
-    <link rel="icon" href="../resources/favicon1.ico">
+    <link rel=stylesheet id=style type=text/css href=/CodeCove/games/snake/css/main-snake.css>
+    <link rel="stylesheet" type="text/css" href="/CodeCove/css/CodeCove.css">
+    <link rel="icon" href="/CodeCove/resources/favicon1.ico">
     <!-- Navbar -->
-    <script src="../js/gameNavbar.js"></script>
+    <script src="/CodeCove/js/gameNavbar.js"></script>
 
     <!--<button onclick=getTheme()>Click to use this theme.</button>
     <select id="select">
@@ -32,9 +32,9 @@ function getTheme () {
     var index = document.getElementById("select").selectedIndex;
     switch (index) {
         case 0:
-          changeTheme('../../games/snake/css/dark-snake.css');
+          changeTheme('/CodeCove/games/snake/css/dark-snake.css');
           break;
-          case 1: changeTheme('../../games/snake/css/main-snake.css');
+          case 1: changeTheme('/CodeCove/games/snake/css/main-snake.css');
     }
 }
 if (navigator.onLine && window.location.hostname === 'patorjk.com') {
@@ -49,7 +49,7 @@ if (navigator.onLine && window.location.hostname === 'patorjk.com') {
     })();
 }
 </script>
-<script src="../../js/ThemeChange.js"></script>
+<script src="/CodeCove/js/ThemeChange.js"></script>
 <!-- Methods to get height and width -->
 <script>
   function getWidth(){
@@ -80,7 +80,7 @@ if (navigator.onLine && window.location.hostname === 'patorjk.com') {
 <body>
     <div id="game-area" tabindex="0">
     </div>
-    <script type="text/javascript" src="../../games/snake/js/snake.js"></script>
+    <script type="text/javascript" src="/CodeCove/games/snake/js/snake.js"></script>
     <script type="text/javascript">
     var mySnakeBoard = new SNAKE.Board(  {
                                             boardContainer: "game-area",
