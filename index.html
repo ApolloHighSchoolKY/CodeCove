@@ -83,31 +83,25 @@
     <div class="display-container animate-opacity">
       <button class="container button display-bottommiddle margin-bottom hover-opacity" onclick="$('#modMain').fadeIn()" style="color: #ffffff; z-index:0; font-family:'Helvetica';font-weight:100;font-size:48px;white-space:nowrap;cursor:pointer;text-shadow: 4px 4px 5px rgba(0,0,0,1);"> CodeCove: The Programming Education Resource</button>
       <!--<img src="/CodeCove/resources/sailboat.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;z-index:2;">-->
-      <div class="parallax-cove" style="height: 600px">
-        <!--<div class="parallax-cove"><img src="/CodeCove/resources/sailboat.jpg"></div>-->
+      <div class="parallax cove" style="height: 600px">
+        <!--<div class="parallax cove"><img src="/CodeCove/resources/sailboat.jpg"></div>-->
       </div>
       <style>
-        .parallax-cove {
+        .parallax {
           position: relative;
           opacity: 1;
           background-attachment: fixed;
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
-          background-image: url("/CodeCove/resources/cove.jpg");
           min-height: 250px;
           z-index: -1;
         }
-        .parallax-boat {
-          position: relative;
-          opacity: 1;
-          background-attachment: fixed;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+        .cove {
+          background-image: url("/CodeCove/resources/cove.jpg");
+        }
+        .boat {
           background-image: url("/CodeCove/resources/sailboat.jpg");
-          min-height: 250px;
-          z-index: -1;
         }
       </style>
       <div class="container display-bottomleft margin-bottom">
@@ -201,12 +195,12 @@
         <img src="/CodeCove/resources/jacob.jpg" alt="Picture of Jacob" style="width:45%" class="circle hover-opacity">
       </a>
       <h3>Jacob Jones</h3>
-      <p>PHP</p>
+      <p>CSS</p>
     </div>
 
     </div>
     </div>
-    <div class="parallax-cove"></div>
+    <div class="parallax cove"></div>
 
     <!-- Work Row -->
     <div class="row-padding padding-64 theme-l1" id="lessons">
@@ -266,7 +260,7 @@
     </div>
     <br><br>
 
-    <div class="parallax-cove"></div>
+    <div class="parallax cove"></div>
 
     <!-- Create an account -->
     <div class="row-padding center padding-64" id="accounts">
@@ -330,7 +324,7 @@
         </div>
     </div>
 
-    <div class="parallax-cove"></div>
+    <div class="parallax cove"></div>
 
     <!-- Contact Container -->
     <div class="container padding-64 theme-l5" id="contact">
@@ -393,7 +387,7 @@
     To use this code on your website, get a free API key from Google.
     Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
     -->
-    <div class="parallax-cove"></div>
+    <div class="parallax cove"></div>
       <!-- Footer -->
       <footer class="container padding-32 theme-d1 center">
         <h4>Follow Us</h4>

@@ -8,10 +8,10 @@ function random_bg_color() {
    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
    document.body.style.backgroundColor = bgColor;
    var navBarColor = "rgb(" + xx + "," + yy + "," + zz + ")";
-   document.getElementById("navbar").style.backgroundColor = navBarColor;
+   document.getElementById("navbar").style.backgroundImage = "linear-gradient(to right, rgba(255,255,255,1), rgba("+xx+","+yy+","+zz+",.7))";
 }
 function defaultTheme() {
-  document.getElementById("navbar").style.backgroundColor = "transparent";
+  document.getElementById("navbar").style.backgroundImage = "linear-gradient(to right, rgba(255,255,255,1), rgba(0,188,212,.7))";
   document.getElementById("navbar").style.color = "black";
   document.body.style.backgroundColor = "white";
   console.log("Theme reset");
