@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>CodeCove</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="/CodeCove/js/quizMaker.js"></script>
     <script src="/CodeCove/js/themeChange.js"> </script>
@@ -8,14 +9,40 @@
     <link rel="icon" href="/CodeCove/resources/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <body  id="myPage" onload ='getQuestions();addContent("Q1: Where does < !DOCTYPE html > go on the form?","At the Beginning of the Form","Before the Emboldened Text","Around the Hyperlink","In the < script > tag")'>
+  <body  id="myPage" onload ="fetchQuestions('html','test',1);">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src='/CodeCove/js/quizMaker.js'></script>
     <script> src='/CodeCove/js/ThemeChange.js' </script>
     <link rel='stylesheet' href='https:/cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link rel='stylesheet' href='/CodeCove/css/CodeCove.css'>
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-database.js"></script>
+    <!--<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-functions.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-storage.js"></script>-->
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDDBGLJFW4v4AtMRrDd53yFz7Wm9pX_OdQ",
+        authDomain: "code-cove.firebaseapp.com",
+        databaseURL: "https://code-cove.firebaseio.com",
+        projectId: "code-cove",
+        storageBucket: "code-cove.appspot.com",
+        messagingSenderId: "1089219979545"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="/CodeCove/js/Firebase.js"></script>
+
     <!-- Navbar -->
     <script src="/CodeCove/js/altNavbar.js"></script>
+<script>
+</script>
     <form>
     <h1 class='cyan' style='margin-top:38px;'> Welcome to the CodeCove HTML Quiz</h1>
     <div id=question class='container cyan'></div>
@@ -29,7 +56,7 @@
       <div><a id='numberCorrect'>Correct Answers: 0 </a></div>
         <div><a id='totalQuestions'>Total Percentage: 0% </a></div>
       <button type='button' onclick ='checkAnswers();' class='red' style='border:none;cursor:pointer;'>Check my answers </button> <br>
-      <br> <button id=newQ style='display:none' type='button' onclick='addContent("Q2: It works","Welcome to the CodeCove HTML Quiz","At the Beginning of the Form","Before the Emboldened Text","Around the Hyperlink","In the < script > Function")' class='red' style='border:none;cursor:pointer;'> New Question </button>
+      <br> <button id=newQ style='display:none' type='button' onclick='fetchQuestions("html,test,2")' class='red' style='border:none;cursor:pointer;'> New Question </button>
     </form>
     <div id="modal" class="modal">
       <div class="modal-content card-4 animate-top">

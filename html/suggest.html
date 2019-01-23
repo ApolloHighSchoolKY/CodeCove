@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>CodeCove</title>
+    <meta charset="UTF-8">
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous">
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/CodeCove/css/CodeCove.css">
+    <link rel="icon" href="/CodeCove/resources/favicon.ico">
+    <!--<link rel="stylesheet" href="/CodeCove/css/CodeCove-Theme-Black.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-database.js"></script>
+    <!--<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-functions.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-storage.js"></script>-->
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDDBGLJFW4v4AtMRrDd53yFz7Wm9pX_OdQ",
+        authDomain: "code-cove.firebaseapp.com",
+        databaseURL: "https://code-cove.firebaseio.com",
+        projectId: "code-cove",
+        storageBucket: "code-cove.appspot.com",
+        messagingSenderId: "1089219979545"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <script src="/CodeCove/js/Firebase.js"></script>
+    <!-- Navbar -->
+    <script src="/CodeCove/js/altNavbar.js"></script>
+  </head>
+  <body>
+    <div style='margin-top:100px;margin-left:475px;'>
+      <select id='qLang' style='margin-top:100px' class='display-topleft third'>
+        <option value;='html'>HTML</option>
+        <option value;='js'>Javascript </option>
+        <option value;='css'>CSS </option>
+      </select>
+      <input style='' type="text" placeholder="Topic" id="topicUp">
+      <input style='' type="text" placeholder="Question" id="qUp">
+      <input style='' type="text" placeholder='First Incorrect Answer' id="inc1Up">
+      <input style='' type="text" placeholder='Second Incorrect Answer'id="inc2Up">
+      <input style='' type="text" placeholder='Third Incorrect Answer' id='inc3Up'>
+      <input style='' type="text" placeholder='Correct Answer' id='correctUp'>
+      <button onclick='javascript:speakFunction()'>Concatenate the strings</button>
+    </div>
+    <script>
+      function speakFunction(){
+        var functionStrP1 = "" + document.getElementById('qLang').value; + ',' + document.getElementById('topicUp').value; + ',' + document.getElementById('qUp').value; + ','  + document.getElementById('inc1Up').value; + ',' + document.getElementById('inc2Up').value;;
+        var functionStrP2 = "" + document.getElementById('inc3Up').value; + ',' + document.getElementById('correctUp').value;;
+        var functionStr = "" + functionStrP1 + functionStrP2;
+        alert(functionStr);
+      };
+    </script>
+  </body>
+  <script>
+    var lang = document.getElementById('qLang').value;
+
+    //Add question to database
+    function addQuestion(language, topic, correct, inc1, inc2, inc3, question){
+      firebase.database().ref('/questions/' + language + '/' + topic).once('value;').then(function(snapshot) {
+        var questionNum = snapshot.child("questionNum").val()+1;
+        firebase.database().ref('questions/' + language +'/'+ topic +'/'+ questionNum).set({
+          correct: correct,
+          inc1: inc1,
+          inc2: inc2,
+          inc3: inc3,
+          question: question
+        });
+        var updates = {};
+        updates['/questions/'+language+'/'+topic+'/'+ "questionNum"] = questionNum;
+        firebase.database().ref().update(updates);
+      });
+    }
+
+    //Remove question from database
+    function removeQuestion(language, topic, questionNum){
+      firebase.database().ref('/questions/' + language + '/' + topic).once('value;').then(function(snapshot) {
+        var totalQuestionNum = snapshot.child("questionNum").val();
+        firebase.database().ref('questions/' + language +'/'+ topic +'/'+ questionNum).remove();
+        var updates = {};
+        updates['/questions/'+language+'/'+topic+'/'+ "questionNum"] = totalQuestionNum-1;
+        // Will create isses with question overwriting others if some are removed
+        // firebase.database().ref().update(updates);
+      });
+    }
+
+    function checkNums(language,topic){
+      return firebase.database().ref('/questions/' + language +'/'+topic).once('value;').then(function(snapshot) {
+        //for each loop
+
+      });
+    }
+  </script>
+
+</html>

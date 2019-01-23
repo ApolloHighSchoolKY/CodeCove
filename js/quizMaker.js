@@ -6,7 +6,7 @@ function setQuestions(){
   window.sessionStorage.clear();
 window.sessionStorage.setItem('qForm', document.getElementById('qNums').value);
 };
-function getQuestions(){
+function getForm(){
   if(typeof(Storage) == "undefined") {
 alert("Your browser does not support Session Storage");
 window.location='quizSetup.html';
@@ -14,6 +14,8 @@ window.location='quizSetup.html';
         return ("" + window.sessionStorage.getItem('qForm'));
       }
       };
+
+
     //};
 /*
 function setType(type){
@@ -56,6 +58,21 @@ document.getElementById('newQ').style.display='block';
 document.getElementById('newQ').style.cursor='pointer';
 document.getElementById('newQ').style.border='none';
 };
+
+function fetchQuestions(language,topic,questionNum){
+  return firebase.database().ref('/questions/' + language +'/'+topic+'/'+questionNum).once('value').then(function(snapshot) {
+    var question = snapshot.child("question").val();
+    var correct = snapshot.child("correct").val();
+    var inc1 = snapshot.child("inc1").val();
+    var inc2 = snapshot.child("inc2").val();
+    var inc3 = snapshot.child("inc3").val();
+    addContent(question,correct,inc1,inc2,inc3);
+  });
+};
+function addContent(){
+  document.getElementById("a1a")
+}
+
 
 function addContent(question,correct,inc1,inc2,inc3){
 if(numQs<=0){
