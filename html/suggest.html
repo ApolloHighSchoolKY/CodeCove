@@ -53,14 +53,18 @@
       <input style='' type="text" placeholder='Second Incorrect Answer'id="inc2Up">
       <input style='' type="text" placeholder='Third Incorrect Answer' id='inc3Up'>
       <input style='' type="text" placeholder='Correct Answer' id='correctUp'>
-      <button onclick='javascript:speakFunction()'>Concatenate the strings</button>
+      <button onclick='javascript:speakFunction()'>Add Question to Database</button>
     </div>
     <script>
       function speakFunction(){
-        var functionStrP1 = "" + document.getElementById('qLang').value; + ',' + document.getElementById('topicUp').value; + ',' + document.getElementById('qUp').value; + ','  + document.getElementById('inc1Up').value; + ',' + document.getElementById('inc2Up').value;;
-        var functionStrP2 = "" + document.getElementById('inc3Up').value; + ',' + document.getElementById('correctUp').value;;
-        var functionStr = "" + functionStrP1 + functionStrP2;
-        alert(functionStr);
+        var language = document.getElementById('qLang').value.toLowerCase();
+        var topic = document.getElementById('topicUp').value.toLowerCase();
+        var question = document.getElementById('qUp').value;
+        var inc1 = document.getElementById('inc1Up').value;
+        var inc2 = document.getElementById('inc2Up').value;
+        var inc3 = document.getElementById('inc3Up').value;
+        var correct = document.getElementById('correctUp').value;
+        addQuestion(language, topic, correct, inc1, inc2, inc3, question);
       };
     </script>
   </body>
@@ -69,7 +73,7 @@
 
     //Add question to database
     function addQuestion(language, topic, correct, inc1, inc2, inc3, question){
-      firebase.database().ref('/questions/' + language + '/' + topic).once('value;').then(function(snapshot) {
+      firebase.database().ref('/questions/' + language + '/' + topic).once('value').then(function(snapshot) {
         var questionNum = snapshot.child("questionNum").val()+1;
         firebase.database().ref('questions/' + language +'/'+ topic +'/'+ questionNum).set({
           correct: correct,
@@ -86,7 +90,7 @@
 
     //Remove question from database
     function removeQuestion(language, topic, questionNum){
-      firebase.database().ref('/questions/' + language + '/' + topic).once('value;').then(function(snapshot) {
+      firebase.database().ref('/questions/' + language + '/' + topic).once('value').then(function(snapshot) {
         var totalQuestionNum = snapshot.child("questionNum").val();
         firebase.database().ref('questions/' + language +'/'+ topic +'/'+ questionNum).remove();
         var updates = {};
