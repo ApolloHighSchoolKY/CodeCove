@@ -240,6 +240,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     z-index: -1;
   }
 .cove {
+    background-image: url("/CodeCove/resources/cove.jpg");
   }
 .boat {
     background-image: url("/CodeCove/resources/sailboat.jpg");
