@@ -229,6 +229,13 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .border-dark-grey,.hover-border-dark-grey:hover,.border-dark-gray,.hover-border-dark-gray:hover{border-color:#616161!important}
 .border-pale-red,.hover-border-pale-red:hover{border-color:#ffe7e7!important}.border-pale-green,.hover-border-pale-green:hover{border-color:#e7ffe7!important}
 .border-pale-yellow,.hover-border-pale-yellow:hover{border-color:#ffffcc!important}.border-pale-blue,.hover-border-pale-blue:hover{border-color:#e7ffff!important}
+
+:root{
+  --main-text-color: black;
+  --main-bg-color: white;
+  --main-accent-color: #00bcd4;
+}
+
 .parallax {
     position: relative;
     opacity: 1;
@@ -280,7 +287,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   height: 300px;
   perspective: 1000px;
 }
-
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -304,12 +310,12 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 .flip-card-front {
   background-color: transparent;
-  color: black;
+  color: var(--main-text-color);
   z-index: 2;
 }
 
 .flip-card-back {
-  background-image: linear-gradient(to top right, white, #00bcd4);
+  background-image: linear-gradient(to top right, var(--main-bg-color), var(--main-accent-color));
   color: black;
   transform: rotateY(180deg);
   z-index: 1;
