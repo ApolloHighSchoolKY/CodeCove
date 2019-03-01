@@ -1,7 +1,7 @@
 document.write(`<div class='customSB'>
   <div class='sidebarElmnt'>
     <div class='sidebarBreak'>
-        <img class='sidebarBreakImg' style='z-index:-1;margin-top:10%;height:80%;'src='/CodeCove/resources/syntaxFull.png'> </img>
+        <img class='sidebarBreakImg' style='z-index:-1;margin-top:10%;height:80%;'src='/CodeCove/resources/syntaxFull.PNG'> </img>
     </div>
     <p id=syntax class='sidebarText'>Syntax</p>
   </div>
