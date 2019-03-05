@@ -1,41 +1,109 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>CodeCove</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/CodeCove/css/CodeCove.css">
-    <link rel="icon" href="/CodeCove/resources/favicon.ico">
-    <!--<link rel="stylesheet" href="/CodeCove/css/CodeCove-Theme-Black.css">-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
-  <body id="myPage">
+<title>CodeCove</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/CodeCove/css/CodeCove.css">
+<link rel="icon" href="/CodeCove/resources/favicon.ico">
+<!--<link rel="stylesheet" href="/CodeCove/css/CodeCove-Theme-Black.css">-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+  <!-- Navbar -->
+  <script src="/CodeCove/js/altNavbar.js"></script>
+  <script src="/CodeCove/js/lessonsSidebar.js"></script>
+  <div style='width:100%;height:40px;position:relative;top:40px;background-color:rgba(225,225,225,.5)'><p style='position:relative;left:37%;'><b> Welcome to the HTML Lessons Page</b></p> </div>
+<!-- Image Header -->
+<div id=lessonsContent class="display-container lessonsList padding-32 animate-opacity">
+<div id='genRules'>
+  <br> <br> <p> <b> <u> General Rules for HTML:</u> </b></p>
+   <ul>
+     <li> All HTML (Hyper Text Markup Language) Files are saved with a ".html" extension. </li>
+     <li> Every element within your webpage must be enclosed in <script>document.write('"<>"'); </script> tags </li>
+     <li> Some examples of elements include: "html", "body", "ul", "li", "form", "title", "header", "footer" </li>
+     <li> *Almost* every element must also be closed with "<" + "/" + ">" tags </li>
+     <li> These exceptions are known as 'Singleton' tags and include the "link", "br", "col", "command", and "embed" tags</li>
+     <li> In 'Singleton' tags, it is not necessary to include a closing tag ("<" + "/" + ">") </li>
+     <li style="color:blue"> HTML is compatible with many different languages, one including CSS, which makes this text blue.</li>
+     <li> Another one is javascript, which lets me place these characters:<script>document.write('&#134,' + "&#167," + "&#17," + "&#149," + "&#187,"); </script> </li>
+   </ul>
+  <div class="container display-bottomleft margin-bottom">
 
-    <!-- Navbar -->
-    <script src="/CodeCove/js/altNavbar.js"></script>
-
-    <!-- Image Header -->
-    <div class="display-container animate-opacity">
-      <p class = "container padding-32 center"><b> Welcome to the HTML Lessons Page</b> </p>
-      <p> <b> <u> General Rules for HTML:</u> </b></p>
-       <ul style="padding-left:32px;">
-         <li> All HTML (Hyper Text Markup Language) Files are saved with a ".html" extension. </li>
-         <li> Every element within your webpage must be enclosed in <script>document.write('"<>"'); </script> tags </li>
-         <li> Some examples of elements include: "html", "body", "ul", "li", "form", "title", "header", "footer" </li>
-         <li> *Almost* every element must also be closed with "<" + "/" + ">" tags </li>
-         <li> These are known as 'Singleton' tags and include the "link", "br", "col", "command", and "embed" tags</li>
-         <li style="color:blue"> HTML is compatible with many different languages, one including CSS, which makes this text blue.</li>
-         <li> Another one is javascript, which lets me place these characters:<script>document.write('&#134,' + "&#167," + "&#17," + "&#149," + "&#187,"); </script> </li>
-       </ul>
-      <div class="container display-bottomleft margin-bottom">
-      </div>
+  </div>
+</div>
+<h3> Compatible Languages with HTML </h3>
+  <table id=orgTable style='border-style:inset;border-color:red;'>
+    <tr id='Headers' style='border-style:inset;border-color:red;' >
+      <th >
+        Language Name
+      </th>
+      <th >
+        Relation
+      </th>
+      <th >
+        How to Enable
+      </th>
+    </tr>
+    <tr id='CSSRow'>
+      <td >
+        CSS
+      </td>
+      <td >
+        Styling/Aesthetics <br>
+        Limited Variable Manipulation
+      </td>
+      <td >
+        Linked by Default
+      </td>
+    </tr>
+    <tr id='JSRow'>
+      <td>
+        Javascript
+      </td>
+      <td>
+        Full Variable Manipulation <br>Functionality <br> Database Relations
+      </td>
+      <td>
+        Enable Javascript <br> in browser
+      </td>
+    </tr>
+    <tr id='jQueryRow'>
+      <td>
+        JQuery
+      </td>
+      <td>
+        Visual Effects <br> Javascript Alternative
+      </td>
+      <td>
+          Paste inside of a < script > tag: <br>
+          <a style='color:red;'> src="https://code.jquery.com/jquery-3.3.1.js" </a><br>
+      </td>
+    </tr>
+    <tr id='ASPRow'>
+      <td>
+        ASP
+      </td>
+      <td>
+        Server-side Scripting <br> Page Navigation
+      </td>
+    </tr>
+  </table>
+<!-- Modals -->
+<div id="modMain" class="modal">
+  <div class="modal-content card-4 animate-top">
+    <header class="container cyan display-container">
+      <span onclick="$('#modMain').fadeOut()" class="button cyan display-topright"><i class="fa fa-remove"></i></span>
+      <h4>Welcome to CodeCove!</h4>
+      <h5>A site designed by programming students for class <i class="fa fa-smile-o"></i></h5>
+    </header>
+    <div class="container">
+      <p>Check the site out and</p>
+      <p>Leave any feedback you may have in the contact section below!</p>
     </div>
     <footer class="container cyan">
       <p>Happy coding!</p>
     </footer>
   </div>
 </div>
-
+</div>
 
 <script src="/CodeCove/js/ThemeChange.js"></script>
 <!-- JQuery -->
@@ -45,22 +113,23 @@
   crossorigin="anonymous">
 </script>
 <!-- Footer -->
-<!--<p> <button onclick="window.location='QuizSetup.html'" target="_blank" style="background-color:inherit; cursor:hand; position:relative; bottom:10px;;left:40%; border-color:#345678;border:2;" > Quiz Me! (Under construction) </button> </p>
+<p> <button onclick="window.location='QuizSetup.html'" target="_blank" style="background-color:inherit; cursor:hand; position:relative; bottom:10px;left:30%;border:2;" > Quiz Me! (Under construction) </button> </p>
 
-    <footer class=" middle bottom container padding-16 theme-d1 center">
-      <h4 >Follow Us</h4>
-      <a class="button large cyan" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
-      <a class="button large cyan" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
-      <a class="button large cyan" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
-      <a class="button large cyan" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
-      <a class="button large cyan hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 
-      <div style="position:relative;bottom:100px;z-index:1;" class="tooltip right">
-        <a class="button theme" href="javascript:$('html, body').animate({scrollTop: '0px'}, 750);"><span class="xlarge">
-        <i class="fa fa-chevron-circle-up"></i></span></a>
-      </div>
-    </footer>-->
+<footer class=" middle bottom container padding-16 theme-d1 center">
+    <h4 >Follow Us</h4>
+    <a class="button large cyan" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+    <a class="button large cyan" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+    <a class="button large cyan" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
+    <a class="button large cyan" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+    <a class="button large cyan hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 
-  </body>
+    <div style="position:relative;bottom:100px;z-index:1;" class="tooltip right">
+      <a class="button theme" href="javascript:$('html, body').animate({scrollTop: '0px'}, 750);"><span class="xlarge">
+      <i class="fa fa-chevron-circle-up"></i></span></a>
+    </div>
+  </footer>
+
+</body>
 </html>
