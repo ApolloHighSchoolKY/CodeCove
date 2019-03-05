@@ -50,7 +50,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .dropdown-click,.dropdown-hover{position:relative;display:inline-block;cursor:pointer}
 .dropdown-hover:hover .dropdown-content{display:block}
 .dropdown-hover:first-child,.dropdown-click:hover{background-color:#ccc;color:#000}
-.dropdown-hover:hover > .button:first-child,.dropdown-click:hover > .button:first-child{background-color:#ccc;color:#000}
+.dropdown-hover:hover > .button:first-child,.dropdown-click:hover > .button:first-child{background-color:var(--main-accent-color);color:var(--main-text-color)}
 .dropdown-content{cursor:auto;color:#000;background-color:#fff;display:none;position:absolute;min-width:160px;margin:0;padding:0;z-index:1}
 .check,.radio{width:24px;height:24px;position:relative;top:6px}
 .sidebar{height:100%;width:200px;background-color:#fff;position:fixed!important;z-index:1;overflow:auto}
@@ -141,7 +141,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .padding-32{padding-top:32px!important;padding-bottom:32px!important}.padding-48{padding-top:48px!important;padding-bottom:48px!important}
 .padding-64{padding-top:64px!important;padding-bottom:64px!important}
 .left{float:left!important}.right{float:right!important}
-.button:hover{color:#000!important;background-color:#ccc!important}
+.button:hover{color:#000;background-color:#ccc}
 .transparent,.hover-none:hover{background-color:transparent!important}
 .hover-none:hover{box-shadow:none!important}
 /* Colors */
@@ -230,12 +230,17 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .border-pale-red,.hover-border-pale-red:hover{border-color:#ffe7e7!important}.border-pale-green,.hover-border-pale-green:hover{border-color:#e7ffe7!important}
 .border-pale-yellow,.hover-border-pale-yellow:hover{border-color:#ffffcc!important}.border-pale-blue,.hover-border-pale-blue:hover{border-color:#e7ffff!important}
 
-:root{
+:root {
   --main-text-color: black;
   --main-bg-color: white;
   --main-accent-color: #00bcd4;
+  --nav-opacity: .7;
+  --cyan: #00bcd4;
 }
-
+*{
+  color: var(--main-text-color);
+}
+.hover-accent:hover{color: var(--main-text-color); background-color: var(--main-accent-color);}
 .parallax {
     position: relative;
     opacity: 1;
@@ -246,13 +251,11 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     min-height: 250px;
     z-index: -1;
   }
-.cove {background-image: url("/CodeCove/resources/cove.jpg");}
-.boat {background-image: url("/CodeCove/resources/sailboat.jpg");}
 .main-div input{
     display: block;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background: #fff;
+    background: #999;
     padding: 15px;
     outline: none;
     width: 100%;
@@ -265,9 +268,9 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     border: 1px solid #999;
   }
 .main-div button{
-    background: #5d8ffc;
-    color: #fff;
-    border: 1px solid #5d8ffc;
+    background: var(--main-accent-color);
+    color: var(--main-text-color);
+    border:1px solid var(--main-bg-color);
     border-radius: 5px;
     padding: 15px;
     display: block;
@@ -277,9 +280,9 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     -moz-transition: 0.3s;
   }
 .main-div button:hover{
-    background: #fff;
-    color: #5d8ffc;
-    border:1px solid #5d8ffc;
+    background: var(--main-text-color);
+    color: var(--main-accent-color);
+    border:1px solid var(--main-accent-color);
   }
   .flip-card {
   background-color: transparent;
@@ -321,3 +324,18 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   z-index: 1;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+.main-modal:hover{
+  background-color: rgba(0,0,0,.4);
+  color: white;
+  border-radius: 1em;
+}
+.main-modal{
+  background-color: transparent;
+  color: white;
+}
+/*div{
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+}*/
+.cove {background-image: url("/CodeCove/resources/cove.jpg"); background-color: transparent;}
+.boat {background-image: url("/CodeCove/resources/sailboat.jpg"); background-color: transparent;}

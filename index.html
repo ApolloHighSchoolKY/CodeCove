@@ -8,6 +8,12 @@
     <link rel="icon" href="/CodeCove/resources/favicon.ico">
     <!--<link rel="stylesheet" href="/CodeCove/css/CodeCove-Theme-Black.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous">
+    </script>
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
 
@@ -31,33 +37,6 @@
       firebase.initializeApp(config);
     </script>
     <script src="/CodeCove/js/Firebase.js"></script>
-    <!-- When login changes -->
-    <script>
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          // User is signed in.
-          $("#user_div").show();
-          $("#login_div").hide();
-
-          var user = firebase.auth().currentUser;
-
-          if(user != null){
-            var email_id = user.email;
-            useRemoteTheme();
-            $("#user_greetings").html("Welcome, " + email_id + "!");
-            $("#navLogin").html("Log Out");
-            console.log("Successfully logged in");
-          }
-          } else {
-            // No user is signed in.
-            $("#user_div").hide();
-            $("#login_div").show();
-            $("#navLogin").html("Log In");
-            defaultTheme();
-            console.log("Successfully logged out");
-          }
-        });
-    </script>
     <script src="/CodeCove/js/ThemeChange.js"></script>
     <noscript>
       <h1>Please enable javascript to use many features of the site</h1>
@@ -66,7 +45,7 @@
   <body id="myPage">
     <!-- Sidebar on click -->
     <nav class="sidebar bar-block white card animate-left xxlarge" style="display:none;z-index:2" id="mySidebar">
-      <a href="javascript:void(0)" onclick="w3_close()" class="bar-item button display-topright text-cyan">Close
+      <a href="javascript:void(0)" onclick="w3_close()" class="bar-item button display-topright">Close
         <i class="fa fa-remove"></i>
       </a>
       <a href="/CodeCove/html/hyperTextMarkupLessons.html" class="bar-item button">HTML</a>
@@ -81,7 +60,7 @@
 
     <!-- Image Header -->
     <div class="display-container animate-opacity">
-      <button class="container button display-bottommiddle margin-bottom hover-opacity" onclick="$('#modMain').fadeIn()" style="color: #ffffff; z-index:0; font-family:'Helvetica';font-weight:100;font-size:48px;white-space:nowrap;cursor:pointer;text-shadow: 4px 4px 5px rgba(0,0,0,1);"> CodeCove: The Programming Education Resource</button>
+      <button class="display-bottommiddle margin-bottom main-modal" onclick="$('#modMain').fadeIn()" style="border: none; color: #ffffff; z-index:0; font-family:'Helvetica';font-weight:100;font-size:48px;white-space:nowrap;cursor:pointer;text-shadow: 4px 4px 5px rgba(0,0,0,1);"> CodeCove: The Programming Education Resource</button>
       <!--<img src="/CodeCove/resources/sailboat.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;z-index:2;">-->
       <div class="parallax cove" style="height: 100vh"></div>
       <div class="container display-bottomleft margin-bottom">
@@ -92,28 +71,28 @@
     <!-- Modals -->
     <div id="modMain" class="modal">
       <div class="modal-content card-4 animate-top">
-        <header class="container cyan display-container">
-          <span onclick="$('#modMain').fadeOut()" class="button cyan display-topright"><i class="fa fa-remove"></i></span>
+        <header class="container display-container" style="background-color: var(--main-accent-color);">
+          <span onclick="$('#modMain').fadeOut()" class="button display-topright"><i class="fa fa-remove"></i></span>
           <h4>Welcome to CodeCove!</h4>
           <h5>A site designed by programming students for class <i class="fa fa-smile-o"></i></h5>
         </header>
-        <div class="container">
+        <div class="container" style="background-color: var(--main-bg-color);">
           <p>Check the site out and</p>
           <p>Leave any feedback you may have in the contact section below!</p>
         </div>
-        <footer class="container cyan">
+        <footer class="container" style="background-color: var(--main-accent-color);">
           <p>Happy coding!</p>
         </footer>
       </div>
     </div>
     <div id="modLogin" class="modal">
       <div class="modal-content card-4 animate-top">
-        <header class="container cyan display-container">
-          <span onclick="$('#modLogin').fadeOut()" class="button cyan display-topright"><i class="fa fa-remove"></i></span>
+        <header class="container display-container" style="background-color: var(--main-accent-color);">
+          <span onclick="$('#modLogin').fadeOut()" class="button display-topright"><i class="fa fa-remove"></i></span>
           <h4>Welcome to CodeCove!</h4>
           <h5>Here you can sign in or create a new account.</h5>
         </header>
-        <div class="container">
+        <div class="container" style="background-color: var(--main-bg-color);">
             <div id="login_div" class="main-div">
               <!--Sign in-->
               <div id="login">
@@ -139,9 +118,6 @@
               <p>Enjoy your time here at CodeCove!</p>
             </div>
         </div>
-        <footer class="container cyan">
-          <p>Happy coding!</p>
-        </footer>
       </div>
     </div>
 
@@ -163,6 +139,7 @@
               <div class="flip-card-back">
                 <h1>Christopher Cox</h1>
                 <p>Lead Programmer</p>
+                <p>Future plans to major in Computer Science</p>
                 <p><a href="https://github.com/legit228" target="_blank">See My Work!</a></p>
               </div>
             </div>
@@ -179,6 +156,7 @@
               <div class="flip-card-back">
                 <h1>Nathan Roberts</h1>
                 <p>Management</p>
+                <p>Future plans to major in Mechanical Engineering</p>
                 <p><a href="https://github.com/NateDaddy" target="_blank">See My Work!</a></p>
               </div>
             </div>
@@ -195,6 +173,7 @@
               <div class="flip-card-back">
                 <h1>Jacob Jones</h1>
                 <p>Business Expert</p>
+                <p>Future plans to major in Astrospace Engineering</p>
                 <p><a href="https://github.com/jajones3" target="_blank">See My Work!</a></p>
               </div>
             </div>
@@ -216,7 +195,7 @@
       </div>
 
       <div class="quarter">
-        <div class="card white">
+        <div class="card border">
           <!--<img src="/w3images/snow.jpg" alt="Snow" style="width:100%">-->
           <div class="container">
             <h3><a href="/CodeCove/html/hyperTextMarkupLessons.html">HTML</a></h3>
@@ -230,7 +209,7 @@
       </div>
 
       <div class="quarter">
-        <div class="card white">
+        <div class="card border">
           <!--<img src="/w3images/lights.jpg" alt="Lights" style="width:100%">-->
           <div class="container">
             <h3><a href="/CodeCove/html/javaScriptLessons.html">JavaScript</a></h3>
@@ -244,9 +223,9 @@
       </div>
 
       <div class="quarter">
-        <div class="card white">
+        <div class="card">
           <!--<img src="/w3images/mountains.jpg" alt="Mountains" style="width:100%">-->
-          <div class="container">
+          <div class="container border">
             <h3><a href="/CodeCove/html/cssLessons.html">CSS</a></h3>
             <h4>Contains</h4>
             <p>general</p>
@@ -260,9 +239,12 @@
 
     <!-- Container -->
     <div class="container" style="position:relative">
-      <a onclick="w3_open()" class="button xlarge circle cyan"
-      style="position:absolute;top:-28px;right:24px">+</a>
+      <a onclick="w3_open()" class="button xlarge circle"
+      style="position:absolute;top:-28px;right:24px" id="addLessons">+</a>
     </div>
+    <script>
+      document.getElementById("addLessons").style.backgroundColor = getComputedStyle(document.body).getPropertyValue("--main-accent-color");
+    </script>
     <br><br>
 
     <div class="parallax cove"></div>
@@ -285,7 +267,7 @@
               <span class="opacity">per month</span>
             </li>
             <li class="theme-l5 padding-24">
-              <a class="button cyan padding-large" href="javascript:$('#modLogin').fadeIn()"><i class="fa fa-check"></i> Sign Up</a>
+              <a class="button padding-large" href="javascript:$('#modLogin').fadeIn()" id="createStudent"  style="background-color: var(--main-accent-color)"><i class="fa fa-check"></i> Sign Up</a>
             </li>
           </ul>
         </div>
@@ -304,7 +286,7 @@
               <span class="opacity">per month</span>
             </li>
             <li class="theme-l5 padding-24">
-              <a class="button cyan padding-large" href="javascript:$('#modLogin').fadeIn()"><i class="fa fa-check"></i> Sign Up</a>
+              <a class="button padding-large" href="javascript:$('#modLogin').fadeIn()" id="createTeacher"  style="background-color: var(--main-accent-color)"><i class="fa fa-check"></i> Sign Up</a>
             </li>
           </ul>
         </div>
@@ -323,7 +305,7 @@
               <span class="opacity">per month</span>
             </li>
             <li class="theme-l5 padding-24">
-              <a class="button cyan padding-large" href="javascript:$('#modLogin').fadeIn()"><i class="fa fa-check"></i> Sign Up</a>
+              <a class="button padding-large" href="javascript:$('#modLogin').fadeIn()" id="createAdmin" style="background-color: var(--main-accent-color)"><i class="fa fa-check"></i> Sign Up</a>
             </li>
           </ul>
         </div>
@@ -335,13 +317,13 @@
     <div class="container padding-64 theme-l5" id="contact">
       <div class="row">
         <div class="col m5">
-        <div class="padding-16"><span class="xlarge border-cyan bottombar">Contact Us</span></div>
+        <div class="padding-16"><span class="xlarge" style="border-bottom: 6px solid var(--main-accent-color);">Contact Us</span></div>
           <h3>How to get ahold of us:</h3>
           <p>Feel free to contact us for any reason.</p>
-          <p><i class="fa fa-map-marker text-cyan xlarge"></i>  Owensboro, US</p>
-          <p><i class="fa fa-envelope-o text-cyan xlarge"></i> <a href="mailto:Christopher.cox@stu.daviess.kyschools.us?Subject=Code%20Cove" style="text-decoration: none">Christopher.cox@stu.daviess.kyschools.us</a></p>
-          <p><i class="fa fa-envelope-o text-cyan xlarge"></i> <a href="mailto:Nathan.roberts@stu.daviess.kyschools.us?Subject=Code%20Cove" style="text-decoration: none">Nathan.roberts@stu.daviess.kyschools.us</a></p>
-          <p><i class="fa fa-envelope-o text-cyan xlarge"></i> <a href="mailto:Jacob.jones3@stu.daviess.kyschools.us?Subject=Code%20Cove" style="text-decoration: none">Jacob.jones3@stu.daviess.kyschools.us</a></p>
+          <p><i class="fa fa-map-marker xlarge" style="color: var(--main-accent-color);"></i>  Owensboro, US</p>
+          <p><i class="fa fa-envelope-o xlarge" style="color: var(--main-accent-color);"></i> <a href="mailto:Christopher.cox@stu.daviess.kyschools.us?Subject=Code%20Cove" style="text-decoration: none">Christopher.cox@stu.daviess.kyschools.us</a></p>
+          <p><i class="fa fa-envelope-o xlarge" style="color: var(--main-accent-color);"></i> <a href="mailto:Nathan.roberts@stu.daviess.kyschools.us?Subject=Code%20Cove" style="text-decoration: none">Nathan.roberts@stu.daviess.kyschools.us</a></p>
+          <p><i class="fa fa-envelope-o xlarge" style="color: var(--main-accent-color);"></i> <a href="mailto:Jacob.jones3@stu.daviess.kyschools.us?Subject=Code%20Cove" style="text-decoration: none">Jacob.jones3@stu.daviess.kyschools.us</a></p>
         </div>
         <div class="col m7">
           <!--Name of commenter-->
@@ -393,25 +375,45 @@
     Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
     -->
     <div class="parallax cove"></div>
-      <!-- Footer -->
-      <footer class="container padding-32 theme-d1 center">
-        <h4>Follow Us</h4>
-        <a class="button large cyan" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
-        <a class="button large cyan" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
-        <a class="button large cyan" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
-        <a class="button large cyan" href=http:/www.instagram.com/nathan_roberts_81 target=_blank title="Instagram"><i class="fa fa-instagram"></i></a>
-        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    <!-- Footer -->
+    <!--<footer class="container padding-32 theme-d1 center">
+      <h4>Follow Us</h4>
+      <a class="button large cyan" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+      <a class="button large cyan" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+      <a class="button large cyan" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
+      <a class="button large cyan" href=http:/www.instagram.com/nathan_roberts_81 target=_blank title="Instagram"><i class="fa fa-instagram"></i></a>
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 
-        <div style="position:relative;bottom:100px;z-index:1;" class="tooltip right">
-          <a class="button theme" href="javascript:$('html, body').animate({scrollTop: '0px'}, 750);"><span class="xlarge">
-          <i class="fa fa-chevron-circle-up"></i></span></a>
-        </div>
-      </footer>
-    <!-- JQuery -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.js"
-      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-      crossorigin="anonymous">
+      <div style="position:relative;bottom:100px;z-index:1;" class="tooltip right">
+        <a class="button theme" href="javascript:$('html, body').animate({scrollTop: '0px'}, 750);"><span class="xlarge">
+        <i class="fa fa-chevron-circle-up"></i></span></a>
+      </div>
+    </footer>-->
+
+    <!-- When login changes -->
+    <script>
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          $("#user_div").show();
+          $("#login_div").hide();
+
+          var user = firebase.auth().currentUser;
+
+          if(user != null){
+            var email_id = user.email;
+            useRemoteTheme();
+            $("#user_greetings").html("Welcome, " + email_id + "!");
+            $("#navLogin").html("Log Out");
+          }
+          } else {
+            // No user is signed in.
+            $("#user_div").hide();
+            $("#login_div").show();
+            $("#navLogin").html("Log In");
+            defaultTheme();
+          }
+        });
     </script>
     <!-- W3 -->
     <script>
