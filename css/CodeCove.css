@@ -340,3 +340,71 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 }*/
 .cove {background-image: url("/CodeCove/resources/cove.jpg"); background-color: transparent;}
 .boat {background-image: url("/CodeCove/resources/sailboat.jpg"); background-color: transparent;}
+.sidebarBreak{ /*Position*/float:left;position:relative;
+  /*Color*/
+  background-color:white;width:20%;height:100%;z-index:1;}
+.sidebarBreak:hover{
+  cursor:default;
+}
+.sidebarBreakImg:hover{
+  cursor:default;
+}
+.sidebarElmnt{
+/*Overlay*/
+  z-index:3;
+/*Position*/
+  position:relative;
+  float:left;
+  vertical-align:middle;
+/*Borders/Color*/
+  color:grey;
+  background-color:white;border-bottom-color:lightgrey;border-bottom-style:inset;border-bottom-width:thin;
+  border-top-width:thin;border-top-style:inset;border-top-color:lightgrey;border-bottom-width:thin;
+/*Size*/
+  width:100%;height:8%}
+/*Hover Properties*/
+div.sidebarElmnt:hover{cursor:hand;background-color:cyan;}
+.customSB{z-index:2;
+  border-right-style:inset;
+  border-right-color:lightgrey;
+  border-right-width:thin;
+  top:38px;
+  width:15%;background-color:white;
+  float:left;
+      flex: 1 0 auto;
+      height: 100%;
+      display: flex;
+      z-index: 1200;
+      outline: none;
+      position: fixed;
+      overflow-x: auto;
+      overflow-y: auto;
+      flex-direction: column;}
+.sidebarText{
+  /*Text Position*/
+  float:left;
+  width:60%;
+  position:relative;
+  z-index:1;
+  left:2%;
+}
+div.pNote{
+  font-size:85%;
+  cursor:default;
+}
+.lessonsList{
+  /*Position*/
+  z-index:6;
+  position:relative;
+  left:15%;
+}
+td{
+  border-style:ridge;
+  border-color:blue;
+}
+tr:hover{
+  background-color:cyan;
+}
+.CodeCoveFooter{
+  /*Insert code here for terms, licenses, and other information to be displayed at the bottom of the page*/
+}
