@@ -234,8 +234,9 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   --main-text-color: black;
   --main-bg-color: white;
   --main-accent-color: #00bcd4;
+  --second-accent-color: rgb(calc(255 - 0), calc(255 - 188), calc(255 - 212));
   --nav-opacity: .7;
-  --cyan: #00bcd4;
+  --cyan: #00bcd4; /* rgb(0, 188, 212) */
 }
 *{
   color: var(--main-text-color);
@@ -253,9 +254,9 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   }
 .main-div input{
     display: block;
-    border: 1px solid #ccc;
+    border: 1px solid var(--main-text-color);
     border-radius: 5px;
-    background: #999;
+    background: var(--main-bg-color);
     padding: 15px;
     outline: none;
     width: 100%;
@@ -265,7 +266,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     -moz-transition: 0.3s;
 }
 .main-div input:focus{
-    border: 1px solid #999;
+    border: 1px solid var(--main-text-color);
   }
 .main-div button{
     background: var(--main-accent-color);
