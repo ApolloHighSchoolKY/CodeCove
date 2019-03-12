@@ -48,11 +48,11 @@
       <a href="javascript:void(0)" onclick="w3_close()" class="bar-item button display-topright">Close
         <i class="fa fa-remove"></i>
       </a>
-      <a href="/CodeCove/html/hyperTextMarkupLessons.html" class="bar-item button">HTML</a>
-      <a href="/CodeCove/html/javaScriptLessons.html" class="bar-item button">Javascript</a>
-      <a href="/CodeCove/html/cssLessons.html" class="bar-item button">CSS</a>
-      <a href="/CodeCove/html/lessons.html" class="bar-item button">View All Lessons</a>
-      <a href="/CodeCove/html/javascript:window.alert('In progress!');" class="bar-item button">Add a Lesson</a>
+      <a href="javascript:void(0)" onclick="window.location.href='/CodeCove/html/hyperTextMarkupLessons.html'" class="bar-item button">HTML</a>
+      <a href="javascript:void(0)" onclick="window.location.href='/CodeCove/html/javaScriptLessons.html'" class="bar-item button">Javascript</a>
+      <a href="javascript:void(0)" onclick="window.location.href='/CodeCove/html/cssLessons.html'" class="bar-item button">CSS</a>
+      <a href="javascript:void(0)" onclick="window.location.href='/CodeCove/html/lessons.html'" class="bar-item button">View All Lessons</a>
+      <a href="javascript:void(0)" onclick="window.alert('In progress!')" class="bar-item button">Add a Lesson</a>
     </nav>
 
     <!-- Navbar -->
@@ -190,7 +190,7 @@
     <div class="row-padding padding-64 theme-l1" id="lessons">
 
       <div class="quarter">
-        <h2><a href="/CodeCove/html/lessons.html">Lessons</a></h2>
+        <h2><a href="javascript:void(0)" onclick="window.location.href='/CodeCove/html/lessons.html'">Lessons</a></h2>
         <p>New lessons will be added over time.</p>
       </div>
 
@@ -198,7 +198,7 @@
         <div class="card border">
           <!--<img src="/w3images/snow.jpg" alt="Snow" style="width:100%">-->
           <div class="container">
-            <h3><a href="/CodeCove/html/hyperTextMarkupLessons.html">HTML</a></h3>
+            <h3><a href="javascript:void(0)" onclick="window.location.href='/CodeCove/html/hyperTextMarkupLessons.html'">HTML</a></h3>
             <h4>Contains</h4>
             <p>general</p>
             <p>lessons for</p>
@@ -212,7 +212,7 @@
         <div class="card border">
           <!--<img src="/w3images/lights.jpg" alt="Lights" style="width:100%">-->
           <div class="container">
-            <h3><a href="/CodeCove/html/javaScriptLessons.html">JavaScript</a></h3>
+            <h3><a href="javascript:void(0)" onclick="window.location.href='/CodeCove/html/javaScriptLessons.html'">JavaScript</a></h3>
             <h4>Contains</h4>
             <p>general</p>
             <p>lessons for</p>
@@ -226,7 +226,7 @@
         <div class="card">
           <!--<img src="/w3images/mountains.jpg" alt="Mountains" style="width:100%">-->
           <div class="container border">
-            <h3><a href="/CodeCove/html/cssLessons.html">CSS</a></h3>
+            <h3><a href="javascript:void(0)" onclick="window.location.href='/CodeCove/html/cssLessons.html'">CSS</a></h3>
             <h4>Contains</h4>
             <p>general</p>
             <p>lessons for</p>
@@ -239,12 +239,9 @@
 
     <!-- Container -->
     <div class="container" style="position:relative">
-      <a onclick="w3_open()" class="button xlarge circle"
+      <a href="javascript:void(0)" onclick="w3_open()" class="button xlarge circle accent hover-accent-half"
       style="position:absolute;top:-28px;right:24px" id="addLessons">+</a>
     </div>
-    <script>
-      document.getElementById("addLessons").style.backgroundColor = getComputedStyle(document.body).getPropertyValue("--main-accent-color");
-    </script>
     <br><br>
 
     <div class="parallax cove"></div>
@@ -267,7 +264,7 @@
               <span class="opacity">per month</span>
             </li>
             <li class="theme-l5 padding-24">
-              <a class="button padding-large" href="javascript:$('#modLogin').fadeIn()" id="createStudent"  style="background-color: var(--main-accent-color)"><i class="fa fa-check"></i> Sign Up</a>
+              <a class="button padding-large accent hover-accent-half" href="javascript:void(0)" onclick="$('#modLogin').fadeIn()" id="createStudent"><i class="fa fa-check"></i> Sign Up</a>
             </li>
           </ul>
         </div>
@@ -286,7 +283,7 @@
               <span class="opacity">per month</span>
             </li>
             <li class="theme-l5 padding-24">
-              <a class="button padding-large" href="javascript:$('#modLogin').fadeIn()" id="createTeacher"  style="background-color: var(--main-accent-color)"><i class="fa fa-check"></i> Sign Up</a>
+              <a class="button padding-large accent hover-accent-half" href="javascript:void(0)" onclick="$('#modLogin').fadeIn()" id="createTeacher"><i class="fa fa-check"></i> Sign Up</a>
             </li>
           </ul>
         </div>
@@ -305,7 +302,7 @@
               <span class="opacity">per month</span>
             </li>
             <li class="theme-l5 padding-24">
-              <a class="button padding-large" href="javascript:$('#modLogin').fadeIn()" id="createAdmin" style="background-color: var(--main-accent-color)"><i class="fa fa-check"></i> Sign Up</a>
+              <a class="button padding-large accent hover-accent-half" href="javascript:void(0)" onclick="$('#modLogin').fadeIn()" id="createAdmin"><i class="fa fa-check"></i> Sign Up</a>
             </li>
           </ul>
         </div>
@@ -321,9 +318,9 @@
           <h3>How to get ahold of us:</h3>
           <p>Feel free to contact us for any reason.</p>
           <p><i class="fa fa-map-marker xlarge" style="color: var(--main-accent-color);"></i>  Owensboro, US</p>
-          <p><i class="fa fa-envelope-o xlarge" style="color: var(--main-accent-color);"></i> <a href="mailto:Christopher.cox@stu.daviess.kyschools.us?Subject=Code%20Cove" style="text-decoration: none">Christopher.cox@stu.daviess.kyschools.us</a></p>
-          <p><i class="fa fa-envelope-o xlarge" style="color: var(--main-accent-color);"></i> <a href="mailto:Nathan.roberts@stu.daviess.kyschools.us?Subject=Code%20Cove" style="text-decoration: none">Nathan.roberts@stu.daviess.kyschools.us</a></p>
-          <p><i class="fa fa-envelope-o xlarge" style="color: var(--main-accent-color);"></i> <a href="mailto:Jacob.jones3@stu.daviess.kyschools.us?Subject=Code%20Cove" style="text-decoration: none">Jacob.jones3@stu.daviess.kyschools.us</a></p>
+          <p><i class="fa fa-envelope-o xlarge" style="color: var(--main-accent-color);"></i> <a href="javascript:void(0)" onclick="window.location.href='mailto:Christopher.cox@stu.daviess.kyschools.us?Subject=Code%20Cove'" style="text-decoration: none">Christopher.cox@stu.daviess.kyschools.us</a></p>
+          <p><i class="fa fa-envelope-o xlarge" style="color: var(--main-accent-color);"></i> <a href="javascript:void(0)" onclick="window.location.href='mailto:Nathan.roberts@stu.daviess.kyschools.us?Subject=Code%20Cove'" style="text-decoration: none">Nathan.roberts@stu.daviess.kyschools.us</a></p>
+          <p><i class="fa fa-envelope-o xlarge" style="color: var(--main-accent-color);"></i> <a href="javascript:void(0)" onclick="window.location.href='mailto:Jacob.jones3@stu.daviess.kyschools.us?Subject=Code%20Cove'" style="text-decoration: none">Jacob.jones3@stu.daviess.kyschools.us</a></p>
         </div>
         <div class="col m7">
           <!--Name of commenter-->
@@ -377,7 +374,7 @@
 
     <!-- Google Maps -->
     <iframe style="width:100%;height:420px;" id='mapcanvas' src='https://maps.google.com/maps?q=Apollo%20High%20School,%20Owensboro,%20Kentucky&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=&amp;output=embed' frameborder='0' scrolling='no' marginheight='0' marginwidth='0'></iframe>
-    
+
     <!-- Footer -->
     <!--<footer class="container padding-32 theme-d1 center">
       <h4>Follow Us</h4>

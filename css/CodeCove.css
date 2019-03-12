@@ -241,7 +241,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 *{
   color: var(--main-text-color);
 }
-.hover-accent:hover{color: var(--main-text-color); background-color: var(--main-accent-color);}
 .parallax {
     position: relative;
     opacity: 1;
@@ -340,6 +339,17 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 }*/
 .cove {background-image: url("/CodeCove/resources/cove.jpg"); background-color: transparent;}
 .boat {background-image: url("/CodeCove/resources/sailboat.jpg"); background-color: transparent;}
+
+.bg{background-color: var(--main-bg-color); color: var(--main-text-color);}
+.hover-bg:hover{background-color: var(--); color: var(--main-text-color); border:1px solid var(--main-text-color)}
+.accent,.hover-accent:hover{background-color: var(--main-accent-color); color: var(--main-text-color);}
+.hover-accent-half:hover{
+  background-color: var(--main-accent-color);
+  color: var(--main-text-color);
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+  
 .sidebarBreak{ /*Position*/float:left;position:relative;
   /*Color*/
   background-color:white;width:20%;height:100%;z-index:1;}
