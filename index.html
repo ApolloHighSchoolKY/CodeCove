@@ -45,13 +45,13 @@
   <body id="myPage">
     <!-- Sidebar on click -->
     <nav class="sidebar bar-block white card animate-left xxlarge" style="display:none;z-index:2" id="mySidebar">
-      <a href="javascript:void(0)" onclick="w3_close()" class="bar-item button display-topright">Close
+      <button onclick="w3_close()" class="bar-item button display-topright">Close
         <i class="fa fa-remove"></i>
-      </a>
-      <a href="javascript:void(0)" onclick="window.location.href='/CodeCove/html/hyperTextMarkupLessons.html'" class="bar-item button">HTML</a>
-      <a href="javascript:void(0)" onclick="window.location.href='/CodeCove/html/javaScriptLessons.html'" class="bar-item button">Javascript</a>
-      <a href="javascript:void(0)" onclick="window.location.href='/CodeCove/html/cssLessons.html'" class="bar-item button">CSS</a>
-      <a href="javascript:void(0)" onclick="window.location.href='/CodeCove/html/lessons.html'" class="bar-item button">View All Lessons</a>
+      </button>
+      <a href="/CodeCove/html/hyperTextMarkupLessons.html" class="bar-item button">HTML</a>
+      <a href="/CodeCove/html/javaScriptLessons.html" class="bar-item button">Javascript</a>
+      <a href="/CodeCove/html/cssLessons.html" class="bar-item button">CSS</a>
+      <a href="/CodeCove/html/lessons.html" class="bar-item button">View All Lessons</a>
       <a href="javascript:void(0)" onclick="window.alert('In progress!')" class="bar-item button">Add a Lesson</a>
     </nav>
 
@@ -71,28 +71,28 @@
     <!-- Modals -->
     <div id="modMain" class="modal">
       <div class="modal-content card-4 animate-top">
-        <header class="container display-container" style="background-color: var(--main-accent-color);">
+        <header class="container display-container accent">
           <span onclick="$('#modMain').fadeOut()" class="button display-topright"><i class="fa fa-remove"></i></span>
           <h4>Welcome to CodeCove!</h4>
           <h5>A site designed by programming students for class <i class="fa fa-smile-o"></i></h5>
         </header>
-        <div class="container" style="background-color: var(--main-bg-color);">
+        <div class="container bg">
           <p>Check the site out and</p>
           <p>Leave any feedback you may have in the contact section below!</p>
         </div>
-        <footer class="container" style="background-color: var(--main-accent-color);">
+        <footer class="container accent">
           <p>Happy coding!</p>
         </footer>
       </div>
     </div>
     <div id="modLogin" class="modal">
       <div class="modal-content card-4 animate-top">
-        <header class="container display-container" style="background-color: var(--main-accent-color);">
+        <header class="container display-container accent">
           <span onclick="$('#modLogin').fadeOut()" class="button display-topright"><i class="fa fa-remove"></i></span>
           <h4>Welcome to CodeCove!</h4>
           <h5>Here you can sign in or create a new account.</h5>
         </header>
-        <div class="container" style="background-color: var(--main-bg-color);">
+        <div class="container bg">
             <div id="login_div" class="main-div">
               <!--Sign in-->
               <div id="login">
@@ -239,8 +239,8 @@
 
     <!-- Container -->
     <div class="container" style="position:relative">
-      <a href="javascript:void(0)" onclick="w3_open()" class="button xlarge circle accent hover-accent-half"
-      style="position:absolute;top:-28px;right:24px" id="addLessons">+</a>
+      <button onclick="w3_open()" class="button xlarge circle accent hover-accent-outline"
+      style="position:absolute;top:-28px;right:24px" id="addLessons">+</button>
     </div>
     <br><br>
 
@@ -264,7 +264,7 @@
               <span class="opacity">per month</span>
             </li>
             <li class="theme-l5 padding-24">
-              <a class="button padding-large accent hover-accent-half" href="javascript:void(0)" onclick="$('#modLogin').fadeIn()" id="createStudent"><i class="fa fa-check"></i> Sign Up</a>
+              <a class="button padding-large accent hover-accent-outline" href="javascript:void(0)" onclick="$('#modLogin').fadeIn()" id="createStudent"><i class="fa fa-check"></i> Sign Up</a>
             </li>
           </ul>
         </div>
@@ -283,7 +283,7 @@
               <span class="opacity">per month</span>
             </li>
             <li class="theme-l5 padding-24">
-              <a class="button padding-large accent hover-accent-half" href="javascript:void(0)" onclick="$('#modLogin').fadeIn()" id="createTeacher"><i class="fa fa-check"></i> Sign Up</a>
+              <a class="button padding-large accent hover-accent-outline" href="javascript:void(0)" onclick="$('#modLogin').fadeIn()" id="createTeacher"><i class="fa fa-check"></i> Sign Up</a>
             </li>
           </ul>
         </div>
@@ -302,7 +302,7 @@
               <span class="opacity">per month</span>
             </li>
             <li class="theme-l5 padding-24">
-              <a class="button padding-large accent hover-accent-half" href="javascript:void(0)" onclick="$('#modLogin').fadeIn()" id="createAdmin"><i class="fa fa-check"></i> Sign Up</a>
+              <a class="button padding-large accent hover-accent-outline" href="javascript:void(0)" onclick="$('#modLogin').fadeIn()" id="createAdmin"><i class="fa fa-check"></i> Sign Up</a>
             </li>
           </ul>
         </div>
@@ -322,7 +322,7 @@
           <p><i class="fa fa-envelope-o xlarge" style="color: var(--main-accent-color);"></i> <a href="javascript:void(0)" onclick="window.location.href='mailto:Nathan.roberts@stu.daviess.kyschools.us?Subject=Code%20Cove'" style="text-decoration: none">Nathan.roberts@stu.daviess.kyschools.us</a></p>
           <p><i class="fa fa-envelope-o xlarge" style="color: var(--main-accent-color);"></i> <a href="javascript:void(0)" onclick="window.location.href='mailto:Jacob.jones3@stu.daviess.kyschools.us?Subject=Code%20Cove'" style="text-decoration: none">Jacob.jones3@stu.daviess.kyschools.us</a></p>
         </div>
-        <div class="col m7">
+        <div class="col m7 contact">
           <!--Name of commenter-->
           <div class="section">
             <label>Name</label>

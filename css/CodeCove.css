@@ -265,7 +265,8 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     -moz-transition: 0.3s;
 }
 .main-div input:focus{
-    border: 1px solid var(--main-text-color);
+    box-shadow: 0 0 3pt 2pt var(--main-accent-color);
+    border: 1px solid transparent;
   }
 .main-div button{
     background: var(--main-accent-color);
@@ -279,10 +280,23 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
   }
+  .contact input:focus{
+    box-shadow: 0 0 2pt 1pt var(--main-accent-color);
+  }
+  .contact button:focus{
+    box-shadow: 0 0 2pt 1pt var(--main-accent-color);
+  }
+  .contact input[type=check]:hover{
+    box-shadow: 0 0 2pt 1pt var(--main-accent-color);
+  }
+  .contact button:hover{
+    box-shadow: 0 0 2pt 1pt var(--main-accent-color);
+  }
 .main-div button:hover{
-    background: var(--main-text-color);
+    background: var(--main-bg-color);
     color: var(--main-accent-color);
-    border:1px solid var(--main-accent-color);
+    box-shadow: 0 0 3pt 2pt var(--main-accent-color);
+    cursor: pointer;
   }
   .flip-card {
   background-color: transparent;
@@ -340,7 +354,9 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .cove {background-image: url("/CodeCove/resources/cove.jpg"); background-color: transparent;}
 .boat {background-image: url("/CodeCove/resources/sailboat.jpg"); background-color: transparent;}
 .bg{background-color: var(--main-bg-color); color: var(--main-text-color);}
-.hover-bg:hover{background-color: var(--); color: var(--main-text-color); border:1px solid var(--main-text-color)}
+.hover-bg:hover{background-color: var(--bg-color); color: var(--main-text-color); border:1px solid var(--main-text-color)}
+.hover-accent-outline:hover{background-color: var(--main-bg-color); color: var(--main-accent-color); box-shadow: 0 0 3pt 2pt var(--main-accent-color);}
+.hover-accent-home:hover{background-color: var(--main-bg-color)!important; color: var(--main-accent-color)!important; box-shadow: 0 0 3pt 2pt var(--main-accent-color)!important;}
 .accent,.hover-accent:hover{background-color: var(--main-accent-color); color: var(--main-text-color);}
 .hover-accent-half:hover{
   background-color: var(--main-accent-color);

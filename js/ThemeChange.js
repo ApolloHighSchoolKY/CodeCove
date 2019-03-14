@@ -18,7 +18,7 @@ function defaultTheme() {
   document.getElementById("navHome").style.backgroundColor = getComputedStyle(document.body).getPropertyValue("--main-accent-color");
   document.getElementById("navHome").style.color = getComputedStyle(document.body).getPropertyValue("--main-text-color");
   document.body.style.backgroundColor = "var(--main-bg-color)";
-  
+
 }
 
 function hexToRgb(hex) {
