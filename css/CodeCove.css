@@ -280,20 +280,16 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
   }
-  .contact input:focus{
-    box-shadow: 0 0 2pt 1pt var(--main-accent-color);
+  .contact input, .contact button{
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
   }
-  .contact button:focus{
+  .contact input[type="checkbox"]:hover, .contact input:focus, .contact button:focus, .contact button:hover{
     box-shadow: 0 0 2pt 1pt var(--main-accent-color);
-  }
-  .contact input[type=check]:hover{
-    box-shadow: 0 0 2pt 1pt var(--main-accent-color);
-  }
-  .contact button:hover{
-    box-shadow: 0 0 2pt 1pt var(--main-accent-color);
+    background-color: var(--main-bg-color);
   }
 .main-div button:hover{
-    background: var(--main-bg-color);
+    background-color: var(--main-bg-color);
     color: var(--main-accent-color);
     box-shadow: 0 0 3pt 2pt var(--main-accent-color);
     cursor: pointer;
@@ -365,7 +361,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   filter: alpha(opacity=50);
   opacity: 0.5;
-  
+
 .sidebarBreak{ /*Position*/float:left;position:relative;
   /*Color*/
   background-color:white;width:20%;height:100%;z-index:1;}
