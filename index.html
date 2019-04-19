@@ -63,9 +63,6 @@
       <button class="display-bottommiddle margin-bottom main-modal" onclick="$('#modMain').fadeIn()" style="border: none; color: #ffffff; z-index:0; font-family:'Helvetica';font-weight:100;font-size:48px;white-space:nowrap;cursor:pointer;text-shadow: 4px 4px 5px rgba(0,0,0,1);"> CodeCove: The Programming Education Resource</button>
       <!--<img src="/CodeCove/resources/sailboat.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;z-index:2;">-->
       <div class="parallax cove" style="height: 100vh"></div>
-      <div class="container display-bottomleft margin-bottom">
-        <!-- <button onclick="document.getElementById('modMain').style.display='block'" style="color:white;" class="button xlarge theme hover-cyan" title="CodeCove">CodeCove</button> -->
-      </div>
     </div>
 
     <!-- Modals -->
@@ -260,7 +257,7 @@
             <li class="padding-16"><b>All</b> Lessons</li>
             <li class="padding-16"><b>Endless</b> Support</li>
             <li class="padding-16">
-              <h2 class="wide"><i class="fa fa-usd"></i> 10</h2>
+              <h2 class="wide"><i class="fa fa-usd"></i> 9.99</h2>
               <span class="opacity">per month</span>
             </li>
             <li class="theme-l5 padding-24">
@@ -279,7 +276,7 @@
             <li class="padding-16"><b>All</b> Lessons</li>
             <li class="padding-16"><b>Endless</b> Support</li>
             <li class="padding-16">
-              <h2 class="wide"><i class="fa fa-usd"></i> 20</h2>
+              <h2 class="wide"><i class="fa fa-usd"></i> 19.99</h2>
               <span class="opacity">per month</span>
             </li>
             <li class="theme-l5 padding-24">
@@ -298,7 +295,7 @@
             <li class="padding-16"><b>All</b> Lessons</li>
             <li class="padding-16"><b>Endless</b> Support</li>
             <li class="padding-16">
-              <h2 class="wide"><i class="fa fa-usd"></i> 100</h2>
+              <h2 class="wide"><i class="fa fa-usd"></i> 99.99</h2>
               <span class="opacity">per month</span>
             </li>
             <li class="theme-l5 padding-24">
@@ -404,13 +401,26 @@
             var email_id = user.email;
             useRemoteTheme();
             $("#user_greetings").html("Welcome, " + email_id + "!");
-            $("#navLogin").html("Log Out");
+            $("#dropLogin").html(`
+              <div class="dropdown-hover hide-small right">
+                <button class="button hover-accent">Profile<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content card-4 bar-block">
+                  <a href='/CodeCove/html/profile.html' class='bar-item button hover-accent'>Settings</a>
+                  <button onclick="logout();" class="bar-item button hover-accent" id="navLogin">Log Out</button>
+                </div>
+              </div>
+            `);
+            document.getElementById("dropLogin").style.backgroundImage = "linear-gradient(to right, "+ textToRgb(getComputedStyle(document.body).getPropertyValue("--main-bg-color")) +", "+ "rgba("+rgbStr+","+getComputedStyle(document.body).getPropertyValue("--nav-opacity")+")";
           }
           } else {
             // No user is signed in.
             $("#user_div").hide();
             $("#login_div").show();
-            $("#navLogin").html("Log In");
+            $("#dropLogin").html(`
+              <button onclick="
+                $('#modLogin').fadeIn();" class="bar-item button hide-small hover-accent right" id="navLogin">Log In
+              </button>
+            `);
             defaultTheme();
           }
         });

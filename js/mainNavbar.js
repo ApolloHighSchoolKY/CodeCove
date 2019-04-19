@@ -7,6 +7,7 @@ document.write(`
     <button onclick="$('html, body').animate({scrollTop: ($('#lessons').offset().top)},500);" class="bar-item button hide-small hover-accent">Lessons</button>
     <button onclick="$('html, body').animate({scrollTop: ($('#accounts').offset().top)},500);" class="bar-item button hide-small hover-accent">Accounts</button>
     <button onclick="$('html, body').animate({scrollTop: ($('#contact').offset().top)},500);" class="bar-item button hide-small hover-accent">Contact</button>
+    <!--Theme Options-->
     <div class="dropdown-hover hide-small">
       <button class="button hover-accent">Theme<i class="fa fa-caret-down"></i></button>
       <div class="dropdown-content card-4 bar-block">
@@ -15,6 +16,7 @@ document.write(`
         <button href="javascript:void(0)" onclick="setRemoteTheme()" class="bar-item button hover-accent" >Save</button>
       </div>
     </div>
+    <!--Fun Section-->
     <div class="dropdown-hover hide-small">
       <button class="button hover-accent">Games<i class="fa fa-caret-down"></i></button>
       <div class="dropdown-content card-4 bar-block">
@@ -22,6 +24,7 @@ document.write(`
         <a href="/CodeCove/html/games/snake.html" class="bar-item button hover-accent">Snake</a>
       </div>
     </div>
+    <!--External Resources-->
     <div class="dropdown-hover hide-small">
       <button class="button hover-accent">Resources<i class="fa fa-caret-down"></i></button>
       <div class="dropdown-content card-4 bar-block">
@@ -30,13 +33,16 @@ document.write(`
         <a href="https://teamup.com/ks2y6w6whbvjz625sh" target="_blank" class="bar-item button hover-accent">Teamup Calendar</a>
       </div>
     </div>
-    <button onclick="
-      if($('#navLogin').text()=='Log In'){
-        $('#modLogin').fadeIn();
-      } else {
-        logout();
-      }" class="bar-item button hide-small hover-accent right" id="navLogin">Log In
-    </button>
+    <!--Login-->
+    <div id='dropLogin'>
+      <button onclick="
+        if($('#navLogin').text()=='Log In'){
+          $('#modLogin').fadeIn();
+        } else {
+          logout();
+        }" class="bar-item button hide-small hover-accent right" id="navLogin">Log In
+      </button>
+    </div>
   </div>
 
     <!-- Navbar on small screens -->
