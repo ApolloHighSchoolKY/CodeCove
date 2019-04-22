@@ -1,0 +1,116 @@
+
+][""]<!DOCTYPE html>
+<html>
+  <head>
+    <title>CodeCove</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/CodeCove/css/CodeCove.css">
+    <link rel="icon" href="/CodeCove/resources/favicon.ico">
+    <!--<link rel="stylesheet" href="/CodeCove/css/CodeCove-Theme-Black.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body id="myPage">
+
+    <!-- Navbar -->
+    <script src="/CodeCove/js/altNavbar.js"></script>
+
+    <!-- Image Header -->
+    <div class="display-container animate-opacity">
+      <p class = "container padding-64 center"><b> Welcome to the Visual Basic Lessons Page</b> </p>
+      <p> <b> <u> General Rules for Visual Basic:</u> </b></p>
+       <ul style="padding-left:32px;">
+         <li> All Visual Basic files are saved with a ".NET" extension. </li>
+         <li> Visual Basic is categorized as Object Oriented Programming (OOP), which is a programming philosophy based on "objects", which are items that can perform select tasks. </li>
+         <li> The Basic in Visual Basic stands for Beginner's All-Purpose Symbolic Instruction Code </li>
+         <li> The tasks, or "functions", either built-in or user made, take inputs from a user and feed them to the program to finish computations. </li>
+         <li> Sub Procedures within Visual Basic start and end with Sub, or "Sub Procedure". </li>
+         <li> Every VB object has malleable properties that can be changed to fit a need specific to your project </li>
+         <li> Visual Basic's Toolbox holds the basic, most frequently used controls </li>
+           </ul>
+      <div class="container display-bottomleft margin-bottom">
+      </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="modMain" class="modal">
+      <div class="modal-content card-4 animate-top">
+        <header class="container cyan display-container">
+          <span onclick="$('#modMain').fadeOut()" class="button cyan display-topright"><i class="fa fa-remove"></i></span>
+          <h4>Welcome to CodeCove!</h4>
+          <h5>A site designed by programming students for class <i class="fa fa-smile-o"></i></h5>
+        </header>
+        <div class="container">
+          <p>Check the site out and</p>
+          <p>Leave any feedback you may have in the contact section below!</p>
+        </div>
+        <footer class="container cyan">
+          <p>Happy coding!</p>
+        </footer>
+      </div>
+    </div>
+    <div id="modLogin" class="modal">
+      <div class="modal-content card-4 animate-top">
+        <header class="container cyan display-container">
+          <span onclick="$('#modLogin').fadeOut()" class="button cyan display-topright"><i class="fa fa-remove"></i></span>
+          <h4>Welcome to CodeCove!</h4>
+          <h5>Here you can sign in or create a new account.</h5>
+        </header>
+        <div class="container">
+          <p>
+            <div id="login_div" class="main-div">
+              <!--Sign in-->
+              <div id="login">
+                <h1>Log In</h1>
+                <input type="email" placeholder="Email Address" id="emailIn" required>
+                <input type="password" placeholder="Password" id="passwordIn" required>
+                <button onclick="login()">Sign In</button>
+              </div>
+              <!--Divider-->
+              <br>
+              <!--Sign up-->
+              <div id="signup">
+                <h1>Create an Account</h1>
+                <input type="email" placeholder="Email Address" id="emailUp" required>
+                <input type="password" placeholder="Password" id="passwordUp" required>
+                <input type="text" placeholder="First Name" id="nameUp" required>
+                <button onclick="signup()">Sign Up</button>
+              </div>
+            </div>
+            <!--Log Out-->
+            <div id="user_div" style="display: none;">
+              <h1 id="user_greetings">Welcome!</h1>
+              <p>Enjoy your time here at CodeCove!</p>
+            </div>
+          </p>
+        </div>
+        <footer class="container cyan">
+          <p>Happy coding!</p>
+        </footer>
+      </div>
+    </div>
+
+    <script src="/CodeCove/js/ThemeChange.js"></script>
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous">
+    </script>
+    <!-- Footer -->
+    <!--<footer class=" middle bottom container padding-16 theme-d1 center">
+      <h4 >Follow Us</h4>
+      <a class="button large cyan" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+      <a class="button large cyan" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+      <a class="button large cyan" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
+      <a class="button large cyan" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+      <a class="button large cyan hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+
+      <div style="position:relative;bottom:100px;z-index:1;" class="tooltip right">
+        <a class="button theme" href="javascript:$('html, body').animate({scrollTop: '0px'}, 750);"><span class="xlarge">
+        <i class="fa fa-chevron-circle-up"></i></span></a>
+      </div>
+    </footer>-->
+  </body>
+</html>
